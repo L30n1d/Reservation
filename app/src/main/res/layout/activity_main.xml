@@ -24,4 +24,13 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="64dp"
         android:id="@+id/editText" />
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/mapView"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
 </RelativeLayout>
