@@ -12,16 +12,35 @@
     android:background="@drawable/placereserve">
 
 
-
-    <EditText
+    <TextView
+        android:text="Where do you wanna go?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
+        android:id="@+id/textView"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/editText"
-        android:background="@color/colorPrimary" />
+        android:layout_marginTop="128dp" />
+
+    <TextView
+        android:text="Choose a date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:id="@+id/textView3"
+        android:textSize="22sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Reserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:id="@+id/button3" />
 
 </RelativeLayout>
