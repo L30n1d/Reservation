@@ -1,13 +1,16 @@
 package com.reservation.reservation;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class Main2Activity extends AppCompatActivity {
+/**
+ * Created by Home on 12/28/2016.
+ */
 
+public class SplashActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.splash);
     }
 }
