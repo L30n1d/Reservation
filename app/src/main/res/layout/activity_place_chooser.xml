@@ -13,34 +13,54 @@
 
 
     <TextView
-        android:text="Where do you wanna go?"
+        android:text="Каде сакаш да резервираш?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textColor="@color/colorPrimary"
-        android:textSize="22sp"
+        android:textSize="25sp"
+        tools:textStyle="bold"
+        android:layout_marginTop="69dp"
+        android:textStyle="normal|bold"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp" />
-
-    <TextView
-        android:text="Choose a date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:id="@+id/textView3"
-        android:textSize="22sp"
-        android:textColor="@color/colorPrimary"
-        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Reserve"
+    <TextView
+        android:text="Избери датум"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        tools:textStyle="bold"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:id="@+id/spinner" />
+
+    <Button
+        android:text="Следно"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp"
-        android:id="@+id/button3" />
+        android:layout_marginTop="36dp"
+        android:id="@+id/spinner2" />
 
 </RelativeLayout>
