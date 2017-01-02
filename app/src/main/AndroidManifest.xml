@@ -8,16 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlaceChooser">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity"></activity>
-
+        <activity android:name=".TestMap" />
+        <activity android:name=".SplashActivity"/>
+        <activity
+            android:name=".PlaceChooser"
+            android:label="@string/title_activity_test_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
