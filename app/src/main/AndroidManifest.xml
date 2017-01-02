@@ -9,9 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PlaceChooser" />
-        <activity android:name=".SplashActivity"/>
+        <activity android:name=".SplashActivity" />
         <activity
-            android:name=".TestMap"
+            android:name=".TestMap2"
             android:label="@string/title_activity_test_map"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,8 +19,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-        <activity android:name=".MainActivity"></activity>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TestMap"></activity>
     </application>
 
 </manifest>

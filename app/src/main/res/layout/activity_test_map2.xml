@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_test_map2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.reservation.reservation.TestMap2">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib2"
+        android:layout_alignTop="@+id/ib1"
+        android:layout_toRightOf="@+id/ib1"
+        android:layout_toEndOf="@+id/ib1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib3"
+        android:layout_alignTop="@+id/ib2"
+        android:layout_toRightOf="@+id/ib2"
+        android:layout_toEndOf="@+id/ib2" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:layout_alignTop="@+id/ib3"
+        android:layout_toRightOf="@+id/ib3"
+        android:layout_toEndOf="@+id/ib3"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib4" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib5"
+        android:layout_below="@+id/ib1"
+        android:layout_alignLeft="@+id/ib1"
+        android:layout_alignStart="@+id/ib1"
+        android:layout_marginTop="0.5dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib6"
+        android:layout_alignTop="@+id/ib5"
+        android:layout_alignLeft="@+id/ib2"
+        android:layout_alignStart="@+id/ib2" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginStart="0.5dp"
+        android:id="@+id/ib7"
+        android:layout_alignTop="@+id/ib6"
+        android:layout_toRightOf="@+id/ib6"
+        android:layout_toEndOf="@+id/ib6" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib8"
+        android:layout_alignTop="@+id/ib7"
+        android:layout_toRightOf="@+id/ib7"
+        android:layout_toEndOf="@+id/ib7" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib9"
+        android:layout_below="@+id/ib5"
+        android:layout_toLeftOf="@+id/ib6"
+        android:layout_toStartOf="@+id/ib6" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:id="@+id/ib10"
+        android:layout_below="@+id/ib6"
+        android:layout_alignLeft="@+id/ib6"
+        android:layout_alignStart="@+id/ib6" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:id="@+id/ib11"
+        android:layout_below="@+id/ib7"
+        android:layout_alignLeft="@+id/ib7"
+        android:layout_alignStart="@+id/ib7" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib12"
+        android:layout_below="@+id/ib8"
+        android:layout_toRightOf="@+id/ib11"
+        android:layout_toEndOf="@+id/ib11" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:id="@+id/ib14"
+        android:layout_alignTop="@+id/ib13"
+        android:layout_toLeftOf="@+id/ib15"
+        android:layout_toStartOf="@+id/ib15" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/redtable"
+        android:id="@+id/ib15"
+        android:layout_alignTop="@+id/ib14"
+        android:layout_alignLeft="@+id/ib11"
+        android:layout_alignStart="@+id/ib11" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib16"
+        android:layout_alignTop="@+id/ib15"
+        android:layout_toRightOf="@+id/ib15"
+        android:layout_toEndOf="@+id/ib15" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib13"
+        android:layout_below="@+id/ib9"
+        android:layout_toLeftOf="@+id/ib14"
+        android:layout_toStartOf="@+id/ib14"
+        android:layout_marginTop="15dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib18"
+        android:layout_below="@+id/ib14"
+        android:layout_alignLeft="@+id/ib13"
+        android:layout_alignStart="@+id/ib13" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib19"
+        android:layout_below="@+id/ib14"
+        android:layout_toRightOf="@+id/ib18"
+        android:layout_toEndOf="@+id/ib18" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib20"
+        android:layout_below="@+id/ib15"
+        android:layout_toRightOf="@+id/ib19"
+        android:layout_toEndOf="@+id/ib19" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib21"
+        android:layout_below="@+id/ib16"
+        android:layout_toRightOf="@+id/ib20"
+        android:layout_toEndOf="@+id/ib20" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib25"
+        android:layout_below="@+id/ib18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib24"
+        android:layout_below="@+id/ib19"
+        android:layout_toRightOf="@+id/ib18"
+        android:layout_toEndOf="@+id/ib18" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/greentable"
+        android:id="@+id/ib23"
+        android:layout_below="@+id/ib20"
+        android:layout_toRightOf="@+id/ib24"
+        android:layout_toEndOf="@+id/ib24" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/tablee"
+        android:id="@+id/ib22"
+        android:layout_below="@+id/ib21"
+        android:layout_toRightOf="@+id/ib23"
+        android:layout_toEndOf="@+id/ib23" />
+
+</RelativeLayout>
