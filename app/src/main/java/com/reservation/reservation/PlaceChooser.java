@@ -29,7 +29,7 @@ public class PlaceChooser extends AppCompatActivity {
 
 
     private Spinner spinner1, spinner2;
-    private String JSON_STRING, caffeId, date;
+    private String JSON_STRING, caffeId, date, layout;
     private Button btn;
 
     @Override
@@ -37,7 +37,7 @@ public class PlaceChooser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place_chooser);
 
-
+        layout = "com.reservation.reservation.TestMap";
 
         spinner1 = (Spinner)findViewById(R.id.spinner);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
@@ -48,17 +48,26 @@ public class PlaceChooser extends AppCompatActivity {
             public void onClick(View v) {
                 date = spinner2.getSelectedItem().toString();
 
-                Intent i = new Intent(PlaceChooser.this, MainActivity.class);
+                getEmployee();
 
-                Bundle bundle = new Bundle();
-                bundle.putString("id", caffeId);
-                i.putExtras(bundle);
+                try {
+                    Class c = Class.forName(layout);
+                    Intent i = new Intent(PlaceChooser.this, c);
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("date", date);
-                i.putExtras(bundle2);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id", caffeId);
+                    i.putExtras(bundle);
 
-                startActivity(i);
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("date", date);
+                    i.putExtras(bundle2);
+
+                    startActivity(i);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
 
             }
         });
@@ -80,6 +89,7 @@ public class PlaceChooser extends AppCompatActivity {
                 String id = jo.getString(Config.TAG_ID);
                 String name = jo.getString(Config.TAG_NAME);
                 String days = jo.getString("Days");
+
 
                 HashMap<String,String> employees = new HashMap<>();
                 employees.put(Config.TAG_ID,id);
@@ -290,6 +300,46 @@ public class PlaceChooser extends AppCompatActivity {
         }
         GetJSON gj = new GetJSON();
         gj.execute();
+    }
+
+
+    private void getEmployee(){
+        class GetEmployee extends AsyncTask<Void,Void,String> {
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(PlaceChooser.this,"","Се вчитува...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                showEmployee(s);
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                RequestHandler rh = new RequestHandler();
+                String s = rh.sendGetRequestParam(Config.GET_CAFFE,caffeId);
+                return s;
+            }
+        }
+        GetEmployee ge = new GetEmployee();
+        ge.execute();
+    }
+
+    private void showEmployee(String json){
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+            JSONObject c = result.getJSONObject(0);
+            layout = c.getString("Layout");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }

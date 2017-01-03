@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton imageButton;
-    private String id,date;
+    private String id,date,seat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         id = bundle.getString("id");
         date = bundle.getString("date");
-
+        seat = bundle.getString("seat");
     }
 
 

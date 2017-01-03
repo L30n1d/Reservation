@@ -13,6 +13,7 @@ public class Config {
     public static final String GET_ALLRESERVATIONS ="http://ucidoma.tk/Android2/getAllReservations.php?id=";
     public static final String GET_RESERVATION ="http://ucidoma.tk/Android2/getReservation.php?id=";
     public static final String GET_SEATS = "http://ucidoma.tk/Android2/getSeats.php";
+    public static final String GET_CAFFE = "http://ucidoma.tk/Android2/getCaffee.php?id=";
 
 
     public static final String TAG_JSON_ARRAY="result";
