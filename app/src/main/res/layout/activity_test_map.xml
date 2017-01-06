@@ -298,15 +298,28 @@
         android:layout_height="match_parent"
         android:background="@drawable/table11">
 
-
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <ImageButton
-            app:srcCompat="@drawable/muda"
+            app:srcCompat="@drawable/reservedtable"
             android:id="@+id/imageButton4"
             android:layout_height="50dp"
             android:layout_width="30dp"
             android:layout_marginLeft="20dp"
             android:background="@null" />
+
+        <ImageButton
+            app:srcCompat="@drawable/bahato2"
+            android:id="@+id/imageButton5"
+            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_marginLeft="20dp"
+            android:background="@null" />
+        </LinearLayout>
+
     </HorizontalScrollView>
+
 
 
 

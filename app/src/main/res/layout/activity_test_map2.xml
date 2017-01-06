@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.TestMap2">
 
-    <ImageButton
+    <!--<ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/greentable"
@@ -270,6 +270,6 @@
         android:id="@+id/iby17"
         android:layout_alignTop="@+id/imageButton2"
         android:layout_toLeftOf="@+id/imageButton2"
-        android:layout_toStartOf="@+id/imageButton2" />
+        android:layout_toStartOf="@+id/imageButton2" />-->
 
 </RelativeLayout>
