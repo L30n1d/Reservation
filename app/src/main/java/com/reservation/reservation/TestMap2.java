@@ -57,7 +57,7 @@ public class TestMap2 extends AppCompatActivity {
                 final String id = jo.getString(Config.TAG_ID);
                 final String seat = jo.getString("Seat");
 
-                imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.redtable);
+                imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.reservedtable);
 
                 imageButtons[Integer.parseInt(seat)].setOnClickListener(null);
             }
@@ -122,7 +122,7 @@ public class TestMap2 extends AppCompatActivity {
     private void initialize(){
         imageButtons = new ImageButton[26];
 
-        /*iby1 = (ImageButton)findViewById(R.id.iby1);
+        iby1 = (ImageButton)findViewById(R.id.iby1);
         iby2 = (ImageButton)findViewById(R.id.iby2);
         iby3 = (ImageButton)findViewById(R.id.iby3);
         iby4 = (ImageButton)findViewById(R.id.iby4);
@@ -700,7 +700,7 @@ public class TestMap2 extends AppCompatActivity {
 
                 startActivity(i);
             }
-        });*/
+        });
 
 
 

@@ -304,7 +304,7 @@
             android:orientation="vertical">
 
         <ImageButton
-            app:srcCompat="@drawable/reservedtable"
+            app:srcCompat="@drawable/bahato2"
             android:id="@+id/ib1"
             android:layout_height="50dp"
             android:layout_width="30dp"
