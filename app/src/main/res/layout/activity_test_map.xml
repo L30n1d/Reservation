@@ -420,8 +420,87 @@
                 android:layout_marginLeft="340dp"
                 android:background="@null" />
 
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib16"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@+id/ib5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib17"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="170dp"
+                android:layout_below="@+id/ib5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib18"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="170dp"
+                android:background="@null" />
 
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib19"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="300dp"
+                android:background="@null" />
 
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib20"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="300dp"
+                android:layout_below="@+id/ib19"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib21"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_below="@+id/ib4"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib22"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_below="@+id/ib4"
+                android:layout_marginLeft="50dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib23"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_below="@+id/ib4"
+                android:layout_marginLeft="90dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib24"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_below="@+id/ib4"
+                android:layout_marginLeft="460dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib25"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_below="@+id/ib4"
+                android:layout_marginLeft="420dp"
+                android:background="@null" />
 
         </RelativeLayout>
 
