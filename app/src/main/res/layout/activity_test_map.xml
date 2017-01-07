@@ -361,6 +361,7 @@
                 android:layout_width="30dp"
                 android:layout_marginLeft="10dp"
                 android:background="@null" />
+
         </LinearLayout>
 
     </HorizontalScrollView>
