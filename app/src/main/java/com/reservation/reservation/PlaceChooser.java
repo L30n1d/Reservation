@@ -48,8 +48,6 @@ public class PlaceChooser extends AppCompatActivity {
             public void onClick(View v) {
                 date = spinner2.getSelectedItem().toString();
 
-                getEmployee();
-
                 try {
                     Class c = Class.forName(layout);
                     Intent i = new Intent(PlaceChooser.this, c);
@@ -73,6 +71,7 @@ public class PlaceChooser extends AppCompatActivity {
         });
 
         getJSON();
+
 
     }
 
@@ -117,6 +116,8 @@ public class PlaceChooser extends AppCompatActivity {
                 HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
                 caffeId = map.get("Id").toString();
                 String days = map.get("Days").toString();
+
+                getEmployee();
 
 
                 ArrayList<String> dates = new ArrayList<String>();
@@ -336,6 +337,8 @@ public class PlaceChooser extends AppCompatActivity {
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
             layout = c.getString("Layout");
+
+
 
         } catch (JSONException e) {
             e.printStackTrace();
