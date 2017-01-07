@@ -303,19 +303,64 @@
             android:layout_height="wrap_content">
         <ImageButton
             app:srcCompat="@drawable/reservedtable"
-            android:id="@+id/imageButton4"
+            android:id="@+id/ib1"
             android:layout_height="50dp"
             android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:background="@null" />
 
         <ImageButton
             app:srcCompat="@drawable/bahato2"
-            android:id="@+id/imageButton55"
+            android:id="@+id/ib2"
             android:layout_height="50dp"
             android:layout_width="30dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:background="@null" />
+
+
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib3"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahato2"
+                android:id="@+id/ib4"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/reservedtable"
+                android:id="@+id/ib5"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/reservedtable"
+                android:id="@+id/ib6"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/reservedtable"
+                android:id="@+id/ib7"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/reservedtable"
+                android:id="@+id/ib8"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
         </LinearLayout>
 
     </HorizontalScrollView>
