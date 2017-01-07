@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".TestMap"></activity>
+        <activity android:name=".TestMap"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar">
+            
+        </activity>
     </application>
 
 </manifest>
