@@ -486,7 +486,7 @@
                 android:layout_marginLeft="90dp"
                 android:background="@null" />
             <ImageButton
-                app:srcCompat="@drawable/bahato2"
+                app:srcCompat="@drawable/bahatowhitereserved"
                 android:id="@+id/ib24"
                 android:layout_height="50dp"
                 android:layout_width="30dp"
@@ -494,7 +494,7 @@
                 android:layout_marginLeft="460dp"
                 android:background="@null" />
             <ImageButton
-                app:srcCompat="@drawable/bahato2"
+                app:srcCompat="@drawable/bahatowhite"
                 android:id="@+id/ib25"
                 android:layout_height="50dp"
                 android:layout_width="30dp"
@@ -502,6 +502,42 @@
                 android:layout_marginLeft="420dp"
                 android:background="@null" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ib23"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/line"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ib23"
+                android:layout_marginLeft="246.5dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/line"/>
+            <ImageView
+                android:layout_width="155dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/ib23"
+                android:layout_marginLeft="175dp"
+                android:layout_marginTop="-5dp"
+                app:srcCompat="@drawable/entry"/>
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="15dp"
+                android:text="ENTRY"
+                android:layout_below="@id/ib23"
+                android:layout_marginLeft="231dp"
+                android:layout_marginTop="-5dp"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/ib18"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/sh"
+                android:background="@null"/>
         </RelativeLayout>
 
     </HorizontalScrollView>
