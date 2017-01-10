@@ -57,7 +57,7 @@ public class TestMap2 extends AppCompatActivity {
                 final String id = jo.getString(Config.TAG_ID);
                 final String seat = jo.getString("Seat");
 
-                imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.reservedtable);
+                imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.bahatowhitereserved);
 
                 imageButtons[Integer.parseInt(seat)].setOnClickListener(null);
             }
