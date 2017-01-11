@@ -24,22 +24,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/etusername"
-        android:hint="Телефонски број"
-        android:layout_weight="1"
-        android:inputType="number"
-        android:lines="1"
-        android:maxLines="1"
-        android:minLines="1"
-        android:backgroundTint="#FFFFFF"
-        android:layout_height="wrap_content"
-        android:layout_width="200dp"
-        android:paddingTop="4dp"
-        android:layout_marginBottom="71dp"
-        android:layout_above="@+id/editText"
-        android:layout_toRightOf="@+id/im2"
-        android:layout_toEndOf="@+id/im2" />
+    <ImageView
+        android:id="@+id/im3"
+        android:background="@drawable/userpassbahato"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:layout_alignTop="@+id/editText"
+        android:layout_toLeftOf="@+id/etusername"
+        android:layout_toStartOf="@+id/etusername" />
 
     <EditText
         android:layout_height="wrap_content"
@@ -53,20 +46,28 @@
         android:backgroundTint="#FFFFFF"
         android:id="@+id/editText"
         android:layout_width="200dp"
-        android:layout_marginBottom="197dp"
+        android:layout_marginBottom="219dp"
+        android:paddingTop="7dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/im3"
         android:layout_toEndOf="@+id/im3" />
 
-    <ImageView
-        android:id="@+id/im3"
-        android:background="@drawable/userpassbahato"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_height="35dp"
-        android:layout_width="35dp"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toLeftOf="@+id/etusername"
-        android:layout_toStartOf="@+id/etusername" />
+    <EditText
+        android:id="@+id/etusername"
+        android:hint="Телефонски број"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:backgroundTint="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:paddingTop="4dp"
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/im3"
+        android:layout_toRightOf="@+id/im2"
+        android:layout_toEndOf="@+id/im2" />
 
 
 </RelativeLayout>
