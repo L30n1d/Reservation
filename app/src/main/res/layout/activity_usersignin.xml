@@ -69,5 +69,27 @@
         android:layout_toRightOf="@+id/im2"
         android:layout_toEndOf="@+id/im2" />
 
+    <Button
+        android:text="Најави се"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/im3"
+        android:layout_marginTop="29dp"
+        android:id="@+id/button5"
+        android:layout_width="280dp"
+        android:layout_alignLeft="@+id/im3"
+        android:layout_alignStart="@+id/im3"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
+
+    <TextView
+        android:text="Не си регистриран?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:onClick="onClick"
+        android:clickable="true"
+        android:layout_below="@+id/button5"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
