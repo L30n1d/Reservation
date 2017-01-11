@@ -9,16 +9,64 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@color/colorPrimary">
+    android:background="@color/common_google_signin_btn_text_light_disabled">
 
+    <ImageView
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:id="@+id/im2"
+        android:background="@drawable/userbahato"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+
+        android:layout_alignTop="@+id/etusername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/etusername"
+        android:hint="Телефонски број"
+        android:layout_weight="1"
+        android:inputType="number"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:backgroundTint="#FFFFFF"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:layout_width="200dp"
+        android:paddingTop="4dp"
+        android:layout_marginBottom="71dp"
+        android:layout_above="@+id/editText"
+        android:layout_toRightOf="@+id/im2"
+        android:layout_toEndOf="@+id/im2" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/editText" />
+        android:hint="Лозинка"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:backgroundTint="#FFFFFF"
+        android:id="@+id/editText"
+        android:layout_width="200dp"
+        android:layout_marginBottom="197dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/im3"
+        android:layout_toEndOf="@+id/im3" />
+
+    <ImageView
+        android:id="@+id/im3"
+        android:background="@drawable/userpassbahato"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:layout_alignTop="@+id/editText"
+        android:layout_toLeftOf="@+id/etusername"
+        android:layout_toStartOf="@+id/etusername" />
+
+
 </RelativeLayout>
