@@ -11,119 +11,143 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignup">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Име"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:id="@+id/editText2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Презиме"
-        android:ems="10"
-        android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_marginTop="22dp"
-        android:id="@+id/editText3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginTop="19dp"
-        android:id="@+id/editText4"
-        android:contextClickable="false" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_below="@+id/editText4"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4"
-        android:layout_marginTop="20dp"
-        android:id="@+id/editText5" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/editText5"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5"
-        android:layout_marginTop="17dp"
-        android:id="@+id/editText6" />
-
-    <Button
-        android:text="Регистрирај се"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText6"
-        android:layout_marginTop="30dp"
-        android:id="@+id/button4"
-        android:layout_alignLeft="@+id/editText6"
-        android:layout_alignStart="@+id/editText6"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6" />
-
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         app:srcCompat="@drawable/namefirst"
-        android:id="@+id/imageView2"
-        android:layout_above="@+id/editText3"
-        android:layout_toLeftOf="@+id/editText2"
-        android:layout_toStartOf="@+id/editText2" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/imageView1" />
 
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_toRightOf="@+id/imageView1"
+        android:id="@+id/editText2"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_marginTop="45dp"
+        android:hint="Име"
+        android:layout_width="190dp" />
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         app:srcCompat="@drawable/namelast"
-        android:layout_above="@+id/editText4"
-        android:layout_toLeftOf="@+id/editText3"
-        android:layout_toStartOf="@+id/editText3"
-        android:id="@+id/imageView3" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/imageView2" />
 
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_toRightOf="@+id/imageView2"
+        android:id="@+id/editText3"
+        android:layout_marginTop="95dp"
+        android:hint="Презиме"
+        android:layout_width="190dp" />
     <ImageView
-        app:srcCompat="@drawable/phonenum"
-        android:layout_above="@+id/editText5"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3"
-        android:id="@+id/imageView4"
-        android:adjustViewBounds="false"
-        android:layout_width="35dp"
-        android:layout_height="35dp" />
-
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/maile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/imageView3" />
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_toRightOf="@+id/imageView3"
+        android:id="@+id/editText4"
+        android:layout_marginTop="142dp"
+        android:hint="Е-пошта"
+        android:layout_width="190dp" />
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        app:srcCompat="@drawable/maile"
-        android:layout_above="@+id/editText6"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:id="@+id/imageView5" />
-
+        app:srcCompat="@drawable/phonenum"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="200dp"
+        android:id="@+id/imageView4" />
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_toRightOf="@+id/imageView4"
+        android:id="@+id/editText5"
+        android:layout_marginTop="196dp"
+        android:hint="Телефонски број"
+        android:layout_width="190dp" />
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         app:srcCompat="@drawable/lockbrate"
-        android:layout_above="@+id/button4"
-        android:layout_toLeftOf="@+id/editText6"
-        android:layout_toStartOf="@+id/editText6"
-        android:id="@+id/imageView6" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView4"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="250dp"
+        android:id="@+id/imageView5" />
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_weight="1"
+        android:lines="1"
+        android:maxLines="1"
+        android:minLines="1"
+        android:layout_toRightOf="@+id/imageView5"
+        android:id="@+id/editText6"
+        android:layout_marginTop="246dp"
+        android:hint="Лозинка"
+        android:layout_width="190dp" />
+
+    <Button
+        android:text="Регистрирај се"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:id="@+id/button4"
+        android:layout_below="@+id/editText6"
+        android:layout_alignLeft="@+id/imageView5"
+        android:layout_alignStart="@+id/imageView5"
+        android:layout_alignRight="@+id/editText4"
+        android:layout_alignEnd="@+id/editText4" />
 
 </RelativeLayout>
