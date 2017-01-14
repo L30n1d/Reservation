@@ -19,7 +19,7 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".usersignup"
+            android:name=".verify"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlaceChooser" />
-        <activity android:name=".usersignin"></activity>
+        <activity android:name=".usersignin" />
+        <activity android:name=".usersignup"></activity>
     </application>
 
 </manifest>
