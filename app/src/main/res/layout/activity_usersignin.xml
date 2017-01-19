@@ -9,19 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@color/colorPrimary">
-
-    <ImageView
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
-        android:id="@+id/im2"
-        android:background="@drawable/userbahato"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_height="35dp"
-        android:layout_width="35dp"
-        android:layout_alignTop="@+id/etusername"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    android:background="@color/common_google_signin_btn_text_dark_default">
 
     <ImageView
         android:id="@+id/im3"
@@ -29,9 +17,9 @@
         android:backgroundTint="@color/colorPrimary"
         android:layout_height="35dp"
         android:layout_width="35dp"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toLeftOf="@+id/etusername"
-        android:layout_toStartOf="@+id/etusername" />
+        android:layout_alignTop="@+id/passTxt"
+        android:layout_toLeftOf="@+id/phoneTxtR"
+        android:layout_toStartOf="@+id/phoneTxtR" />
 
     <EditText
         android:layout_height="wrap_content"
@@ -43,7 +31,7 @@
         android:maxLines="1"
         android:minLines="1"
         android:backgroundTint="#FFFFFF"
-        android:id="@+id/editText"
+        android:id="@+id/passTxt"
         android:layout_width="200dp"
         android:layout_marginBottom="219dp"
         android:paddingTop="7dp"
@@ -51,34 +39,17 @@
         android:layout_toRightOf="@+id/im3"
         android:layout_toEndOf="@+id/im3" />
 
-    <EditText
-        android:id="@+id/etusername"
-        android:hint="Телефонски број"
-        android:layout_weight="1"
-        android:inputType="number"
-        android:lines="1"
-        android:maxLines="1"
-        android:minLines="1"
-        android:backgroundTint="#FFFFFF"
-        android:layout_height="wrap_content"
-        android:layout_width="200dp"
-        android:paddingTop="4dp"
-        android:layout_marginBottom="21dp"
-        android:layout_above="@+id/im3"
-        android:layout_toRightOf="@+id/im2"
-        android:layout_toEndOf="@+id/im2" />
-
     <Button
         android:text="Најави се"
         android:layout_height="wrap_content"
         android:layout_below="@+id/im3"
         android:layout_marginTop="29dp"
-        android:id="@+id/button5"
+        android:id="@+id/loginBtn"
         android:layout_width="280dp"
         android:layout_alignLeft="@+id/im3"
         android:layout_alignStart="@+id/im3"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/passTxt"
+        android:layout_alignEnd="@+id/passTxt" />
 
     <TextView
         android:text="Не си регистриран?"
@@ -87,8 +58,42 @@
         android:id="@+id/textView2"
         android:onClick="onClick"
         android:clickable="true"
-        android:layout_below="@+id/button5"
+        android:layout_below="@+id/loginBtn"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/im2"
+        android:background="@drawable/userbahato"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:layout_alignTop="@+id/phoneTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/phoneTxt"
+        android:hint="Телефонски број"
+        android:layout_above="@+id/passTxt"
+        android:layout_toRightOf="@+id/im2"
+        android:layout_toEndOf="@+id/im2"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
+
+    <Button
+        android:text="Регистрирај се"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/goToReg"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/loginBtn"
+        android:layout_alignEnd="@+id/loginBtn" />
 
 
 </RelativeLayout>

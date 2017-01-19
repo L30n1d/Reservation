@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class TestMap extends AppCompatActivity {
 
-    private String JSON_STRING,id,date;
+    private String JSON_STRING,id,date, typeC;
     private ImageButton ib1,ib2,ib3,ib4,ib5,ib6,ib7,ib8,ib9,ib10,ib11,ib12,ib13,ib14,ib15,ib16,ib17,
             ib18,ib19,ib20,ib21,ib22,ib23,ib24,ib25;
 
@@ -43,6 +43,7 @@ public class TestMap extends AppCompatActivity {
 
         id = bundle.getString("id");
         date = bundle.getString("date");
+        typeC = bundle.getString("type");
 
         getJSON();
 
@@ -184,7 +185,7 @@ public class TestMap extends AppCompatActivity {
         ib1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -198,6 +199,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","1");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -205,7 +210,7 @@ public class TestMap extends AppCompatActivity {
         ib2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -219,6 +224,11 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","2");
                 i.putExtras(bundle3);
 
+
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -227,7 +237,7 @@ public class TestMap extends AppCompatActivity {
         ib3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -241,6 +251,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","3");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -249,7 +263,7 @@ public class TestMap extends AppCompatActivity {
         ib4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -263,6 +277,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","4");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -270,7 +288,7 @@ public class TestMap extends AppCompatActivity {
         ib5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -284,6 +302,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","5");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -291,7 +313,7 @@ public class TestMap extends AppCompatActivity {
         ib6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -305,6 +327,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","6");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -312,7 +338,7 @@ public class TestMap extends AppCompatActivity {
         ib7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -326,6 +352,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","7");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -333,7 +363,7 @@ public class TestMap extends AppCompatActivity {
         ib8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -347,6 +377,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","8");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -354,7 +388,7 @@ public class TestMap extends AppCompatActivity {
         ib9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -368,6 +402,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","9");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -375,7 +413,7 @@ public class TestMap extends AppCompatActivity {
         ib10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -389,6 +427,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","10");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -396,7 +438,7 @@ public class TestMap extends AppCompatActivity {
         ib11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -410,6 +452,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","11");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -417,7 +463,7 @@ public class TestMap extends AppCompatActivity {
         ib12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -431,6 +477,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","12");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -438,7 +488,7 @@ public class TestMap extends AppCompatActivity {
         ib13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -452,6 +502,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","13");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -459,7 +513,7 @@ public class TestMap extends AppCompatActivity {
         ib14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -473,6 +527,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","14");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -480,7 +538,7 @@ public class TestMap extends AppCompatActivity {
         ib15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -494,6 +552,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","15");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -501,7 +563,7 @@ public class TestMap extends AppCompatActivity {
         ib16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -515,6 +577,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","16");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -522,7 +588,7 @@ public class TestMap extends AppCompatActivity {
         ib17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -536,6 +602,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","17");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -543,7 +613,7 @@ public class TestMap extends AppCompatActivity {
         ib18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -557,6 +627,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","18");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -564,7 +638,7 @@ public class TestMap extends AppCompatActivity {
         ib19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -578,6 +652,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","19");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -585,7 +663,7 @@ public class TestMap extends AppCompatActivity {
         ib20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -599,6 +677,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","20");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -606,7 +688,7 @@ public class TestMap extends AppCompatActivity {
         ib21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -620,6 +702,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","21");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -627,7 +713,7 @@ public class TestMap extends AppCompatActivity {
         ib22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -641,6 +727,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","22");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -648,7 +738,7 @@ public class TestMap extends AppCompatActivity {
         ib23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -662,6 +752,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","23");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -669,7 +763,7 @@ public class TestMap extends AppCompatActivity {
         ib24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -683,6 +777,10 @@ public class TestMap extends AppCompatActivity {
                 bundle3.putString("seat","24");
                 i.putExtras(bundle3);
 
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
+
                 startActivity(i);
             }
         });
@@ -690,7 +788,7 @@ public class TestMap extends AppCompatActivity {
         ib25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap.this, MainActivity.class);
+                Intent i = new Intent(TestMap.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -703,6 +801,10 @@ public class TestMap extends AppCompatActivity {
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("seat","25");
                 i.putExtras(bundle3);
+
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("type", typeC);
+                i.putExtras(bundle4);
 
                 startActivity(i);
             }

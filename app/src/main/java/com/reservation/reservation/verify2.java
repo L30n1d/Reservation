@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class verify extends AppCompatActivity {
+public class verify2 extends AppCompatActivity {
 
     private Button btn;
     private EditText pinTxt;
@@ -28,11 +28,12 @@ public class verify extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify);
+        setContentView(R.layout.activity_verify2);
 
-        btn = (Button)findViewById(R.id.confirmBtn);
-        pinTxt = (EditText)findViewById(R.id.pin);
-        resend = (TextView)findViewById(R.id.resendBtn);
+        btn = (Button)findViewById(R.id.confirmBtn2);
+        pinTxt = (EditText)findViewById(R.id.pin2);
+
+        resend = (TextView)findViewById(R.id.resendBtn2);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -55,7 +56,6 @@ public class verify extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void sendEmail(String code, String emailB){
@@ -67,7 +67,7 @@ public class verify extends AppCompatActivity {
         String toEmail = emailB;
         String emailSubject = "Kod za verifikacija";
         String emailBody = "Vashiot kod e: " + code;
-        new SendMailTask(verify.this).execute(fromEmail,
+        new SendMailTask(verify2.this).execute(fromEmail,
                 fromPassword, toEmail, emailSubject, emailBody);
 
 
@@ -85,6 +85,7 @@ public class verify extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Невалиден код", Toast.LENGTH_SHORT).show();
             }
             else{
+
                 updateUser();
 
             }
@@ -106,7 +107,7 @@ public class verify extends AppCompatActivity {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                loading = ProgressDialog.show(verify.this,"","Се вчитува...",false,false);
+                loading = ProgressDialog.show(verify2.this,"","Се вчитува...",false,false);
 
 
             }
@@ -141,14 +142,14 @@ public class verify extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(verify.this,"","Се вчитува...",false,false);
+                loading = ProgressDialog.show(verify2.this,"","Се вчитува...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                startActivity(new Intent(verify.this, usersignin.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                startActivity(new Intent(verify2.this, PlaceChooser.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
             }
 
             @Override
@@ -167,6 +168,5 @@ public class verify extends AppCompatActivity {
         UpdateEmployee ue = new UpdateEmployee();
         ue.execute();
     }
-
 
 }

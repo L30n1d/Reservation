@@ -486,7 +486,7 @@
                 android:layout_marginLeft="90dp"
                 android:background="@null" />
             <ImageButton
-                app:srcCompat="@drawable/bahatowhitereserved"
+                app:srcCompat="@drawable/bahatowhite"
                 android:id="@+id/ib24"
                 android:layout_height="50dp"
                 android:layout_width="30dp"
