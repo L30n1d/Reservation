@@ -75,14 +75,14 @@
     <Button
         android:text="Резервирај"
         android:layout_width="wrap_content"
-        android:layout_height="26dp"
-        android:layout_below="@+id/placeTxt"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="113dp"
         android:id="@+id/rezBtn"
-        android:layout_alignRight="@+id/placeTxt"
-        android:layout_alignEnd="@+id/placeTxt"
+        android:background="?attr/colorButtonNormal"
+        android:layout_height="56dp"
+        android:layout_below="@+id/placeTxt"
         android:layout_alignLeft="@+id/placeTxt"
         android:layout_alignStart="@+id/placeTxt"
-        android:background="?attr/colorButtonNormal" />
+        android:layout_alignRight="@+id/placeTxt"
+        android:layout_alignEnd="@+id/placeTxt" />
 
 </RelativeLayout>

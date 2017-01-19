@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 
 public class finalverification extends AppCompatActivity {
 
@@ -29,6 +31,7 @@ public class finalverification extends AppCompatActivity {
     private TextView nameLast, email, seatTxt, place;
     private Button resBtn;
     private int userId;
+    private Semaphore allow = new Semaphore(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +59,20 @@ public class finalverification extends AppCompatActivity {
         resBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                try {
+                    Log.i("1","clickBtn");
+                    allow.acquire();
+                    Log.i("1","clickBtn2");
+                    getJSON3();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+
+
                 //addReservation();
-                getJSON3();
             }
         });
 
@@ -68,7 +83,7 @@ public class finalverification extends AppCompatActivity {
 
     }
 
-    private void addReservation(){
+    private synchronized void addReservation(){
 
 
         class AddEmployee extends AsyncTask<Void,Void,String>{
@@ -85,6 +100,7 @@ public class finalverification extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
+                allow.release();
                 startActivity(new Intent(finalverification.this, Successfull.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
             }
 
@@ -248,19 +264,23 @@ public class finalverification extends AppCompatActivity {
         gj.execute();
     }
 
-
-    private void showSeats3(){
+    private synchronized void showSeats3(){
         JSONObject jsonObject = null;
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
+            Log.i("1","checkRes");
+
             if(result.length() < 1){
                 addReservation();
+                //allow.release();
+
             }
             else{
                 Toast.makeText(getApplicationContext(),"Веќе е резервирана таа маса!", Toast.LENGTH_SHORT).show();
+              //  allow.release();
             }
 
         } catch (JSONException e) {
@@ -268,10 +288,9 @@ public class finalverification extends AppCompatActivity {
         }
 
 
-
     }
 
-    private void getJSON3(){
+    private synchronized void getJSON3(){
         class GetJSON3 extends AsyncTask<Void,Void,String> {
 
             ProgressDialog loading;
@@ -287,6 +306,9 @@ public class finalverification extends AppCompatActivity {
                 loading.dismiss();
                 JSON_STRING = s;
                 showSeats3();
+
+                Log.i("1","release");
+
             }
 
             @Override

@@ -367,6 +367,9 @@ public class PlaceChooser extends AppCompatActivity {
 
         ArrayList<String> dates = new ArrayList<String>();
 
+        dates1.clear();
+        dates2.clear();
+
         if(days.equals("7")){
 
             Calendar cal = GregorianCalendar.getInstance();
