@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner2A"
-        android:background="@color/colorPrimary"
+        android:background="@color/common_google_signin_btn_text_dark_default"
         android:layout_below="@+id/textView3A"
         android:layout_marginTop="26dp"
         android:textAlignment="center"

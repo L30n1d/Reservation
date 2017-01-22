@@ -19,6 +19,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class usersignup extends AppCompatActivity {
 
@@ -82,60 +84,104 @@ public class usersignup extends AppCompatActivity {
         final String phone = phoneTxt.getText().toString();
         final String pass = passTxt.getText().toString();
 
-        int min = 100000, max = 999999;
-
-        Random rand = new Random();
-        final int n = rand.nextInt((max-min+1)+min);
-
-        class AddEmployee extends AsyncTask<Void,Void,String>{
-
-            ProgressDialog loading;
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(usersignup.this,"","Се вчитува...",false,false);
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-
-                sendEmail(email, n);
-
-                Intent i = new Intent(usersignup.this, verify.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                Bundle bundle = new Bundle();
-                bundle.putString("code", Integer.toString(n));
-                i.putExtras(bundle);
-
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("email", email);
-                i.putExtras(bundle2);
-
-                startActivity(i);
-
-            }
-
-            @Override
-            protected String doInBackground(Void... v) {
-                HashMap<String,String> params = new HashMap<>();
-                params.put("name",name);
-                params.put("lastName",lastName);
-                params.put("email",email);
-                params.put("mobile",phone);
-                params.put("code",Integer.toString(n));
-                params.put("password",pass);
-
-                RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostRequest(Config.ADD_USER, params);
-                return res;
-            }
+        if(!isEmailValid(email)){
+            displayToast("Невалидна емаил адреса!");
         }
+        else {
 
-        AddEmployee ae = new AddEmployee();
-        ae.execute();
+            if(!checkPhone(phone)){
+                displayToast("Невалиден формат на број!");
+            }
+
+            else{
+
+
+
+            int min = 100000, max = 999999;
+
+            Random rand = new Random();
+            final int n = rand.nextInt((max - min + 1) + min);
+
+            class AddEmployee extends AsyncTask<Void, Void, String> {
+
+                ProgressDialog loading;
+
+                @Override
+                protected void onPreExecute() {
+                    super.onPreExecute();
+                    loading = ProgressDialog.show(usersignup.this, "", "Се вчитува...", false, false);
+                }
+
+                @Override
+                protected void onPostExecute(String s) {
+                    super.onPostExecute(s);
+                    loading.dismiss();
+
+                    sendEmail(email, n);
+
+                    Intent i = new Intent(usersignup.this, verify.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("code", Integer.toString(n));
+                    i.putExtras(bundle);
+
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("email", email);
+                    i.putExtras(bundle2);
+
+                    startActivity(i);
+
+                }
+
+                @Override
+                protected String doInBackground(Void... v) {
+                    HashMap<String, String> params = new HashMap<>();
+                    params.put("name", name);
+                    params.put("lastName", lastName);
+                    params.put("email", email);
+                    params.put("mobile", phone);
+                    params.put("code", Integer.toString(n));
+                    params.put("password", pass);
+
+                    RequestHandler rh = new RequestHandler();
+                    String res = rh.sendPostRequest(Config.ADD_USER, params);
+                    return res;
+                }
+            }
+
+            AddEmployee ae = new AddEmployee();
+            ae.execute();
+        }
+        }
+    }
+
+    private boolean checkPhone(String phone){
+
+        boolean isValid = false;
+        String expression = "^07[0,1,2,5,6,7,8][0-9]{6}$";
+        CharSequence inputStr = phone;
+
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
+
+    }
+
+    private boolean isEmailValid(String email) {
+        boolean isValid = false;
+
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
     }
 
     private void displayToast(String s){
