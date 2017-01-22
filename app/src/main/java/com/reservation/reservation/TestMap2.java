@@ -215,7 +215,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","2");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -241,7 +241,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","3");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -267,7 +267,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","4");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -292,7 +292,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","5");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -317,7 +317,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","6");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -342,7 +342,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","7");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -367,7 +367,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","8");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -392,7 +392,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","9");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -417,7 +417,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","10");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -442,7 +442,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","11");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -467,7 +467,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","12");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -492,7 +492,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","13");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -517,7 +517,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","14");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -542,7 +542,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","15");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -567,7 +567,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","16");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -592,7 +592,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","17");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -617,7 +617,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","18");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -642,7 +642,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","19");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -667,7 +667,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","20");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -692,7 +692,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","21");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -717,7 +717,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","22");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -742,7 +742,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","23");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -767,7 +767,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","24");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();
@@ -792,7 +792,7 @@ public class TestMap2 extends AppCompatActivity {
                 i.putExtras(bundle2);
 
                 Bundle bundle3 = new Bundle();
-                bundle3.putString("seat","1");
+                bundle3.putString("seat","25");
                 i.putExtras(bundle3);
 
                 Bundle bundle4 = new Bundle();

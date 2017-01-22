@@ -3,6 +3,7 @@ package com.reservation.reservation;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TestMap extends AppCompatActivity {
 
@@ -46,6 +49,8 @@ public class TestMap extends AppCompatActivity {
         typeC = bundle.getString("type");
 
         getJSON();
+
+        callAsynchronousTask();
 
     }
 
@@ -80,17 +85,17 @@ public class TestMap extends AppCompatActivity {
     private void getJSON(){
         class GetJSON extends AsyncTask<Void,Void,String> {
 
-            ProgressDialog loading;
+           // ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(TestMap.this,"","Се вчитува...",false,false);
+               // loading = ProgressDialog.show(TestMap.this,"","Се вчитува...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
+              //  loading.dismiss();
                 JSON_STRING = s;
                 showSeats();
             }
@@ -124,6 +129,26 @@ public class TestMap extends AppCompatActivity {
         }
         GetJSON gj = new GetJSON();
         gj.execute();
+    }
+
+    public void callAsynchronousTask() {
+        final Handler handler = new Handler();
+        Timer timer = new Timer();
+        TimerTask doAsynchronousTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
+                        try {
+                            getJSON();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        };
+        timer.schedule(doAsynchronousTask, 0, 3000);
     }
 
     private void initialize(){

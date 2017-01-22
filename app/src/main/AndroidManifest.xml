@@ -23,7 +23,8 @@
         <activity
             android:name=".finalverification"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PlaceChooser" />
+        <activity android:name=".PlaceChooser"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".usersignin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
