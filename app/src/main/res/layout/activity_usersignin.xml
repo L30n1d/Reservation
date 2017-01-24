@@ -9,17 +9,84 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@color/common_google_signin_btn_text_dark_default">
+    android:background="#fb3958">
 
     <ImageView
         android:id="@+id/im3"
-        android:background="@drawable/userpassbahato"
+        android:background="@drawable/userpassbahato1"
         android:backgroundTint="@color/colorPrimary"
         android:layout_height="35dp"
         android:layout_width="35dp"
+        android:layout_marginLeft="10dp"
         android:layout_alignTop="@+id/passTxt"
         android:layout_toLeftOf="@+id/phoneTxtR"
         android:layout_toStartOf="@+id/phoneTxtR" />
+
+    <Button
+        android:text="Најави се"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/im3"
+        android:layout_marginTop="29dp"
+        android:id="@+id/loginBtn"
+        android:layout_alignRight="@+id/passTxt"
+        android:layout_alignEnd="@+id/passTxt"
+        android:background="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_alignLeft="@+id/im3"
+        android:layout_alignStart="@+id/im3" />
+
+    <TextView
+        android:text="Не си регистриран?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:onClick="onClick"
+        android:layout_marginTop="3dp"
+        android:clickable="true"
+        android:layout_below="@+id/loginBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Регистрирај се"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goToReg"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/loginBtn"
+        android:layout_alignEnd="@+id/loginBtn"
+        android:layout_alignLeft="@+id/loginBtn"
+        android:layout_alignStart="@+id/loginBtn"
+        android:background="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/im2"
+        android:background="@drawable/userbahato1"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/phoneTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/phoneTxt"
+        android:hint="Телефонски број"
+        android:paddingTop="3.5dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/im2"
+        android:layout_toEndOf="@+id/im2"
+        android:layout_marginTop="120dp"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textColorLink="?attr/actionMenuTextColor"
+        android:backgroundTint="?attr/editTextBackground" />
 
     <EditText
         android:layout_height="wrap_content"
@@ -32,68 +99,14 @@
         android:minLines="1"
         android:backgroundTint="#FFFFFF"
         android:id="@+id/passTxt"
-        android:layout_width="200dp"
-        android:layout_marginBottom="219dp"
-        android:paddingTop="7dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/im3"
-        android:layout_toEndOf="@+id/im3" />
-
-    <Button
-        android:text="Најави се"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/im3"
-        android:layout_marginTop="29dp"
-        android:id="@+id/loginBtn"
-        android:layout_width="280dp"
-        android:layout_alignLeft="@+id/im3"
-        android:layout_alignStart="@+id/im3"
-        android:layout_alignRight="@+id/passTxt"
-        android:layout_alignEnd="@+id/passTxt" />
-
-    <TextView
-        android:text="Не си регистриран?"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:onClick="onClick"
-        android:clickable="true"
-        android:layout_below="@+id/loginBtn"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/im2"
-        android:background="@drawable/userbahato"
-        android:backgroundTint="@color/colorPrimary"
-        android:layout_height="35dp"
-        android:layout_width="35dp"
-        android:layout_alignTop="@+id/phoneTxt"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginBottom="13dp"
-        android:id="@+id/phoneTxt"
-        android:hint="Телефонски број"
-        android:layout_above="@+id/passTxt"
-        android:layout_toRightOf="@+id/im2"
-        android:layout_toEndOf="@+id/im2"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
-
-    <Button
-        android:text="Регистрирај се"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:id="@+id/goToReg"
-        android:layout_below="@+id/textView2"
-        android:layout_alignRight="@+id/loginBtn"
-        android:layout_alignEnd="@+id/loginBtn" />
+        android:paddingTop="6.5dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/phoneTxt"
+        android:layout_alignLeft="@+id/phoneTxt"
+        android:layout_alignStart="@+id/phoneTxt"
+        android:textColor="?attr/actionMenuTextColor"
+        android:textColorLink="?attr/actionMenuTextColor" />
 
 
 </RelativeLayout>
