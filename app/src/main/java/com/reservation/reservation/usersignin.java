@@ -2,12 +2,14 @@ package com.reservation.reservation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -23,6 +25,9 @@ public class usersignin extends AppCompatActivity {
     private Session session;
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
+    private TextView title1;
+
+
 
     private int flag = 0;
 
@@ -47,7 +52,9 @@ public class usersignin extends AppCompatActivity {
         passTxt = (EditText)findViewById(R.id.passTxt);
         //phoneTxt.setSelection(2);
         //passTxt.setSelection(2);
-
+        title1=(TextView)findViewById(R.id.textView6);
+        Typeface cus_font = Typeface.createFromAsset(getAssets(), "fonts/segoescb.ttf");
+        title1.setTypeface(cus_font);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
