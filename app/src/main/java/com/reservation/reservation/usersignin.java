@@ -25,7 +25,7 @@ public class usersignin extends AppCompatActivity {
     private Session session;
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
-    private TextView title1;
+
 
 
 
@@ -52,9 +52,7 @@ public class usersignin extends AppCompatActivity {
         passTxt = (EditText)findViewById(R.id.passTxt);
         //phoneTxt.setSelection(2);
         //passTxt.setSelection(2);
-        title1=(TextView)findViewById(R.id.textView6);
-        Typeface cus_font = Typeface.createFromAsset(getAssets(), "fonts/segoescb.ttf");
-        title1.setTypeface(cus_font);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

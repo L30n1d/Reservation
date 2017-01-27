@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:onClick="onClick"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:clickable="true"
         android:layout_below="@+id/loginBtn"
         android:layout_centerHorizontal="true"
@@ -89,7 +89,7 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/im2"
         android:layout_toEndOf="@+id/im2"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="115dp"
         android:textColor="?attr/actionMenuTextColor"
         android:textColorLink="?attr/actionMenuTextColor"
         android:backgroundTint="?attr/editTextBackground"
@@ -131,25 +131,11 @@
         android:textAlignment="center"
         android:text="Заборавена лозинка?"
         android:clickable="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4.5dp"
         android:layout_marginLeft="66.5dp"
         android:layout_below="@+id/passTxt"
         android:layout_alignLeft="@+id/passTxt"
         android:layout_alignStart="@+id/passTxt"
         android:textColor="#212121" />
-
-    <TextView
-        android:text="Резервирај мк"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/textView6"
-        android:textSize="36sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:textStyle="normal|bold"
-        android:textColor="#212121" />
-
 
 </RelativeLayout>
