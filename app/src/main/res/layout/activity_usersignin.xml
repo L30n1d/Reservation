@@ -9,11 +9,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="#FF9800">
+    android:background="@drawable/backgroun1">
 
     <ImageView
         android:id="@+id/im3"
-        android:background="@drawable/pass"
+        android:background="@drawable/pass11"
         android:backgroundTint="@color/colorPrimary"
         android:layout_height="35dp"
         android:layout_width="35dp"
@@ -24,7 +24,6 @@
 
     <Button
         android:text="Најави се"
-        android:layout_height="45dp"
         android:layout_below="@+id/im3"
         android:layout_marginTop="42dp"
         android:id="@+id/loginBtn"
@@ -35,7 +34,8 @@
         android:layout_alignLeft="@+id/im3"
         android:layout_alignStart="@+id/im3"
         android:textColor="#212121"
-        android:textAlignment="gravity" />
+        android:textAlignment="gravity"
+        android:layout_height="42dp" />
 
     <TextView
         android:text="Не си регистриран?"
@@ -52,7 +52,6 @@
     <Button
         android:text="Регистрирај се"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
         android:id="@+id/goToReg"
         android:layout_marginTop="1dp"
         android:layout_below="@+id/textView2"
@@ -62,61 +61,68 @@
         android:layout_alignStart="@+id/loginBtn"
         android:background="@drawable/rounded"
         android:textColor="#212121"
-        android:textAlignment="gravity" />
+        android:textAlignment="gravity"
+        android:layout_height="42dp" />
 
     <ImageView
         android:id="@+id/im2"
         android:background="@drawable/muda"
         android:backgroundTint="@color/colorPrimary"
-        android:layout_height="35dp"
-        android:layout_width="35dp"
         android:layout_marginLeft="12dp"
         android:layout_alignTop="@+id/phoneTxt"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_width="33dp"
+        android:layout_height="35dp" />
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/phoneTxt"
         android:hint=" Телефонски број"
+        android:paddingLeft="10dp"
         android:paddingTop="3dp"
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/im2"
         android:layout_toEndOf="@+id/im2"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="140dp"
         android:textColor="?attr/actionMenuTextColor"
         android:textColorLink="?attr/actionMenuTextColor"
         android:backgroundTint="?attr/editTextBackground"
         android:textColorHint="#757575"
         android:textAllCaps="false"
-        android:textColorHighlight="@color/colorPrimary" />
+        android:textColorHighlight="#FFFFFF"
+        android:background="@drawable/edittext_bg" />
 
     <EditText
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:inputType="textPassword"
+        android:gravity="start"
         android:ems="10"
         android:hint=" Лозинка"
         android:layout_weight="1"
+        android:ellipsize="middle"
         android:lines="1"
         android:maxLines="1"
+        android:paddingLeft="10dp"
         android:minLines="1"
         android:backgroundTint="#FFFFFF"
         android:id="@+id/passTxt"
         android:layout_width="wrap_content"
         android:paddingTop="6.5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/phoneTxt"
         android:layout_alignLeft="@+id/phoneTxt"
         android:layout_alignStart="@+id/phoneTxt"
         android:textColor="?attr/actionMenuTextColor"
         android:textColorLink="?attr/actionMenuTextColor"
         android:textColorHint="#757575"
-        android:textColorHighlight="@color/colorPrimary" />
+        android:textColorHighlight="#FFFFFF"
+        android:background="@drawable/edittext_bg" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,7 +130,8 @@
         android:id="@+id/lostpass"
         android:textAlignment="center"
         android:text="Заборавена лозинка?"
-        android:layout_marginTop="0dp"
+        android:clickable="true"
+        android:layout_marginTop="1.5dp"
         android:layout_marginLeft="66dp"
         android:layout_below="@+id/passTxt"
         android:layout_alignLeft="@+id/passTxt"
@@ -132,12 +139,12 @@
         android:textColor="#212121" />
 
     <ImageView
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="45dp"
         android:background="@drawable/proba1"
         android:layout_above="@+id/im2"
         android:layout_centerHorizontal="true"
-        android:layout_width="215dp" />
+        android:layout_width="220dp" />
 
 
 </RelativeLayout>

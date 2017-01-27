@@ -23,6 +23,7 @@ public class usersignin extends AppCompatActivity {
     private Session session;
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
+
     private int flag = 0;
 
     @Override
@@ -44,6 +45,8 @@ public class usersignin extends AppCompatActivity {
         reg = (Button)findViewById(R.id.goToReg);
         phoneTxt = (EditText)findViewById(R.id.phoneTxt);
         passTxt = (EditText)findViewById(R.id.passTxt);
+        //phoneTxt.setSelection(2);
+        //passTxt.setSelection(2);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
