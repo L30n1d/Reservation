@@ -136,6 +136,7 @@ public class PlaceChooser extends AppCompatActivity {
                 PlaceChooser.this, list, android.R.layout.simple_spinner_item,
                 new String[]{Config.TAG_NAME},
                 new int[]{android.R.id.text1});
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
 
@@ -641,6 +642,7 @@ public class PlaceChooser extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adp1=new ArrayAdapter<String>(PlaceChooser.this,android.R.layout.simple_spinner_item,dates);
+        adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner2.setAdapter(adp1);
 
