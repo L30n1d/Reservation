@@ -3,7 +3,8 @@
 
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#FFDED1C1"/>
+            <solid android:color="#ffb74d"/>
+            <stroke android:width="0.8dp" android:color="#FFFFFF"/>
             <!--corners allow us to make the rounded corners button-->
             <corners android:radius="10dp" />
         </shape>
