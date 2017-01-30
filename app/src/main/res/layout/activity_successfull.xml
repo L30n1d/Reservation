@@ -18,7 +18,7 @@
         android:id="@+id/textView7"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="195dp"
         android:textSize="24sp"
         android:textColor="@color/colorPrimary"
         android:layout_height="32dp" />
@@ -52,13 +52,13 @@
         android:textColor="#212121" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:srcCompat="@drawable/stick"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:id="@+id/imageView2" />
+        android:layout_marginTop="74dp"
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 
 </RelativeLayout>

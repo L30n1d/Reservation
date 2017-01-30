@@ -21,7 +21,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="25sp"
         tools:textStyle="bold"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="158dp"
         android:textStyle="normal|bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/logOut"
         android:background="@drawable/log_out"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/spinner"
         android:layout_alignEnd="@+id/spinner"

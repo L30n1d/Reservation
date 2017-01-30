@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_test_map"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,7 +12,7 @@
     android:fillViewport="true"
     tools:context="com.reservation.reservation.TestMap"
     android:clickable="true"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <!--<RelativeLayout
         android:layout_width="match_parent"
@@ -296,11 +296,11 @@
     </RelativeLayout>-->
     <HorizontalScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/table111">
+        android:background="@drawable/muda1">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
         <ImageButton
@@ -328,6 +328,14 @@
 
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite"
+                android:id="@+id/ib5"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="130dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite"
                 android:id="@+id/ib4"
                 android:layout_height="50dp"
                 android:layout_width="30dp"
@@ -335,13 +343,6 @@
                 android:layout_below="@+id/ib1"
                 android:background="@null" />
 
-            <ImageButton
-                app:srcCompat="@drawable/bahatowhite"
-                android:id="@+id/ib5"
-                android:layout_height="50dp"
-                android:layout_width="30dp"
-                android:layout_marginLeft="130dp"
-                android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite"
                 android:id="@+id/ib6"
@@ -538,6 +539,14 @@
                 android:layout_marginTop="15dp"
                 app:srcCompat="@drawable/sh"
                 android:background="@null"/>
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite"
+                android:id="@+id/ib26"
+                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignRight="@+id/ib24"
+                android:background="@null" />
         </RelativeLayout>
 
     </HorizontalScrollView>
