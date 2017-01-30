@@ -128,12 +128,9 @@ public class usersignup extends AppCompatActivity {
                     super.onPostExecute(s);
                     loading.dismiss();
 
-                    //sendEmail(email, n);
-                    codeG = Integer.toString(n);
-                    sendSMSMessage();
+                    sendEmail(email, n);
 
-
-                 /*   Intent i = new Intent(usersignup.this, verify.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Intent i = new Intent(usersignup.this, verify.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                     Bundle bundle = new Bundle();
                     bundle.putString("code", Integer.toString(n));
@@ -143,7 +140,7 @@ public class usersignup extends AppCompatActivity {
                     bundle2.putString("email", email);
                     i.putExtras(bundle2);
 
-                    startActivity(i);*/
+                    startActivity(i);
 
                 }
 
@@ -344,61 +341,5 @@ public class usersignup extends AppCompatActivity {
 
 
     }
-
-    protected void sendSMSMessage() {
-
-
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.SEND_SMS)
-                != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.SEND_SMS)) {
-            } else {
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.SEND_SMS},
-                        MY_PERMISSIONS_REQUEST_SEND_SMS);
-            }
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(phoneG, null, codeG, null, null);
-                    Toast.makeText(getApplicationContext(), "SMS sent.",
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
-                    return;
-                }
-            }
-        }
-
-    }
-
-    protected void sendSMS() {
-        Log.i("Send SMS", "");
-        Intent smsIntent = new Intent(Intent.ACTION_VIEW);
-
-        smsIntent.setData(Uri.parse("smsto:"));
-        smsIntent.setType("vnd.android-dir/mms-sms");
-        smsIntent.putExtra("address"  , phoneG);
-        smsIntent.putExtra("sms_body"  , codeG);
-
-        try {
-            startActivity(smsIntent);
-            finish();
-            Log.i("Finished sending SMS...", "");
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(usersignup.this,
-                    "SMS faild, please try again later.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
 }
