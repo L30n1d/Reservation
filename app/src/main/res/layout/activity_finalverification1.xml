@@ -1,93 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_finalverification"
+    android:id="@+id/activity_finalverification1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.reservation.reservation.finalverification"
-    android:background="@drawable/gradientback">
+    tools:context="com.reservation.reservation.finalverification1"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:text="Име и Презиме"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:id="@+id/nameLastTxt"
+        android:layout_width="200dp"
+        android:background="?attr/colorButtonNormal"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:text="Email"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_below="@+id/nameLastTxt"
-        android:paddingTop="2dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/emailTxtF"
         android:textSize="18sp"
-        android:background="@drawable/edittext_bg"
+        android:background="?attr/colorButtonNormal"
         android:layout_alignRight="@+id/nameLastTxt"
         android:layout_alignEnd="@+id/nameLastTxt"
         android:layout_alignLeft="@+id/nameLastTxt"
         android:layout_alignStart="@+id/nameLastTxt"
-        android:textColor="#212121" />
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:text="Бр. астал"
         android:layout_width="wrap_content"
-        android:paddingTop="2dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/emailTxtF"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/seatTxt"
         android:textSize="18sp"
         android:textAlignment="center"
-        android:background="@drawable/edittext_bg"
+        android:background="?attr/colorButtonNormal"
         android:layout_alignRight="@+id/emailTxtF"
         android:layout_alignEnd="@+id/emailTxtF"
         android:layout_alignLeft="@+id/emailTxtF"
         android:layout_alignStart="@+id/emailTxtF"
-        android:textColor="#212121" />
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:text="Место"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/seatTxt"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/placeTxt"
-        android:background="@drawable/edittext_bg"
+        android:background="?attr/colorButtonNormal"
         android:textAlignment="center"
-        android:paddingTop="2dp"
         android:textSize="18sp"
         android:layout_alignRight="@+id/seatTxt"
         android:layout_alignEnd="@+id/seatTxt"
         android:layout_alignLeft="@+id/seatTxt"
         android:layout_alignStart="@+id/seatTxt"
-        android:textColor="#212121" />
+        android:textColor="@color/colorPrimary" />
 
     <Button
         android:text="Резервирај"
         android:layout_width="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="113dp"
         android:id="@+id/rezBtn"
-        android:background="@drawable/rounded_but"
+        android:background="?attr/colorButtonNormal"
+        android:layout_height="56dp"
         android:layout_below="@+id/placeTxt"
         android:layout_alignLeft="@+id/placeTxt"
         android:layout_alignStart="@+id/placeTxt"
         android:layout_alignRight="@+id/placeTxt"
-        android:layout_alignEnd="@+id/placeTxt"
-        android:layout_height="42dp"
-        android:textColor="#212121" />
-
-    <TextView
-        android:text="Име и Презиме"
-        android:paddingTop="2dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="135dp"
-        android:id="@+id/nameLastTxt"
-        android:background="@drawable/edittext_bg"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textColor="#212121"
-        android:layout_width="250dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignEnd="@+id/placeTxt" />
 
 </RelativeLayout>

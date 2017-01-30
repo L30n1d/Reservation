@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_successfull"
     android:layout_width="match_parent"
@@ -9,32 +10,55 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.Successfull"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/gradientback">
 
     <TextView
-        android:text="Успешно направите резервација !"
+        android:text="Успешна резервација!"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView7"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp" />
+        android:layout_marginTop="145dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_height="32dp" />
 
     <Button
         android:text="Избери друго место"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_below="@+id/textView7"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp"
-        android:id="@+id/chooseBtn" />
+        android:id="@+id/chooseBtn"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7"
+        android:background="@drawable/rounded_but"
+        android:textColor="#212121" />
 
     <Button
         android:text="Исклучи"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_below="@+id/chooseBtn"
+        android:layout_marginTop="51dp"
+        android:id="@+id/exitBtn"
+        android:layout_alignLeft="@+id/chooseBtn"
+        android:layout_alignStart="@+id/chooseBtn"
+        android:layout_alignRight="@+id/chooseBtn"
+        android:layout_alignEnd="@+id/chooseBtn"
+        android:background="@drawable/log_out2"
+        android:textColor="#212121" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/stick"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:id="@+id/exitBtn" />
+        android:layout_marginTop="64dp"
+        android:id="@+id/imageView2" />
+
+
 </RelativeLayout>

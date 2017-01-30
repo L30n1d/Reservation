@@ -14,8 +14,9 @@
             android:name=".TestMap2"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".TestMap"
@@ -23,12 +24,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".finalverification"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PlaceChooser"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
-        <activity android:name=".usersignin" android:screenOrientation="portrait"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PlaceChooser"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".usersignin"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,16 +40,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".usersignup" android:screenOrientation="portrait"
+        <activity
+            android:name=".usersignup"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".verify2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".verify"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Successfull"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".verify" android:screenOrientation="portrait"/>
-        <activity android:name=".verify2" android:screenOrientation="portrait"/>
-        <activity android:name=".Successfull" android:screenOrientation="portrait"/>
-        <activity android:name=".test_map_admin"
+        <activity
+            android:name=".test_map_admin"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".PlaceChooserAdmin" android:screenOrientation="portrait" />
-        <activity android:name=".Overview" android:screenOrientation="portrait"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PlaceChooserAdmin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Overview"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".finalverification1"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

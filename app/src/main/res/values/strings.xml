@@ -2,4 +2,5 @@
     <string name="app_name">Rezerviraj</string>
     <string name="title_activity_test_map">TestActivity</string>
     <string name="title_activity_usersignin">usersignin</string>
+    <string name="title_activity_finalverification1">finalverification1</string>
 </resources>
