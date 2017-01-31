@@ -47,9 +47,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".verify2"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".verify"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Successfull"
