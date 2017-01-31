@@ -47,28 +47,31 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".verify2"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".verify"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Successfull"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".test_map_admin"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PlaceChooserAdmin"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Overview"
             android:screenOrientation="portrait" />
         <activity
             android:name=".finalverification1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".forget_pass"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -275,7 +275,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adp1=new ArrayAdapter<String>(PlaceChooserAdmin.this,android.R.layout.simple_spinner_item,dates);
-
+        adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adp1);
     }
 

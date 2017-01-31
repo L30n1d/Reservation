@@ -8,27 +8,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.reservation.reservation.Overview">
+    tools:context="com.reservation.reservation.Overview"
+    android:background="@drawable/gradientback">
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="131dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="77dp"
-        android:id="@+id/nameL" />
+        android:id="@+id/haha1"
+        android:textColor="@color/colorPrimary"
+        android:text="Име и Презиме"
+        android:layout_marginTop="140dp"
+        android:textSize="25sp"
+        android:textAlignment="center"/>
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/numL"
-        android:layout_alignBottom="@+id/nameL"
-        android:layout_alignLeft="@+id/nameL"
-        android:layout_alignStart="@+id/nameL"
-        android:layout_marginBottom="34dp" />
+        android:id="@+id/haha2"
+        android:textColor="@color/colorPrimary"
+        android:text="Број на астал"
+        android:layout_marginTop="180dp"
+        android:textSize="25sp"
+        android:textAlignment="center"/>
+
 </RelativeLayout>

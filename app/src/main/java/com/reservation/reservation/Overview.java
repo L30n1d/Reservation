@@ -26,8 +26,8 @@ public class Overview extends AppCompatActivity {
 
         id = bundle.getString("id");
 
-        nameTxt = (TextView)findViewById(R.id.nameL);
-        numTxt = (TextView)findViewById(R.id.numL);
+        nameTxt = (TextView)findViewById(R.id.haha1);
+        numTxt = (TextView)findViewById(R.id.haha2);
 
         getJSON();
 

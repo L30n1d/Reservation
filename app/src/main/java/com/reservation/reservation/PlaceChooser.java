@@ -71,30 +71,36 @@ public class PlaceChooser extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                date = spinner2.getSelectedItem().toString();
 
-                try {
-                    Class c = Class.forName(layout);
-                    Intent i = new Intent(PlaceChooser.this, c);
 
-                    Bundle bundle = new Bundle();
-                    bundle.putString("id", caffeId);
-                    i.putExtras(bundle);
+                if(spinner2.getSelectedItem() == null){
 
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString("date", date);
-                    i.putExtras(bundle2);
-
-                    Bundle bundle3 = new Bundle();
-                    bundle3.putString("type", typeC);
-                    i.putExtras(bundle3);
-
-                    startActivity(i);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),"Изберете друго место", Toast.LENGTH_SHORT).show();
                 }
+                else {
+                    date = spinner2.getSelectedItem().toString();
+                    try {
+                        Class c = Class.forName(layout);
+                        Intent i = new Intent(PlaceChooser.this, c);
 
+                        Bundle bundle = new Bundle();
+                        bundle.putString("id", caffeId);
+                        i.putExtras(bundle);
 
+                        Bundle bundle2 = new Bundle();
+                        bundle2.putString("date", date);
+                        i.putExtras(bundle2);
+
+                        Bundle bundle3 = new Bundle();
+                        bundle3.putString("type", typeC);
+                        i.putExtras(bundle3);
+
+                        startActivity(i);
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                }
 
             }
         });

@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:maxLines="1"
         android:minLines="1"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:hint=" Име"
         android:layout_width="match_parent"
         android:background="@drawable/edittext_bg"
@@ -141,7 +141,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="80dp"
         android:layout_below="@id/regBtn"
         android:background="#212121"
         android:id="@+id/view1" />
@@ -149,7 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/view1"
-        android:layout_marginTop="1.5dp"
+        android:layout_marginTop="2dp"
         android:textColor="#212121"
         android:text="Имаш профил?"
         android:layout_marginLeft="60dp"

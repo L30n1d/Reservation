@@ -25,6 +25,7 @@ public class usersignin extends AppCompatActivity {
     private Session session;
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
+    private TextView lost;
 
 
 
@@ -50,6 +51,7 @@ public class usersignin extends AppCompatActivity {
         reg = (Button)findViewById(R.id.goToReg);
         phoneTxt = (EditText)findViewById(R.id.phoneTxt);
         passTxt = (EditText)findViewById(R.id.passTxt);
+        lost = (TextView)findViewById(R.id.lostpass);
         //phoneTxt.setSelection(2);
         //passTxt.setSelection(2);
 
@@ -64,6 +66,13 @@ public class usersignin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(usersignin.this, usersignup.class));
+            }
+        });
+
+        lost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(usersignin.this,forget_pass.class));
             }
         });
 
