@@ -162,6 +162,6 @@
         android:layout_below="@id/view1"
         android:layout_marginLeft="3.5dp"
         android:text="Најави се"
-        />
+        android:id="@+id/logTxtView" />
 
 </RelativeLayout>

@@ -62,7 +62,7 @@ public class forget_pass extends AppCompatActivity {
             else{
                 for(int i = 0; i<result.length(); i++){
                     JSONObject jo = result.getJSONObject(i);
-                    password = jo.getString("code");
+                    password = jo.getString("password");
                 }
 
                 sendEmail(emailTxt,password);

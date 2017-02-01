@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -37,6 +38,7 @@ public class usersignup extends AppCompatActivity {
     private int flagEmail = 0, flagPhone = 0;
     private String JSON_STRING;
     private String codeG,phoneG;
+    private TextView loginTxtV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +49,25 @@ public class usersignup extends AppCompatActivity {
 
         reg = (Button)findViewById(R.id.regBtn);
         nameTxt = (EditText)findViewById(R.id.nameTxt);
+        loginTxtV = (TextView)findViewById(R.id.logTxtView);
         lastNameTxt = (EditText)findViewById(R.id.lastNameTxt);
         emailTxt = (EditText)findViewById(R.id.emailTxtR);
         phoneTxt = (EditText)findViewById(R.id.phoneTxtR);
         passTxt = (EditText)findViewById(R.id.passTxtR);
 
+
+
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 register();
+            }
+        });
+
+          loginTxtV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(usersignup.this,usersignin.class));
             }
         });
 
