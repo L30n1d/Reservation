@@ -12,7 +12,7 @@
     android:background="@drawable/gradientback">
 
     <TextView
-        android:text="Внесете го вашиот е-маил"
+        android:text="Внесете го вашиот телефонски број"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
@@ -37,7 +37,7 @@
         android:background="@drawable/edittext_bg"
         android:padding="5dp"
         android:id="@+id/emailEditTxt"
-        android:hint="Внеси е-маил адреса"
+        android:hint="Телефонски број"
         />
     <Button
         android:layout_width="match_parent"

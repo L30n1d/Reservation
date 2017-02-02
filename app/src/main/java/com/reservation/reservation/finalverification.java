@@ -205,7 +205,7 @@ public class finalverification extends AppCompatActivity {
                 JSONObject jo = result.getJSONObject(i);
                 String name = jo.getString("name");
                 String lastName = jo.getString("lastName");
-                String emaill = jo.getString("email");
+                String emaill = jo.getString("mobile");
                 nameLast.setText(name + " " + lastName);
                 email.setText(emaill);
             }

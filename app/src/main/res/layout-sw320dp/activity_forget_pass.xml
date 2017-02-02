@@ -12,7 +12,7 @@
     android:background="@drawable/gradientback">
 
     <TextView
-        android:text="Внесете го вашиот е-маил"
+        android:text="Внесете го вашиот телефонски број"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -21,6 +21,15 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimary"
         android:textSize="23sp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailEditTxt"
+        android:background="@drawable/rounded_but"
+        android:text="Внеси"
+        android:layout_marginTop="20dp"
+        android:id="@+id/checkEmailBtn" />
 
     <EditText
         android:layout_width="match_parent"
@@ -32,21 +41,13 @@
         android:textColor="#212121"
         android:textColorLink="?attr/actionMenuTextColor"
         android:textColorHighlight="#FFFFFF"
-        android:layout_below="@id/textView6"
-        android:layout_marginTop="20dp"
         android:background="@drawable/edittext_bg"
         android:padding="5dp"
         android:id="@+id/emailEditTxt"
-        android:hint="Внеси е-маил адреса"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/emailEditTxt"
-        android:background="@drawable/rounded_but"
-        android:text="Внеси"
-        android:layout_marginTop="20dp"
-        android:id="@+id/checkEmailBtn" />
+        android:hint="Телефонски број"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

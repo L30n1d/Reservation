@@ -1,10 +1,14 @@
 package com.reservation.reservation;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +26,7 @@ public class verify2 extends AppCompatActivity {
 
     private Button btn;
     private EditText pinTxt;
-    private String JSON_STRING, code, emailB;
+    private String JSON_STRING, code, emailB,phoneG,codeG;
     private TextView resend;
 
     @Override
@@ -37,13 +41,14 @@ public class verify2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        code = bundle.getString("code");
-        emailB = bundle.getString("email");
+        codeG = bundle.getString("code");
+        phoneG = bundle.getString("email");
 
         resend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendEmail(code,emailB);
+               // sendEmail(code,emailB);
+                sendSMSMessage();
                 Toast.makeText(getApplicationContext(),"Кодот е испратен на вашиот емаил!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -155,7 +160,7 @@ public class verify2 extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put("email",emailB);
+                hashMap.put("email",phoneG);
 
                 RequestHandler rh = new RequestHandler();
 
@@ -168,5 +173,37 @@ public class verify2 extends AppCompatActivity {
         UpdateEmployee ue = new UpdateEmployee();
         ue.execute();
     }
+
+
+    protected void sendSMSMessage() {
+
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(phoneG, null, codeG, null, null);
+        Toast.makeText(getApplicationContext(), "SMS sent.",
+                Toast.LENGTH_LONG).show();
+       /* ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.SEND_SMS},
+                MY_PERMISSIONS_REQUEST_SEND_SMS);*/
+    }
+
+
+
+   /* @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneG, null, codeG, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }}*/
 
 }

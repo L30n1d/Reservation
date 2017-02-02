@@ -51,7 +51,7 @@ public class usersignup extends AppCompatActivity {
         nameTxt = (EditText)findViewById(R.id.nameTxt);
         loginTxtV = (TextView)findViewById(R.id.logTxtView);
         lastNameTxt = (EditText)findViewById(R.id.lastNameTxt);
-        emailTxt = (EditText)findViewById(R.id.emailTxtR);
+       // emailTxt = (EditText)findViewById(R.id.emailTxtR);
         phoneTxt = (EditText)findViewById(R.id.phoneTxtR);
         passTxt = (EditText)findViewById(R.id.passTxtR);
 
@@ -78,7 +78,7 @@ public class usersignup extends AppCompatActivity {
 
         String name = nameTxt.getText().toString();
         String lastName = lastNameTxt.getText().toString();
-        String email = emailTxt.getText().toString();
+        String email = "s";
         String phone = phoneTxt.getText().toString();
         String pass = passTxt.getText().toString();
 
@@ -89,7 +89,7 @@ public class usersignup extends AppCompatActivity {
 
             phoneG = phone;
 
-            getJSON(email);
+           // getJSON(email);
             getJSON2(phone, email);
 
 
@@ -102,24 +102,17 @@ public class usersignup extends AppCompatActivity {
 
         final String name = nameTxt.getText().toString();
         final String lastName = lastNameTxt.getText().toString();
-        final String email = emailTxt.getText().toString();
+        final String email = "s";
         final String phone = phoneTxt.getText().toString();
         final String pass = passTxt.getText().toString();
 
         phoneG = phone;
 
 
-        if(!isEmailValid(email)){
-            displayToast("Невалидна емаил адреса!");
+        if(!checkPhone(phone)){
+            displayToast("Невалиден формат на број!");
         }
         else {
-
-           /* if(!checkPhone(phone)){
-                displayToast("Невалиден формат на број!");
-            }
-
-            else{*/
-
 
 
             int min = 100000, max = 999999;
@@ -155,7 +148,7 @@ public class usersignup extends AppCompatActivity {
                     i.putExtras(bundle);
 
                     Bundle bundle2 = new Bundle();
-                    bundle2.putString("email", email);
+                    bundle2.putString("email", phone);
                     i.putExtras(bundle2);
 
                     startActivity(i);
@@ -302,7 +295,7 @@ public class usersignup extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if(flagEmail == 1 && flagPhone == 1){
+        if(flagPhone == 1){
             addUser();
         }
 

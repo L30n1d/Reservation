@@ -69,28 +69,6 @@
         android:textColorLink="?attr/actionMenuTextColor"
         android:textColorHighlight="#FFFFFF" />
 
-    <EditText
-        android:layout_height="30dp"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_weight="1"
-        android:lines="1"
-        android:maxLines="1"
-        android:minLines="1"
-        android:id="@+id/emailTxtR"
-        android:paddingLeft="9dp"
-        android:hint=" Е-пошта"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/lastNameTxt"
-        android:layout_alignLeft="@+id/lastNameTxt"
-        android:layout_alignStart="@+id/lastNameTxt"
-        android:layout_alignRight="@+id/lastNameTxt"
-        android:layout_alignEnd="@+id/lastNameTxt"
-        android:background="@drawable/edittext_bg"
-        android:layout_width="match_parent"
-        android:textColor="#212121"
-        android:textColorLink="?attr/actionMenuTextColor"
-        android:textColorHighlight="#FFFFFF" />
 
     <EditText
         android:layout_height="30dp"
@@ -104,7 +82,7 @@
         android:paddingLeft="9dp"
         android:hint=" Телефонски број"
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/emailTxtR"
+        android:layout_below="@+id/lastNameTxt"
         android:layout_alignLeft="@+id/emailTxtR"
         android:layout_alignStart="@+id/emailTxtR"
         android:layout_alignRight="@+id/emailTxtR"

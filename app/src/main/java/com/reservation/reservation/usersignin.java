@@ -119,7 +119,7 @@ public class usersignin extends AppCompatActivity {
                     i.putExtras(bundle);
 
                     Bundle bundle2 = new Bundle();
-                    bundle2.putString("email", emailB);
+                    bundle2.putString("email", phone);
                     i.putExtras(bundle2);
 
                     startActivity(i);
