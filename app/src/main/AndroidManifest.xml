@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,8 +18,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TestMap"
             android:screenOrientation="landscape"
@@ -35,11 +42,7 @@
             android:name=".usersignin"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".usersignup"
@@ -69,9 +72,6 @@
             android:name=".Overview"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".finalverification1"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".forget_pass"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

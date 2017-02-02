@@ -39,12 +39,14 @@ public class usersignup extends AppCompatActivity {
     private String JSON_STRING;
     private String codeG,phoneG;
     private TextView loginTxtV;
+    private ConnectionDetector cd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersignup);
 
+        cd = new ConnectionDetector(this);
         session = new Session(this);
 
         reg = (Button)findViewById(R.id.regBtn);
@@ -60,7 +62,13 @@ public class usersignup extends AppCompatActivity {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register();
+                if(cd.isConnected()){
+                    register();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Нема интернет конекција",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

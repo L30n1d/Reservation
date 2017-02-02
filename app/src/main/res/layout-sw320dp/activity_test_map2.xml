@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                app:srcCompat="@drawable/free64"
+                app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/iby1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -197,7 +197,7 @@
                 android:layout_marginLeft="50dp"
                 android:background="@null" />
             <ImageButton
-                app:srcCompat="@drawable/free64"
+                app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/iby23"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"

@@ -3,6 +3,7 @@ package com.reservation.reservation;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,6 +28,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class PlaceChooser extends AppCompatActivity {
 
@@ -37,6 +41,10 @@ public class PlaceChooser extends AppCompatActivity {
     private ArrayList<String> dates1;
     private ArrayList<String> dates2;
     private Button btn, logOut;
+    private TextView conTxt;
+    private ConnectionDetector cd;
+    private final Handler handler = new Handler();
+    private Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +61,14 @@ public class PlaceChooser extends AppCompatActivity {
 
         layout = "com.reservation.reservation.TestMap";
 
+        cd = new ConnectionDetector(this);
         spinner1 = (Spinner)findViewById(R.id.spinner);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
         btn = (Button)findViewById(R.id.button3);
+        conTxt = (TextView)findViewById(R.id.connTxt);
         logOut = (Button)findViewById(R.id.logOut);
+
+        conTxt.setVisibility(View.INVISIBLE);
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +117,50 @@ public class PlaceChooser extends AppCompatActivity {
             }
         });
 
-        getJSON();
+       // checkConnection();
+
+        callTimer();
+
+       // getJSON();
 
 
+
+
+    }
+
+    private void callTimer(){
+
+        TimerTask doAsynchronousTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
+                        try {
+                            checkConnection();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        };
+        timer.schedule(doAsynchronousTask, 0, 3000);
+
+    }
+
+    private void checkConnection(){
+
+
+
+        if(cd.isConnected() == true){
+            conTxt.setVisibility(View.INVISIBLE);
+            timer.cancel();
+            getJSON();
+        }
+        else{
+            conTxt.setText("Нема интернет конекција");
+            conTxt.setVisibility(View.VISIBLE);
+        }
     }
 
 

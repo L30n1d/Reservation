@@ -26,6 +26,7 @@ public class usersignin extends AppCompatActivity {
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
     private TextView lost;
+    private ConnectionDetector cd;
 
 
 
@@ -37,6 +38,7 @@ public class usersignin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersignin);
 
+        cd = new ConnectionDetector(this);
         session = new Session(this);
 
         if(session.loggedIn()){
@@ -58,7 +60,13 @@ public class usersignin extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                if(cd.isConnected()){
+                    login();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Нема интернет конекција",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

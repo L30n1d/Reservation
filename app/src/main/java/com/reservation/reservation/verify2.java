@@ -27,6 +27,7 @@ public class verify2 extends AppCompatActivity {
     private Button btn;
     private EditText pinTxt;
     private String JSON_STRING, code, emailB,phoneG,codeG;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private TextView resend;
 
     @Override
@@ -49,7 +50,7 @@ public class verify2 extends AppCompatActivity {
             public void onClick(View v) {
                // sendEmail(code,emailB);
                 sendSMSMessage();
-                Toast.makeText(getApplicationContext(),"Кодот е испратен на вашиот емаил!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Кодот е испратен на вашиот број!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -177,18 +178,15 @@ public class verify2 extends AppCompatActivity {
 
     protected void sendSMSMessage() {
 
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(phoneG, null, codeG, null, null);
-        Toast.makeText(getApplicationContext(), "SMS sent.",
-                Toast.LENGTH_LONG).show();
-       /* ActivityCompat.requestPermissions(this,
+
+        ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.SEND_SMS},
-                MY_PERMISSIONS_REQUEST_SEND_SMS);*/
+                MY_PERMISSIONS_REQUEST_SEND_SMS);
     }
 
 
 
-   /* @Override
+    @Override
     public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS: {
@@ -204,6 +202,6 @@ public class verify2 extends AppCompatActivity {
                     return;
                 }
             }
-        }}*/
+        }}
 
 }

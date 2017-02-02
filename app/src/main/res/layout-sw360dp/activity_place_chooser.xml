@@ -82,4 +82,18 @@
         android:layout_alignEnd="@+id/spinner"
         android:layout_height="30dp" />
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/connTxt"
+        tools:text="Нема интернет конекција"
+        android:background="@drawable/log_out2"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:layout_below="@+id/logOut"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp" />
+
 </RelativeLayout>
