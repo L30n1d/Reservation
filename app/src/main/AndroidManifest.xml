@@ -67,12 +67,23 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Overview"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".finalverification1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".forget_pass"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
+
+    <supports-screens android:resizeable="true"
+    android:smallScreens="true"
+    android:normalScreens="true"
+    android:largeScreens="true"
+    android:xlargeScreens="true"
+    android:anyDensity="true"
+    android:requiresSmallestWidthDp="320"
+    android:compatibleWidthLimitDp="360"
+    android:largestWidthLimitDp="640"/>
 
 </manifest>

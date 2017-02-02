@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -58,9 +60,35 @@ public class TestMap2 extends AppCompatActivity {
                 final String id = jo.getString(Config.TAG_ID);
                 final String seat = jo.getString("Seat");
 
-                imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.bahatowhitereserved);
+                Display display = getWindowManager().getDefaultDisplay();
+                DisplayMetrics outMetrics = new DisplayMetrics ();
+                display.getMetrics(outMetrics);
+
+                float density  = getResources().getDisplayMetrics().density;
+                float dpHeight = outMetrics.heightPixels / density;
+                float dpWidth  = outMetrics.widthPixels / density;
+                float width = outMetrics.widthPixels;
+
+                // Toast.makeText(getApplicationContext(),Float.toString(dpWidth),Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(),Float.toString(width),Toast.LENGTH_SHORT).show();
+
+
+                if(width <= 480){
+                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy32);
+                }
+                else if(dpHeight == 320){
+                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy64);
+                }
+                else if(width > 1920){
+                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy192);
+                }
+                else if(dpHeight == 360){
+                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy150);
+                }
+
 
                 imageButtons[Integer.parseInt(seat)].setOnClickListener(null);
+
             }
 
         } catch (JSONException e) {
@@ -149,31 +177,50 @@ public class TestMap2 extends AppCompatActivity {
         iby24 = (ImageButton)findViewById(R.id.iby24);
         iby25 = (ImageButton)findViewById(R.id.iby25);
 
-
         imageButtons[1] = iby1;
         imageButtons[2] = iby3;
-        imageButtons[4] = iby4;
-        imageButtons[5] = iby5;
-        imageButtons[6] = iby6;
-        imageButtons[7] = iby7;
-        imageButtons[8] = iby8;
-        imageButtons[9] = iby9;
-        imageButtons[10] = iby10;
-        imageButtons[11] = iby11;
-        imageButtons[12] = iby12;
-        imageButtons[13] = iby13;
+        imageButtons[3] = iby4;
+        imageButtons[4] = iby5;
+        imageButtons[5] = iby6;
+        imageButtons[6] = iby7;
+        imageButtons[7] = iby8;
+        imageButtons[8] = iby9;
+        imageButtons[9] = iby10;
+        imageButtons[10] = iby11;
+        imageButtons[11] = iby12;
+        imageButtons[12] = iby13;
+        imageButtons[13] = iby15;
         imageButtons[14] = iby15;
-        imageButtons[15] = iby15;
-        imageButtons[16] = iby16;
-        imageButtons[17] = iby17;
-        imageButtons[18] = iby18;
-        imageButtons[19] = iby19;
-        imageButtons[20] = iby20;
-        imageButtons[21] = iby21;
-        imageButtons[22] = iby22;
-        imageButtons[23] = iby23;
-        imageButtons[24] = iby24;
-        imageButtons[25] = iby25;
+        imageButtons[15] = iby16;
+        imageButtons[16] = iby17;
+        imageButtons[17] = iby18;
+        imageButtons[18] = iby19;
+        imageButtons[19] = iby20;
+        imageButtons[20] = iby21;
+        imageButtons[21] = iby22;
+        imageButtons[22] = iby23;
+        imageButtons[22] = iby24;
+        imageButtons[23] = iby25;
+
+
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics ();
+        display.getMetrics(outMetrics);
+
+        float density  = getResources().getDisplayMetrics().density;
+        float dpHeight = outMetrics.heightPixels / density;
+        float dpWidth  = outMetrics.widthPixels / density;
+        float width = outMetrics.widthPixels;
+
+        // Toast.makeText(getApplicationContext(),Float.toString(dpWidth),Toast.LENGTH_SHORT).show();
+        // Toast.makeText(getApplicationContext(),Float.toString(width),Toast.LENGTH_SHORT).show();
+
+
+        for(int i = 1; i < 24; i++){
+            if(width <= 480){
+                imageButtons[i].setImageResource(R.drawable.free32);
+            }
+        }
 
 
         iby1.setOnClickListener(new View.OnClickListener() {

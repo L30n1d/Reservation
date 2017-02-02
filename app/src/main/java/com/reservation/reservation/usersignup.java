@@ -87,6 +87,8 @@ public class usersignup extends AppCompatActivity {
         }
         else{
 
+            phoneG = phone;
+
             getJSON(email);
             getJSON2(phone, email);
 
@@ -140,7 +142,11 @@ public class usersignup extends AppCompatActivity {
                     super.onPostExecute(s);
                     loading.dismiss();
 
-                    sendEmail(email, n);
+                    codeG = Integer.toString(n);
+
+                    //sendEmail(email, n);
+                    sendSMSMessage();
+
 
                     Intent i = new Intent(usersignup.this, verify.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -338,6 +344,35 @@ public class usersignup extends AppCompatActivity {
         GetJSON2 gj = new GetJSON2();
         gj.execute();
     }
+
+    protected void sendSMSMessage() {
+
+
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+            }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneG, null, codeG, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }}
+
 
     private void sendEmail(String email, int code){
 
