@@ -81,16 +81,13 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lostpass"
         android:textAlignment="center"
         android:text="Заборавена лозинка?"
         android:clickable="true"
-        android:layout_marginTop="7dp"
-        android:gravity="right"
-        android:textSize="15sp"
-        android:layout_marginRight="-10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="102dp"
         android:layout_below="@+id/passTxt"
         android:layout_alignLeft="@+id/passTxt"

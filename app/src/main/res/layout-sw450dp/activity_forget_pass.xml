@@ -12,44 +12,41 @@
     android:background="@drawable/gradientback">
 
     <TextView
-        android:text="Внесете го вашиот број"
+        android:text="Внесете го вашиот е-маил"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="114dp"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimary"
         android:textSize="23sp"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
+        android:minLines="1"
+        android:textColor="#212121"
+        android:textColorLink="?attr/actionMenuTextColor"
+        android:textColorHighlight="#FFFFFF"
+        android:layout_below="@id/textView6"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_bg"
+        android:padding="5dp"
+        android:id="@+id/emailEditTxt"
+        android:hint="Внеси е-маил адреса"
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailEditTxt"
         android:background="@drawable/rounded_but"
         android:text="Внеси"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/checkEmailBtn" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lines="1"
-        android:maxLines="1"
-        android:inputType="number"
-        android:minLines="1"
-        android:layout_below="@id/textView6"
-        android:layout_marginTop="15dp"
-        android:textColor="#212121"
-        android:textColorLink="?attr/actionMenuTextColor"
-        android:textColorHighlight="#FFFFFF"
-        android:background="@drawable/edittext_bg"
-        android:padding="5dp"
-        android:id="@+id/emailEditTxt"
-        android:hint="Телефонски број"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
