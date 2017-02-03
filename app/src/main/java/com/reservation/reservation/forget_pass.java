@@ -19,6 +19,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class forget_pass extends AppCompatActivity {
 
@@ -42,8 +44,13 @@ public class forget_pass extends AppCompatActivity {
             public void onClick(View v) {
 
                 phoneG = email.getText().toString();
+                if(checkPhone(phoneG)){
+                    getJSON();
+                }
+                else{
+                    displayToast("Внесете валиден формат на број!");
+                }
 
-                getJSON();
 
             }
         });
@@ -169,6 +176,21 @@ public class forget_pass extends AppCompatActivity {
 
     private void displayToast(String s){
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean checkPhone(String phone){
+
+        boolean isValid = false;
+        String expression = "^07[0,1,2,5,6,7,8][0-9]{6}$";
+        CharSequence inputStr = phone;
+
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+        if (matcher.matches()) {
+            isValid = true;
+        }
+        return isValid;
+
     }
 
 }
