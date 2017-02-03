@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity{
             @Override
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(1500);
                     startActivity(new Intent(SplashActivity.this,usersignin.class));
                     finish();
                 } catch (InterruptedException e) {
