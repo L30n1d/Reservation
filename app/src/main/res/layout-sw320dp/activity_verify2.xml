@@ -76,10 +76,10 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="50dp"
+        android:layout_width="65dp"
         android:id="@+id/logoViewv2"
         app:srcCompat="@drawable/logo192"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp" />

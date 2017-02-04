@@ -81,7 +81,7 @@
         android:text="Име и Презиме"
         android:paddingTop="2dp"
         android:layout_height="30dp"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="175dp"
         android:id="@+id/nameLastTxt"
         android:background="@drawable/edittext_bg"
         android:textAlignment="center"
@@ -91,12 +91,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <ImageView
-        android:layout_width="75dp"
         android:id="@+id/logoViewF"
-        android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        app:srcCompat="@drawable/logo192" />
+        app:srcCompat="@drawable/logo192"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

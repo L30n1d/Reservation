@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradientback">
+   >
 
 
 
@@ -12,7 +12,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/hand"
+            app:srcCompat="@drawable/back"
             android:id="@+id/imageView3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />

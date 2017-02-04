@@ -91,12 +91,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
     <ImageView
-        android:layout_width="50dp"
         android:id="@+id/logoViewF"
-        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        app:srcCompat="@drawable/logo192" />
+        app:srcCompat="@drawable/logo192"
+        android:layout_width="65dp"
+        android:layout_height="65dp" />
 
 </RelativeLayout>

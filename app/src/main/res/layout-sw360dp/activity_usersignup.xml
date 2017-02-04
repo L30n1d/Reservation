@@ -116,17 +116,15 @@
         android:textColorLink="?attr/actionMenuTextColor"
         android:textColorHighlight="#FFFFFF" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:layout_marginTop="125dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/regBtn"
-        android:background="#212121"
-        android:id="@+id/view1" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view1"
         android:layout_marginTop="2dp"
         android:textColor="#212121"
         android:text="Имаш профил?"
@@ -137,16 +135,16 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/t1"
         android:textColor="#FFFFFF"
-        android:layout_below="@id/view1"
         android:layout_marginLeft="3.5dp"
         android:text="Најави се"
         android:id="@+id/logTxtView" />
+    </RelativeLayout>
 
     <ImageView
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:id="@+id/logoViewS"
         app:srcCompat="@drawable/logo192"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp" />

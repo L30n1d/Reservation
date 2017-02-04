@@ -51,13 +51,13 @@
 
 
     <ImageView
-        android:layout_width="50dp"
         android:id="@+id/logoViewP"
-        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
-        app:srcCompat="@drawable/logo192" />
+        app:srcCompat="@drawable/logo192"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>
