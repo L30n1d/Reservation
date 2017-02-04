@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:maxLines="1"
         android:minLines="1"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="140dp"
         android:hint=" Име"
         android:layout_width="match_parent"
         android:background="@drawable/edittext_bg"
@@ -142,5 +142,14 @@
         android:layout_marginLeft="3.5dp"
         android:text="Најави се"
         />
+    <ImageView
+        android:layout_width="50dp"
+        android:id="@+id/logoViewS"
+        app:srcCompat="@drawable/logo192"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
 
 </RelativeLayout>

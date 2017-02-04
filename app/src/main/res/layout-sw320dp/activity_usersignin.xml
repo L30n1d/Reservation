@@ -106,7 +106,7 @@
         android:hint=" Телефонски број"
         android:paddingLeft="10dp"
         android:paddingTop="2dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="135dp"
         android:textColor="#212121"
         android:textColorLink="?attr/actionMenuTextColor"
         android:backgroundTint="#FFFFFF"
@@ -119,7 +119,7 @@
 
     <ImageView
         android:layout_width="50dp"
-        android:id="@+id/logoView"
+        android:id="@+id/logoViewSign"
         app:srcCompat="@drawable/logo192"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"

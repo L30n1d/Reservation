@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_overview"
     android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         android:id="@+id/haha1"
         android:textColor="@color/colorPrimary"
         android:text="Име и Презиме"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="220dp"
         android:textSize="25sp"
         android:textAlignment="center"/>
 
@@ -27,8 +28,17 @@
         android:id="@+id/haha2"
         android:textColor="@color/colorPrimary"
         android:text="Број на астал"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="270dp"
         android:textSize="25sp"
         android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:id="@+id/logoViewO"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        app:srcCompat="@drawable/logo192" />
 
 </RelativeLayout>
