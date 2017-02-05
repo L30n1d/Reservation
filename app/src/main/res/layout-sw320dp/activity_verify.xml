@@ -42,7 +42,7 @@
 
 
     <TextView
-        android:text="Почитувани, вашиот профил не е верифициран. Ве молиме внесете го пинот кој ви го испративме."
+        android:text="Почитувани, вашиот профил не е верифициран. Внесете го пинот кој ви го испративме на вашиот број."
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/textView4"
@@ -57,15 +57,14 @@
         android:text="Успешна регистрација!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="145dp"
         android:id="@+id/textView11"
         android:textSize="25sp"
         android:textAlignment="center"
         tools:textStyle="bold"
         android:layout_alignParentTop="true"
         android:textColor="@color/colorPrimary"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

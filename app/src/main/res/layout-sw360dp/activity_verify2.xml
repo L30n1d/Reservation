@@ -38,11 +38,12 @@
 
 
     <TextView
-        android:text="Почитуван кориснику, вашиот профил не е верифициран. Ве молиме внесете го пинот кој ви го имаме испратено на вашиот број."
+        android:text="Почитувани, вашиот профил сеуште не е верифициран. Ве молиме внесете го пинот кој ви го имаме испратено на вашиот број."
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="70dp"
         android:id="@+id/textView4"
         android:textStyle="normal|bold"
+        android:layout_below="@id/logoViewv2"
         android:layout_width="wrap_content"
         android:textColor="#212121"
         android:textSize="15sp" />
@@ -76,10 +77,10 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:id="@+id/logoViewv2"
         app:srcCompat="@drawable/logo192"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp" />

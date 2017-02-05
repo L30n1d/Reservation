@@ -13,15 +13,16 @@
     android:background="@drawable/gradientback">
 
     <TextView
-        android:text="Внесете го вашиот телефонски број"
-        android:layout_width="wrap_content"
+        android:text="Внесете го вашиот број"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimary"
-        android:textSize="23sp"/>
+        android:textSize="24sp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -56,8 +57,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         app:srcCompat="@drawable/logo192"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 
 </RelativeLayout>

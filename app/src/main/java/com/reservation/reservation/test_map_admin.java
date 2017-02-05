@@ -197,29 +197,30 @@ public class test_map_admin extends AppCompatActivity {
 
 
         imageButtons[1] = iba1;
-        imageButtons[2] = iba3;
-        imageButtons[3] = iba4;
-        imageButtons[4] = iba5;
-        imageButtons[5] = iba6;
-        imageButtons[6] = iba7;
-        imageButtons[7] = iba8;
-        imageButtons[8] = iba9;
-        imageButtons[9] = iba10;
-        imageButtons[10] = iba11;
-        imageButtons[11] = iba12;
-        imageButtons[12] = iba13;
-        imageButtons[13] = iba15;
-        imageButtons[14] = iba15;
-        imageButtons[15] = iba16;
-        imageButtons[16] = iba17;
-        imageButtons[17] = iba18;
-        imageButtons[18] = iba19;
-        imageButtons[19] = iba20;
-        imageButtons[20] = iba21;
-        imageButtons[21] = iba22;
-        imageButtons[22] = iba23;
-        imageButtons[23] = iba24;
-        imageButtons[24] = iba25;
+        imageButtons[2] = iba2;
+        imageButtons[3] = iba3;
+        imageButtons[4] = iba4;
+        imageButtons[5] = iba5;
+        imageButtons[6] = iba6;
+        imageButtons[7] = iba7;
+        imageButtons[8] = iba8;
+        imageButtons[9] = iba9;
+        imageButtons[10] = iba10;
+        imageButtons[11] = iba11;
+        imageButtons[12] = iba12;
+        imageButtons[13] = iba13;
+        imageButtons[14] = iba14;
+        imageButtons[15] = iba15;
+        imageButtons[16] = iba16;
+        imageButtons[17] = iba17;
+        imageButtons[18] = iba18;
+        imageButtons[19] = iba19;
+        imageButtons[20] = iba20;
+        imageButtons[21] = iba21;
+        imageButtons[22] = iba22;
+        imageButtons[23] = iba23;
+        imageButtons[24] = iba24;
+        imageButtons[25] = iba25;
 
 
         Display display = getWindowManager().getDefaultDisplay();

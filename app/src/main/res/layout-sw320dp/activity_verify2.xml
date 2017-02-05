@@ -38,9 +38,9 @@
 
 
     <TextView
-        android:text="Почитувани, вашиот профил не е верифициран. Ве молиме внесете го пинот кој ви го испративме."
+        android:text="Почитувани, вашиот профил сеуште не е верифициран. Ве молиме внесете го пинот кој ви го имаме испратено на вашиот број."
         android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="155dp"
         android:id="@+id/textView4"
         android:textStyle="normal|bold"
         android:layout_width="wrap_content"

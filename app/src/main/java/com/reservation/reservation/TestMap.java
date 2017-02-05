@@ -211,29 +211,30 @@ public class TestMap extends AppCompatActivity {
 
 
         imageButtons[1] = ib1;
-        imageButtons[2] = ib3;
-        imageButtons[3] = ib4;
-        imageButtons[4] = ib5;
-        imageButtons[5] = ib6;
-        imageButtons[6] = ib7;
-        imageButtons[7] = ib8;
-        imageButtons[8] = ib9;
-        imageButtons[9] = ib10;
-        imageButtons[10] = ib11;
-        imageButtons[11] = ib12;
-        imageButtons[12] = ib13;
-        imageButtons[13] = ib15;
-        imageButtons[14] = ib15;
-        imageButtons[15] = ib16;
-        imageButtons[16] = ib17;
-        imageButtons[17] = ib18;
-        imageButtons[18] = ib19;
-        imageButtons[19] = ib20;
-        imageButtons[20] = ib21;
-        imageButtons[21] = ib22;
-        imageButtons[22] = ib23;
-        imageButtons[22] = ib24;
-        imageButtons[23] = ib25;
+        imageButtons[2] = ib2;
+        imageButtons[3] = ib3;
+        imageButtons[4] = ib4;
+        imageButtons[5] = ib5;
+        imageButtons[6] = ib6;
+        imageButtons[7] = ib7;
+        imageButtons[8] = ib8;
+        imageButtons[9] = ib9;
+        imageButtons[10] = ib10;
+        imageButtons[11] = ib11;
+        imageButtons[12] = ib12;
+        imageButtons[13] = ib13;
+        imageButtons[14] = ib14;
+        imageButtons[15] = ib15;
+        imageButtons[16] = ib16;
+        imageButtons[17] = ib17;
+        imageButtons[18] = ib18;
+        imageButtons[19] = ib19;
+        imageButtons[20] = ib20;
+        imageButtons[21] = ib21;
+        imageButtons[22] = ib22;
+        imageButtons[23] = ib23;
+        imageButtons[24] = ib24;
+        imageButtons[25] = ib25;
 
 
         Display display = getWindowManager().getDefaultDisplay();
