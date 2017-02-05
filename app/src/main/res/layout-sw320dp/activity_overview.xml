@@ -18,7 +18,7 @@
         android:id="@+id/haha1"
         android:textColor="@color/colorPrimary"
         android:text="Име и Презиме"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="240dp"
         android:textSize="25sp"
         android:textAlignment="center"/>
 
@@ -28,7 +28,7 @@
         android:id="@+id/haha2"
         android:textColor="@color/colorPrimary"
         android:text="Број на астал"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="300dp"
         android:textSize="25sp"
         android:textAlignment="center"/>
 
@@ -38,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
         app:srcCompat="@drawable/logo192"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="100dp"
+        android:layout_width="100dp" />
 
 </RelativeLayout>
