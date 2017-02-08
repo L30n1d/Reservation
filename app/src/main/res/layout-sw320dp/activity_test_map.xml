@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_test_map"
@@ -16,7 +16,9 @@
     <HorizontalScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradientback2">
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -222,13 +224,46 @@
                 android:layout_below="@+id/ib4"
                 android:layout_marginLeft="410dp"
                 android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/ib26"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/ib21"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/ib27"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/ib26"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/ib28"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/ib27"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/ib29"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/ib28"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
 
 
         </RelativeLayout>
+        </ScrollView>
 
     </HorizontalScrollView>
 
+</RelativeLayout>
 
 
 
-</ScrollView>
