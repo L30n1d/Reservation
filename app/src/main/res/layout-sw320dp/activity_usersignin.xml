@@ -27,18 +27,6 @@
         android:layout_alignLeft="@+id/passTxt"
         android:layout_alignStart="@+id/passTxt" />
 
-    <TextView
-        android:text="Не си регистриран?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:onClick="onClick"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:layout_below="@+id/loginBtn"
-        android:layout_centerHorizontal="true"
-        android:textColor="#212121" />
-
     <Button
         android:text="Регистрирај се"
         android:layout_width="match_parent"
@@ -125,6 +113,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp" />
+
+    <TextView
+        android:text="Не си регистриран?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:clickable="true"
+        android:textColor="#212121"
+        android:layout_below="@+id/loginBtn"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
