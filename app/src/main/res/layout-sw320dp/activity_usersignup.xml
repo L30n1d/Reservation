@@ -120,24 +120,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/r1"
-        android:layout_below="@id/regBtn"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp">
+        android:paddingLeft="50dp"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+
             android:textColor="#212121"
             android:text="Имаш профил?"
-            android:layout_marginLeft="60dp"
+
             android:id="@+id/t1" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/t1"
-            android:layout_marginTop="2dp"
+            android:layout_marginLeft="10dp"
             android:textColor="#FFFFFF"
-            android:layout_marginLeft="3.5dp"
+
             android:text="Најави се"
             android:id="@+id/logTxtView" />
     </RelativeLayout>

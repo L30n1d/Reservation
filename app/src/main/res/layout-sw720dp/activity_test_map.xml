@@ -15,7 +15,7 @@
     android:layout_height="match_parent">
     <HorizontalScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_dark">
+        android:background="@drawable/gradientback2">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -37,14 +37,14 @@
                 android:id="@+id/ib2"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="80dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib3"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="150dp"
                 android:background="@null" />
 
             <ImageButton
@@ -61,14 +61,14 @@
                 android:id="@+id/ib5"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="220dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib6"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="80dp"
                 android:layout_below="@id/ib2"
                 android:background="@null" />
             <ImageButton
@@ -76,7 +76,7 @@
                 android:id="@+id/ib7"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="150dp"
                 android:layout_below="@id/ib3"
                 android:background="@null" />
             <ImageButton
@@ -84,7 +84,7 @@
                 android:id="@+id/ib8"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="460dp"
+                android:layout_marginLeft="1070dp"
                 android:layout_below="@id/ib5"
                 android:background="@null" />
             <ImageButton
@@ -92,14 +92,14 @@
                 android:id="@+id/ib9"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="460dp"
+                android:layout_marginLeft="1070dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib10"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="420dp"
+                android:layout_marginLeft="1000dp"
                 android:layout_below="@id/ib5"
                 android:background="@null" />
             <ImageButton
@@ -107,7 +107,7 @@
                 android:id="@+id/ib11"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="380dp"
+                android:layout_marginLeft="930dp"
                 android:layout_below="@id/ib5"
                 android:background="@null" />
             <ImageButton
@@ -115,7 +115,7 @@
                 android:id="@+id/ib12"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="340dp"
+                android:layout_marginLeft="860dp"
                 android:layout_below="@id/ib5"
                 android:background="@null" />
 
@@ -124,21 +124,21 @@
                 android:id="@+id/ib13"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="420dp"
+                android:layout_marginLeft="1000dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib14"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="380dp"
+                android:layout_marginLeft="930dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib15"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="340dp"
+                android:layout_marginLeft="860dp"
                 android:background="@null" />
 
             <ImageButton
@@ -146,7 +146,7 @@
                 android:id="@+id/ib16"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="220dp"
                 android:layout_below="@+id/ib5"
                 android:background="@null" />
             <ImageButton
@@ -154,7 +154,7 @@
                 android:id="@+id/ib17"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="300dp"
                 android:layout_below="@+id/ib5"
                 android:background="@null" />
             <ImageButton
@@ -162,7 +162,7 @@
                 android:id="@+id/ib18"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="300dp"
                 android:background="@null" />
 
             <ImageButton
@@ -170,7 +170,7 @@
                 android:id="@+id/ib19"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="790dp"
                 android:background="@null" />
 
             <ImageButton
@@ -178,7 +178,7 @@
                 android:id="@+id/ib20"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="300dp"
+                android:layout_marginLeft="790dp"
                 android:layout_below="@+id/ib19"
                 android:background="@null" />
 
@@ -196,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_below="@+id/ib4"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="80dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
@@ -204,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_below="@+id/ib4"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="150dp"
                 android:background="@null" />
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
@@ -212,16 +212,18 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_below="@+id/ib4"
-                android:layout_marginLeft="460dp"
+                android:layout_marginLeft="1070dp"
                 android:background="@null" />
+
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib25"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_below="@+id/ib4"
-                android:layout_marginLeft="420dp"
-                android:background="@null" />
+                android:background="@null"
+                android:layout_below="@+id/ib10"
+                android:layout_alignLeft="@+id/ib10"
+                android:layout_alignStart="@+id/ib10" />
 
 
         </RelativeLayout>
