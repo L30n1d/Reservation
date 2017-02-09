@@ -193,8 +193,8 @@
             <ImageButton
                 app:srcCompat="@drawable/bahatowhite1"
                 android:id="@+id/ib22"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
                 android:layout_below="@+id/ib4"
                 android:layout_marginLeft="50dp"
                 android:background="@null" />

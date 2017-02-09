@@ -117,19 +117,18 @@
         android:textColorHighlight="#FFFFFF" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textAlignment="center"
         android:layout_centerHorizontal="true"
-        android:paddingLeft="50dp">
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:textColor="#212121"
         android:text="Имаш профил?"
-        android:layout_marginLeft="60dp"
+        android:textAlignment="center"
         android:id="@+id/t1" />
     <TextView
         android:layout_width="wrap_content"
@@ -138,6 +137,7 @@
         android:textColor="#FFFFFF"
         android:layout_marginLeft="3.5dp"
         android:text="Најави се"
+        android:textAlignment="center"
         android:id="@+id/logTxtView" />
     </RelativeLayout>
 

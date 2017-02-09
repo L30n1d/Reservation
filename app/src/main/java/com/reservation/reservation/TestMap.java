@@ -95,6 +95,9 @@ public class TestMap extends AppCompatActivity {
                 else if(width > 1920){
                     imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy192);
                 }
+                else if(dpHeight == 360 && width == 1196){
+                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy96);
+                }
                 else if(dpHeight == 360){
                     imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy150);
                 }
