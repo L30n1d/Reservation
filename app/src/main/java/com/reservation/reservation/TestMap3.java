@@ -20,18 +20,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-public class TestMap2 extends AppCompatActivity {
+public class TestMap3 extends AppCompatActivity {
 
     private String JSON_STRING,id,date, typeC;
-    private ImageButton iby1,iby2,iby3,iby4,iby5,iby6,iby7,iby8,iby9,iby10,iby11,iby12,iby13,iby14,iby15,iby16,iby17,
-            iby18,iby19,iby20,iby21,iby22,iby23,iby24,iby25;
+    private ImageButton ibv1,ibv2,ibv3,ibv4,ibv5,ibv6,ibv7,ibv8,ibv9,ibv10,ibv11,ibv12,ibv13,ibv14,ibv15,ibv16,ibv17,
+            ibv18,ibv19,ibv20,ibv21,ibv22,ibv23,ibv24,ibv25;
 
     private ImageButton[] imageButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_map2);
+        setContentView(R.layout.activity_test_map3);
 
         initialize();
 
@@ -42,8 +42,9 @@ public class TestMap2 extends AppCompatActivity {
         typeC = bundle.getString("type");
 
         getJSON();
-        
+
     }
+
 
 
     private void showSeats(){
@@ -82,9 +83,6 @@ public class TestMap2 extends AppCompatActivity {
                 else if(width > 1920){
                     imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy192);
                 }
-                else if(dpHeight == 360 && width == 1196){
-                    imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy96);
-                }
                 else if(dpHeight == 360){
                     imageButtons[Integer.parseInt(seat)].setImageResource(R.drawable.busy150);
                 }
@@ -109,7 +107,7 @@ public class TestMap2 extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(TestMap2.this,"","Се вчитува...",false,false);
+                loading = ProgressDialog.show(TestMap3.this,"","Се вчитува...",false,false);
             }
 
             @Override
@@ -154,57 +152,57 @@ public class TestMap2 extends AppCompatActivity {
     private void initialize(){
         imageButtons = new ImageButton[26];
 
-        iby1 = (ImageButton)findViewById(R.id.iby1);
-        iby2 = (ImageButton)findViewById(R.id.iby2);
-        iby3 = (ImageButton)findViewById(R.id.iby3);
-        iby4 = (ImageButton)findViewById(R.id.iby4);
-        iby5 = (ImageButton)findViewById(R.id.iby5);
-        iby6 = (ImageButton)findViewById(R.id.iby6);
-        iby7 = (ImageButton)findViewById(R.id.iby7);
-        iby8 = (ImageButton)findViewById(R.id.iby8);
-        iby9 = (ImageButton)findViewById(R.id.iby9);
-        iby10 = (ImageButton)findViewById(R.id.iby10);
-        iby11 = (ImageButton)findViewById(R.id.iby11);
-        iby12 = (ImageButton)findViewById(R.id.iby12);
-        iby13 = (ImageButton)findViewById(R.id.iby13);
-        iby14 = (ImageButton)findViewById(R.id.iby14);
-        iby15 = (ImageButton)findViewById(R.id.iby15);
-        iby16 = (ImageButton)findViewById(R.id.iby16);
-        iby17 = (ImageButton)findViewById(R.id.iby17);
-        iby18 = (ImageButton)findViewById(R.id.iby18);
-        iby19 = (ImageButton)findViewById(R.id.iby19);
-        iby20 = (ImageButton)findViewById(R.id.iby20);
-        iby21 = (ImageButton)findViewById(R.id.iby21);
-        iby22 = (ImageButton)findViewById(R.id.iby22);
-        iby23 = (ImageButton)findViewById(R.id.iby23);
-        iby24 = (ImageButton)findViewById(R.id.iby24);
-        iby25 = (ImageButton)findViewById(R.id.iby25);
+        ibv1 = (ImageButton)findViewById(R.id.ibv1);
+        ibv2 = (ImageButton)findViewById(R.id.ibv2);
+        ibv3 = (ImageButton)findViewById(R.id.ibv3);
+        ibv4 = (ImageButton)findViewById(R.id.ibv4);
+        ibv5 = (ImageButton)findViewById(R.id.ibv5);
+        ibv6 = (ImageButton)findViewById(R.id.ibv6);
+        ibv7 = (ImageButton)findViewById(R.id.ibv7);
+        ibv8 = (ImageButton)findViewById(R.id.ibv8);
+        ibv9 = (ImageButton)findViewById(R.id.ibv9);
+        ibv10 = (ImageButton)findViewById(R.id.ibv10);
+        ibv11 = (ImageButton)findViewById(R.id.ibv11);
+        ibv12 = (ImageButton)findViewById(R.id.ibv12);
+        ibv13 = (ImageButton)findViewById(R.id.ibv13);
+        ibv14 = (ImageButton)findViewById(R.id.ibv14);
+        ibv15 = (ImageButton)findViewById(R.id.ibv15);
+        ibv16 = (ImageButton)findViewById(R.id.ibv16);
+        ibv17 = (ImageButton)findViewById(R.id.ibv17);
+        ibv18 = (ImageButton)findViewById(R.id.ibv18);
+        ibv19 = (ImageButton)findViewById(R.id.ibv19);
+        ibv20 = (ImageButton)findViewById(R.id.ibv20);
+        ibv21 = (ImageButton)findViewById(R.id.ibv21);
+        ibv22 = (ImageButton)findViewById(R.id.ibv22);
+        ibv23 = (ImageButton)findViewById(R.id.ibv23);
+        ibv24 = (ImageButton)findViewById(R.id.ibv24);
+        ibv25 = (ImageButton)findViewById(R.id.ibv25);
 
-        imageButtons[1] = iby1;
-        imageButtons[2] = iby2;
-        imageButtons[3] = iby3;
-        imageButtons[4] = iby4;
-        imageButtons[5] = iby5;
-        imageButtons[6] = iby6;
-        imageButtons[7] = iby7;
-        imageButtons[8] = iby8;
-        imageButtons[9] = iby9;
-        imageButtons[10] = iby10;
-        imageButtons[11] = iby11;
-        imageButtons[12] = iby12;
-        imageButtons[13] = iby13;
-        imageButtons[14] = iby14;
-        imageButtons[15] = iby15;
-        imageButtons[16] = iby16;
-        imageButtons[17] = iby17;
-        imageButtons[18] = iby18;
-        imageButtons[19] = iby19;
-        imageButtons[20] = iby20;
-        imageButtons[21] = iby21;
-        imageButtons[22] = iby22;
-        imageButtons[23] = iby23;
-        imageButtons[24] = iby24;
-        imageButtons[25] = iby25;
+        imageButtons[1] = ibv1;
+        imageButtons[2] = ibv2;
+        imageButtons[3] = ibv3;
+        imageButtons[4] = ibv4;
+        imageButtons[5] = ibv5;
+        imageButtons[6] = ibv6;
+        imageButtons[7] = ibv7;
+        imageButtons[8] = ibv8;
+        imageButtons[9] = ibv9;
+        imageButtons[10] = ibv10;
+        imageButtons[11] = ibv11;
+        imageButtons[12] = ibv12;
+        imageButtons[13] = ibv13;
+        imageButtons[14] = ibv14;
+        imageButtons[15] = ibv15;
+        imageButtons[16] = ibv16;
+        imageButtons[17] = ibv17;
+        imageButtons[18] = ibv18;
+        imageButtons[19] = ibv19;
+        imageButtons[20] = ibv20;
+        imageButtons[21] = ibv21;
+        imageButtons[22] = ibv22;
+        imageButtons[23] = ibv23;
+        imageButtons[24] = ibv24;
+        imageButtons[25] = ibv25;
 
 
         Display display = getWindowManager().getDefaultDisplay();
@@ -227,10 +225,10 @@ public class TestMap2 extends AppCompatActivity {
         }
 
 
-        iby1.setOnClickListener(new View.OnClickListener() {
+        ibv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -252,10 +250,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby2.setOnClickListener(new View.OnClickListener() {
+        ibv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -278,10 +276,10 @@ public class TestMap2 extends AppCompatActivity {
         });
 
 
-        iby3.setOnClickListener(new View.OnClickListener() {
+        ibv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -304,10 +302,10 @@ public class TestMap2 extends AppCompatActivity {
         });
 
 
-        iby4.setOnClickListener(new View.OnClickListener() {
+        ibv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -329,10 +327,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby5.setOnClickListener(new View.OnClickListener() {
+        ibv5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -354,10 +352,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby6.setOnClickListener(new View.OnClickListener() {
+        ibv6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -379,10 +377,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby7.setOnClickListener(new View.OnClickListener() {
+        ibv7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -404,10 +402,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby8.setOnClickListener(new View.OnClickListener() {
+        ibv8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -429,10 +427,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby9.setOnClickListener(new View.OnClickListener() {
+        ibv9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -454,10 +452,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby10.setOnClickListener(new View.OnClickListener() {
+        ibv10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -479,10 +477,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby11.setOnClickListener(new View.OnClickListener() {
+        ibv11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -504,10 +502,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby12.setOnClickListener(new View.OnClickListener() {
+        ibv12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -529,10 +527,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby13.setOnClickListener(new View.OnClickListener() {
+        ibv13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -554,10 +552,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby14.setOnClickListener(new View.OnClickListener() {
+        ibv14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -579,10 +577,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby15.setOnClickListener(new View.OnClickListener() {
+        ibv15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -604,10 +602,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby16.setOnClickListener(new View.OnClickListener() {
+        ibv16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -629,10 +627,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby17.setOnClickListener(new View.OnClickListener() {
+        ibv17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -654,10 +652,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby18.setOnClickListener(new View.OnClickListener() {
+        ibv18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -679,10 +677,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby19.setOnClickListener(new View.OnClickListener() {
+        ibv19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -704,10 +702,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby20.setOnClickListener(new View.OnClickListener() {
+        ibv20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -729,10 +727,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby21.setOnClickListener(new View.OnClickListener() {
+        ibv21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -754,10 +752,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby22.setOnClickListener(new View.OnClickListener() {
+        ibv22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -779,10 +777,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby23.setOnClickListener(new View.OnClickListener() {
+        ibv23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -804,10 +802,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby24.setOnClickListener(new View.OnClickListener() {
+        ibv24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -829,10 +827,10 @@ public class TestMap2 extends AppCompatActivity {
             }
         });
 
-        iby25.setOnClickListener(new View.OnClickListener() {
+        ibv25.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TestMap2.this, finalverification.class);
+                Intent i = new Intent(TestMap3.this, finalverification.class);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("id", id);
@@ -857,5 +855,5 @@ public class TestMap2 extends AppCompatActivity {
 
 
     }
-    
+
 }
