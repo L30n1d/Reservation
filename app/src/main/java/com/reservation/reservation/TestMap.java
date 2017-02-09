@@ -253,7 +253,7 @@ public class TestMap extends AppCompatActivity {
         // Toast.makeText(getApplicationContext(),Float.toString(width),Toast.LENGTH_SHORT).show();
 
 
-        for(int i = 1; i < 24; i++){
+        for(int i = 1; i < 26; i++){
             if(width <= 480){
                 imageButtons[i].setImageResource(R.drawable.free32);
             }
