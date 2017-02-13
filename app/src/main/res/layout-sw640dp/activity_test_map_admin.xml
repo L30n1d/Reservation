@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test_map_admin"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:fillViewport="true"
+    android:clickable="true"
+    android:layout_height="match_parent"
+    tools:context="com.reservation.reservation.test_map_admin">
+
+
+    <HorizontalScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradientback2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba4"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/iba1"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba5"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba6"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_below="@id/iba2"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba7"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:layout_below="@id/iba3"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba8"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="460dp"
+                android:layout_below="@id/iba5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba9"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="460dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba10"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="420dp"
+                android:layout_below="@id/iba5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba11"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="380dp"
+                android:layout_below="@id/iba5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba12"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="340dp"
+                android:layout_below="@id/iba5"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba13"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="420dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba14"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="380dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba15"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="340dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba16"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@+id/iba5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba17"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_below="@+id/iba5"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba18"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba19"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba20"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="300dp"
+                android:layout_below="@+id/iba19"
+                android:background="@null" />
+
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba21"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/iba4"
+                android:layout_marginLeft="10dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba22"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/iba4"
+                android:layout_marginLeft="50dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba23"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/iba4"
+                android:layout_marginLeft="90dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba24"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/iba4"
+                android:layout_marginLeft="460dp"
+                android:background="@null" />
+            <ImageButton
+                app:srcCompat="@drawable/bahatowhite1"
+                android:id="@+id/iba25"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/iba4"
+                android:layout_marginLeft="420dp"
+                android:background="@null" />
+
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+
+</ScrollView>
