@@ -31,8 +31,7 @@
         android:layout_marginTop="15dp"
         android:id="@+id/confirmBtn"
         android:layout_below="@+id/pin"
-        android:layout_alignLeft="@+id/imageView7"
-        android:layout_alignStart="@+id/imageView7"
+
         android:layout_alignRight="@+id/pin2"
         android:layout_alignEnd="@+id/pin2"
         android:background="@drawable/rounded_but"
