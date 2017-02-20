@@ -41,9 +41,9 @@ public class TextViewAdapter extends BaseAdapter {
             TextView textView = (TextView) gridView
                     .findViewById(R.id.grid_item_label);
             textView.setText(textViewValues[position]);
-            textView.setTextSize(10);
+            textView.setTextSize(30);
             textView.setBackgroundColor(Color.RED);
-            textView.setPadding(150,150,150,150);
+            textView.setPadding(50,50,50,50);
 
         } else {
             gridView = (View) convertView;
