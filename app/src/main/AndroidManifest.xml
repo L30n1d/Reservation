@@ -85,11 +85,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".usersignin" />
         <activity android:name=".GridViewSupplementActivity">
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".listView" />
+        <activity android:name=".listView2"></activity>
     </application>
 
 </manifest>

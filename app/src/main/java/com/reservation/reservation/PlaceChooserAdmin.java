@@ -72,7 +72,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
 
                 try {
                     Class c = Class.forName(layout);
-                    Intent i = new Intent(PlaceChooserAdmin.this, c);
+                    Intent i = new Intent(PlaceChooserAdmin.this, listView.class);
 
                     Bundle bundle = new Bundle();
                     bundle.putString("id", caffeId);
