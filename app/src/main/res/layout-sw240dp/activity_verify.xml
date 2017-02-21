@@ -17,7 +17,6 @@
         android:inputType="numberPassword"
         android:ems="10"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/textView4"
         android:id="@+id/pin"
         android:layout_centerHorizontal="true"
         android:hint="ПИН"
@@ -32,6 +31,7 @@
         android:layout_marginTop="15dp"
         android:id="@+id/confirmBtn"
         android:layout_below="@+id/pin"
+
         android:layout_alignRight="@+id/pin2"
         android:layout_alignEnd="@+id/pin2"
         android:background="@drawable/rounded_but"
@@ -40,29 +40,28 @@
 
 
     <TextView
-        android:text="Почитувани, вашиот профил не е верифициран. Внесете го пинот кој ви го испративме на вашиот број."
+        android:text="Почитуван кориснику, вашиот профил не е верифициран. Затоа внесете го пинот кој ви го имаме испратено на вашиот mail."
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/textView4"
-        android:layout_below="@id/textView11"
         android:textStyle="normal|bold"
         android:layout_width="wrap_content"
         android:textColor="#212121"
-        android:textSize="14sp"
-        android:textAllCaps="false" />
+        android:textSize="14sp" />
 
     <TextView
         android:text="Успешна регистрација!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/textView11"
         android:textSize="25sp"
         android:textAlignment="center"
         tools:textStyle="bold"
         android:layout_alignParentTop="true"
         android:textColor="@color/colorPrimary"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,14 +88,5 @@
         tools:textStyle="normal|bold"
         android:textColor="@color/colorPrimary" />
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/logoViewV"
-        app:srcCompat="@drawable/logo192"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
-        android:layout_width="65dp"
-        android:layout_height="65dp" />
 
 </RelativeLayout>
