@@ -311,7 +311,7 @@ public class PlaceChooser extends AppCompatActivity {
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
             layout = c.getString("Layout");
-            seats = c.getString("Seat");
+            seats = c.getString("Seats");
 
 
         } catch (JSONException e) {

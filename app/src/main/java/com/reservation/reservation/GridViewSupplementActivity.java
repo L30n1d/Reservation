@@ -54,6 +54,7 @@ public class GridViewSupplementActivity extends Activity {
         session = new Session(this);
 
         seats = session.getAdminSeats();
+        listt = new ArrayList<String>();
 
         resId = bundle.getString("id");
         caffeId = bundle.getString("caffeId");
@@ -87,8 +88,9 @@ public class GridViewSupplementActivity extends Activity {
                 final String idd = jo.getString(Config.TAG_ID);
                 resSeat = jo.getString("Seat");
 
-                listt.add(resSeat);
-
+                if(!resSeat.equals("0")){
+                    listt.add(resSeat);
+                }
 
             }
 
@@ -163,53 +165,23 @@ public class GridViewSupplementActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
 
-                updateRes();
+                updateRes(selectedItem);
 
-                getJSON();
+
 
             }
         });
 
-        for (String object: listt) {
+      /*  for (String object: listt) {
             View asd = gv.getChildAt(Integer.parseInt(object));
             asd.setBackgroundColor(Color.RED);
             asd.setOnClickListener(null);
             asd.setClickable(false);
-        }
+        }*/
 
     }
 
-    private void updateRes(){
 
-        class UpdateEmployee extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-                startActivity(new Intent(GridViewSupplementActivity.this, usersignin.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-
-                RequestHandler rh = new RequestHandler();
-
-                String s = rh.sendGetRequestParam(Config.UPDATE_RES,resId);
-
-                return s;
-            }
-        }
-
-        UpdateEmployee ue = new UpdateEmployee();
-        ue.execute();
-    }
 
 
     private void getJSON(){
@@ -259,6 +231,42 @@ public class GridViewSupplementActivity extends Activity {
         }
         GetJSON gj = new GetJSON();
         gj.execute();
+    }
+
+    private void updateRes(final String selectedSeat){
+
+        class UpdateEmployee extends AsyncTask<Void,Void,String>{
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                getJSON();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+
+                RequestHandler rh = new RequestHandler();
+
+                HashMap<String,String> hashMap = new HashMap<>();
+                hashMap.put("id",resId);
+                hashMap.put("seat",selectedSeat);
+
+                String s = rh.sendPostRequest(Config.UPDATE_RES,hashMap);
+
+                return s;
+            }
+        }
+
+        UpdateEmployee ue = new UpdateEmployee();
+        ue.execute();
     }
 
 }

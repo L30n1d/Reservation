@@ -26,6 +26,7 @@ public class listView extends AppCompatActivity {
 
     private ListView listView;
     private String id2,date, JSON_STRING, userId;
+    private  ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,8 @@ public class listView extends AppCompatActivity {
             }
         });
 
+        getJSON3();
+
     }
 
     private synchronized void showSeats3(){
@@ -79,7 +82,7 @@ public class listView extends AppCompatActivity {
                 String seatt = jo.getString("Seat");
                 userId = jo.getString("UserId");
 
-                if(seatt == "0"){
+                if(seatt.equals("0")){
                    getJSON2(id);
                 }
 
@@ -88,6 +91,7 @@ public class listView extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
 
 
     }
@@ -108,6 +112,7 @@ public class listView extends AppCompatActivity {
                 loading.dismiss();
                 JSON_STRING = s;
                 showSeats3();
+
             }
 
             @Override
@@ -130,7 +135,7 @@ public class listView extends AppCompatActivity {
 
                 map.put("caffe_id",id2);
                 map.put("date",newDate2);
-                map.put("seat","0");
+              //  map.put("seat","0");
 
 
                 String s = rh.sendPostRequest(Config.GET_SEATS2,map);
@@ -144,7 +149,7 @@ public class listView extends AppCompatActivity {
 
     private void showEmployee2(String id){
         JSONObject jsonObject = null;
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
@@ -170,15 +175,6 @@ public class listView extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ListAdapter adapter = new SimpleAdapter(
-                listView.this, list, R.layout.listitem,
-                new String[]{"name"},
-                new int[]{R.id.textView8});
-
-
-
-        listView.setAdapter(adapter);
-
 
     }
 
@@ -201,6 +197,16 @@ public class listView extends AppCompatActivity {
                 loading.dismiss();
                 JSON_STRING = s;
                 showEmployee2(id);
+                ListAdapter adapter = new SimpleAdapter(
+                        listView.this, list, R.layout.listitem,
+                        new String[]{"name"},
+                        new int[]{R.id.textView8});
+
+
+
+                listView.setAdapter(adapter);
+
+
             }
 
             @Override

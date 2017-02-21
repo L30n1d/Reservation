@@ -88,12 +88,12 @@ public class finalverification extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                if(s.equals("Error")){
+                /*if(s.equals("Error")){
                     Toast.makeText(getApplicationContext(),"Веќе е резервирана таа маса!", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else {*/
                     startActivity(new Intent(finalverification.this, Successfull.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-                }
+                //}
             }
 
             @Override
@@ -316,7 +316,7 @@ public class finalverification extends AppCompatActivity {
 
                 map.put("caffe_id",id);
                 map.put("date",newDate2);
-                map.put("seat","0");
+               // map.put("seat","0");
 
 
                 String s = rh.sendPostRequest(Config.GET_SEATS2,map);
