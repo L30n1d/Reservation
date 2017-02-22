@@ -6,9 +6,9 @@
     >
     <gradient
         android:angle="-270"
-        android:centerColor="#FF5722"
-        android:endColor="#FF5722"
-        android:startColor="#FF5722"
+        android:centerColor="#FFFFFF"
+        android:endColor="#FFFFFF"
+        android:startColor="#FFFFFF"
         />
-
+//boja kd e stisnato FF5722
 </shape>
