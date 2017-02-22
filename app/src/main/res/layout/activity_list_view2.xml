@@ -16,5 +16,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:id="@+id/listView2" />
+        android:id="@+id/listView2"
+        android:background="#000000" />
 </RelativeLayout>

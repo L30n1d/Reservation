@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -123,7 +124,7 @@ public class GridViewSupplementActivity extends Activity {
                 // Convert the view as a TextView widget
                 TextView tv = (TextView) view;
 
-                //tv.setTextColor(Color.DKGRAY);
+                tv.setTextColor(Color.parseColor("#212121"));
 
                 // Set the layout parameters for TextView widget
               /*  RelativeLayout.LayoutParams lp =  new RelativeLayout.LayoutParams(
@@ -151,7 +152,8 @@ public class GridViewSupplementActivity extends Activity {
                 tv.setText(plantsList.get(position));
 
                 // Set the TextView background color
-                tv.setBackgroundColor(Color.parseColor("#FF82DE81"));
+                tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                tv.setBackgroundResource(R.drawable.boxxcolor);
 
 
 
@@ -172,12 +174,13 @@ public class GridViewSupplementActivity extends Activity {
             }
         });
 
-      /*  for (String object: listt) {
+      for (String object: listt) {
             View asd = gv.getChildAt(Integer.parseInt(object));
             asd.setBackgroundColor(Color.RED);
-            asd.setOnClickListener(null);
-            asd.setClickable(false);
-        }*/
+            //asd.setOnClickListener(null);
+            //asd.setClickable(false);
+        }
+
 
     }
 
