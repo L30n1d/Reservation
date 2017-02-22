@@ -154,7 +154,8 @@ public class GridViewSupplementActivity extends Activity {
                 // Set the TextView background color
                 tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv.setBackgroundResource(R.drawable.boxxcolor);
-
+                tv.setTextSize(getResources().getDimension(R.dimen.textsize));
+                tv.setTextColor(Color.parseColor("#FFFFFF"));
 
 
                 // Return the TextView widget as GridView item
