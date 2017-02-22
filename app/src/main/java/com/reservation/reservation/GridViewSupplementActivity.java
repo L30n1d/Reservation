@@ -176,7 +176,7 @@ public class GridViewSupplementActivity extends Activity {
 
       for (String object: listt) {
             View asd = gv.getChildAt(Integer.parseInt(object));
-            //asd.setBackgroundColor(Color.RED);
+            //iasd.setBackgroundColor(Color.RED);
             //asd.setOnClickListener(null);
             //asd.setClickable(false);
         }
