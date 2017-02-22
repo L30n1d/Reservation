@@ -35,7 +35,7 @@ public class PlaceChooser extends AppCompatActivity {
 
 
     private Spinner spinner1, spinner2;
-    private String JSON_STRING, caffeId, date, layout, typeC;
+    private String JSON_STRING, caffeId, date, layout, typeC, seats;
     private int userId;
     private Session session;
     private ArrayList<String> dates1;
@@ -91,9 +91,29 @@ public class PlaceChooser extends AppCompatActivity {
                 }
                 else {
                     date = spinner2.getSelectedItem().toString();
-                    try {
+
+                    Intent i = new Intent(PlaceChooser.this, finalverification.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id", caffeId);
+                    i.putExtras(bundle);
+
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("date", date);
+                    i.putExtras(bundle2);
+
+                    Bundle bundle3 = new Bundle();
+                    bundle3.putString("type", typeC);
+                    i.putExtras(bundle3);
+
+                    Bundle bundle4 = new Bundle();
+                    bundle4.putString("seats", seats);
+                    i.putExtras(bundle4);
+
+                    startActivity(i);
+                   /* try {
                         Class c = Class.forName(layout);
-                        Intent i = new Intent(PlaceChooser.this, c);
+                        Intent i = new Intent(PlaceChooser.this, finalverification.class);
 
                         Bundle bundle = new Bundle();
                         bundle.putString("id", caffeId);
@@ -110,7 +130,7 @@ public class PlaceChooser extends AppCompatActivity {
                         startActivity(i);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
-                    }
+                    }*/
 
                 }
 
@@ -291,6 +311,8 @@ public class PlaceChooser extends AppCompatActivity {
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
             layout = c.getString("Layout");
+            seats = c.getString("Seats");
+
 
         } catch (JSONException e) {
             e.printStackTrace();

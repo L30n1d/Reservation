@@ -2,11 +2,16 @@ package com.reservation.reservation;
 
 
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +22,26 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import android.content.res.Resources;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class GridViewSupplementActivity extends Activity {
 
+    private String resId,caffeId,date, JSON_STRING,resSeat;
+    private ArrayList<String> listt;
+    private String seats;
+    private Session session;
 
 
     @Override
@@ -32,14 +49,63 @@ public class GridViewSupplementActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_grid_view_supplement);
 
-        // Get the widgets reference from XML layout
+        Bundle bundle = getIntent().getExtras();
+
+        session = new Session(this);
+
+        seats = session.getAdminSeats();
+        listt = new ArrayList<String>();
+
+        resId = bundle.getString("id");
+        caffeId = bundle.getString("caffeId");
+        date = bundle.getString("date");
+
+        getJSON();
+
+
+    }
+
+    public static int getPixelsFromDPs(Activity activity, int dps){
+        Resources r = activity.getResources();
+        int  px = (int) (TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
+        return px;
+    }
+
+
+    private void showSeats(){
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+        try {
+            jsonObject = new JSONObject(JSON_STRING);
+            JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+
+            ArrayList<String> list1 = new ArrayList<>();
+
+
+            for(int i = 0; i<result.length(); i++){
+                JSONObject jo = result.getJSONObject(i);
+                final String idd = jo.getString(Config.TAG_ID);
+                resSeat = jo.getString("Seat");
+
+                if(!resSeat.equals("0")){
+                    listt.add(resSeat);
+                }
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
         GridView gv = (GridView) findViewById(R.id.gv);
         final TextView tv_message = (TextView) findViewById(R.id.tv_message);
 
         // Initializing a new String Array
-        String[] plants = new String[100];
+        String[] plants = new String[Integer.parseInt(seats)+1];
 
-        for(int i = 0;i<100;i++){
+        for(int i = 1;i<Integer.parseInt(seats)+1;i++){
             plants[i] = Integer.toString(i);
         }
 
@@ -98,17 +164,109 @@ public class GridViewSupplementActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
-                tv_message.setText("Selected Item : " + selectedItem);
+
+                updateRes(selectedItem);
+
+
+
             }
         });
 
+      /*  for (String object: listt) {
+            View asd = gv.getChildAt(Integer.parseInt(object));
+            asd.setBackgroundColor(Color.RED);
+            asd.setOnClickListener(null);
+            asd.setClickable(false);
+        }*/
+
     }
 
-    public static int getPixelsFromDPs(Activity activity, int dps){
-        Resources r = activity.getResources();
-        int  px = (int) (TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
-        return px;
+
+
+
+    private void getJSON(){
+        class GetJSON extends AsyncTask<Void,Void,String> {
+
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                JSON_STRING = s;
+                showSeats();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                RequestHandler rh = new RequestHandler();
+
+                HashMap<String,String> map = new HashMap<>();
+
+                SimpleDateFormat sdf2 = new SimpleDateFormat("E MMM dd yyyy");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                Date newDate = null;
+                try {
+                    newDate = sdf2.parse(date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                String newDate2 = sdf.format(newDate);
+
+                map.put("caffe_id",caffeId);
+                map.put("date",newDate2);
+
+
+
+                String s = rh.sendPostRequest(Config.GET_SEATS,map);
+                return s;
+            }
+        }
+        GetJSON gj = new GetJSON();
+        gj.execute();
+    }
+
+    private void updateRes(final String selectedSeat){
+
+        class UpdateEmployee extends AsyncTask<Void,Void,String>{
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                getJSON();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+
+                RequestHandler rh = new RequestHandler();
+
+                HashMap<String,String> hashMap = new HashMap<>();
+                hashMap.put("id",resId);
+                hashMap.put("seat",selectedSeat);
+
+                String s = rh.sendPostRequest(Config.UPDATE_RES,hashMap);
+
+                return s;
+            }
+        }
+
+        UpdateEmployee ue = new UpdateEmployee();
+        ue.execute();
     }
 
 }

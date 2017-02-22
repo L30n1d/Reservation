@@ -70,9 +70,21 @@ public class PlaceChooserAdmin extends AppCompatActivity {
             public void onClick(View v) {
                 date = spinner2.getSelectedItem().toString();
 
-                try {
+                Intent i = new Intent(PlaceChooserAdmin.this, listView.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("id", caffeId);
+                i.putExtras(bundle);
+
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("date", date);
+                i.putExtras(bundle2);
+
+
+                startActivity(i);
+              /*  try {
                     Class c = Class.forName(layout);
-                    Intent i = new Intent(PlaceChooserAdmin.this, c);
+                    Intent i = new Intent(PlaceChooserAdmin.this, listView.class);
 
                     Bundle bundle = new Bundle();
                     bundle.putString("id", caffeId);
@@ -86,7 +98,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
                     startActivity(i);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
-                }
+                }*/
 
 
 

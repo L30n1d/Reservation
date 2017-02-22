@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class usersignin extends AppCompatActivity {
 
 
-    private String JSON_STRING, id, phone, password, active, name, code,emailB;
+    private String JSON_STRING, id, phone, password, active, name, code,emailB, seats;
     private Session session;
     private Button login, exit, reg;
     private EditText phoneTxt, passTxt;
@@ -116,6 +116,7 @@ public class usersignin extends AppCompatActivity {
                     caffeId = jo.getString("caffeId");
                     days = jo.getString("days");
                     layout = jo.getString("layout");
+                    seats = jo.getString("seats");
                     flag = 1;
                 }
 
@@ -135,6 +136,7 @@ public class usersignin extends AppCompatActivity {
                 else if(role.equals("admin")){
                     session.setLoggedIn(true, phone);
                     session.setUserRole("admin");
+                    session.setAdminSeats(seats);
                     session.setUserId(Integer.parseInt(id));
 
                     Intent i = new Intent(usersignin.this, PlaceChooserAdmin.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -27,7 +27,7 @@ import java.util.concurrent.Semaphore;
 public class finalverification extends AppCompatActivity {
 
     private Session session;
-    private String JSON_STRING, id, date, typeC, seat;
+    private String JSON_STRING, id, date, typeC, seats;
     private TextView nameLast, email, seatTxt, place;
     private Button resBtn;
     private int userId;
@@ -47,7 +47,8 @@ public class finalverification extends AppCompatActivity {
         id = bundle.getString("id");
         date = bundle.getString("date");
         typeC = bundle.getString("type");
-        seat = bundle.getString("seat");
+        seats = bundle.getString("seats");
+        //seat = bundle.getString("seat");
 
         nameLast = (TextView) findViewById(R.id.nameLastTxt);
         email = (TextView)findViewById(R.id.emailTxtF);
@@ -63,7 +64,7 @@ public class finalverification extends AppCompatActivity {
             }
         });
 
-        seatTxt.setText(seat);
+       // seatTxt.setText(seat);
 
         getJSON();
         getJSON2();
@@ -87,12 +88,12 @@ public class finalverification extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                if(s.equals("Error")){
+                /*if(s.equals("Error")){
                     Toast.makeText(getApplicationContext(),"Веќе е резервирана таа маса!", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else {*/
                     startActivity(new Intent(finalverification.this, Successfull.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-                }
+                //}
             }
 
             @Override
@@ -114,7 +115,7 @@ public class finalverification extends AppCompatActivity {
                 String newDate2 = sdf.format(newDate);
 
                 params.put("date",newDate2);
-                params.put("seat",seat);
+                params.put("seat","0");
                 params.put("type",typeC);
 
                 RequestHandler rh = new RequestHandler();
@@ -262,12 +263,12 @@ public class finalverification extends AppCompatActivity {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
-            if(result.length() < 1){
+            if(result.length() <= Integer.parseInt(seats)){
                 addReservation();
 
             }
             else{
-                Toast.makeText(getApplicationContext(),"Веќе е резервирана таа маса!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Сите маси се резервирани!", Toast.LENGTH_SHORT).show();
             }
 
         } catch (JSONException e) {
@@ -315,8 +316,7 @@ public class finalverification extends AppCompatActivity {
 
                 map.put("caffe_id",id);
                 map.put("date",newDate2);
-                map.put("seat",seat);
-
+               // map.put("seat","0");
 
 
                 String s = rh.sendPostRequest(Config.GET_SEATS2,map);

@@ -58,6 +58,13 @@ public class Session {
         editor.commit();
     }
 
+    public void setAdminSeats(String seats){
+        editor.putString("seats",seats);
+        editor.commit();
+    }
+
+    public String getAdminSeats(){return prefs.getString("seats","");}
+
     public String getUserRole(){return prefs.getString("role","");}
 
     public int getUserId(){
