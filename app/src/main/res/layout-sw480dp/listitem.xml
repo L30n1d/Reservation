@@ -9,5 +9,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView8"
         android:padding="10dp"
+        android:background="@drawable/tvrounded"
         android:textAlignment="center" />
 </LinearLayout>

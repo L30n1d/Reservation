@@ -8,12 +8,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFFFFF"
     tools:context="com.reservation.reservation.listView2">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/boxxcolor"
         android:layout_alignParentTop="true"
+        android:dividerHeight="3dp"
+        android:divider="@null"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
         android:id="@+id/listView2" />
