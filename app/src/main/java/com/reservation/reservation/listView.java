@@ -80,10 +80,14 @@ public class listView extends AppCompatActivity {
                 JSONObject jo = result.getJSONObject(i);
                 String id = jo.getString(Config.TAG_ID);
                 String seatt = jo.getString("Seat");
-                userId = jo.getString("UserId");
-
+              //  userId = jo.getString("UserId");
+                String name = jo.getString("Name");
                 if(seatt.equals("0")){
-                   getJSON2(id);
+                 //  getJSON2(id);
+                    HashMap<String,String> employees = new HashMap<>();
+                    employees.put("id",id);
+                    employees.put("name",name);
+                    list.add(employees);
                 }
 
             }
@@ -93,6 +97,14 @@ public class listView extends AppCompatActivity {
         }
 
 
+        ListAdapter adapter = new SimpleAdapter(
+                listView.this, list, R.layout.listitem,
+                new String[]{"name"},
+                new int[]{R.id.textView8});
+
+
+
+        listView.setAdapter(adapter);
 
     }
 
@@ -135,7 +147,7 @@ public class listView extends AppCompatActivity {
 
                 map.put("caffe_id",id2);
                 map.put("date",newDate2);
-              //  map.put("seat","0");
+
 
 
                 String s = rh.sendPostRequest(Config.GET_SEATS2,map);
@@ -197,14 +209,7 @@ public class listView extends AppCompatActivity {
                 loading.dismiss();
                 JSON_STRING = s;
                 showEmployee2(id);
-                ListAdapter adapter = new SimpleAdapter(
-                        listView.this, list, R.layout.listitem,
-                        new String[]{"name"},
-                        new int[]{R.id.textView8});
 
-
-
-                listView.setAdapter(adapter);
 
 
             }

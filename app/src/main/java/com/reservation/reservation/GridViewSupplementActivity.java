@@ -160,6 +160,8 @@ public class GridViewSupplementActivity extends Activity {
 
                 // Return the TextView widget as GridView item
                 return tv;
+
+
             }
         });
 
@@ -175,12 +177,31 @@ public class GridViewSupplementActivity extends Activity {
             }
         });
 
-      for (String object: listt) {
-            View asd = gv.getChildAt(Integer.parseInt(object));
+      //for (String object: listt) {
+        // View asd = gv.getChildAt(Integer.parseInt(object));
             //iasd.setBackgroundColor(Color.RED);
             //asd.setOnClickListener(null);
             //asd.setClickable(false);
-        }
+       // }
+
+
+        ViewGroup gridChild = (ViewGroup) gv.getChildAt(8);
+        View asd = gridChild.getChildAt(1);
+        asd.setBackgroundColor(Color.GREEN);
+      //  gv.setSelection(2);
+
+
+
+        /*final int size = gv.getChildCount();
+        for(int i = 0; i < 100; i++) {
+            ViewGroup gridChild = (ViewGroup) gv.getChildAt(i);
+            int childSize = gridChild.getChildCount();
+            for(int k = 0; k < childSize; k++) {
+                if( gridChild.getChildAt(k) instanceof TextView ) {
+                    gridChild.getChildAt(k).setVisibility(View.GONE);
+                }
+            }
+        }*/
 
 
     }
