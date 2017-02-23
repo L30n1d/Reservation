@@ -8,14 +8,7 @@
     tools:context=".GridViewSupplementActivity"
     android:background="@drawable/backgrid"
     >
-    <TextView
-        android:id="@+id/tv_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tvrounded1"
-        android:layout_marginBottom="15dp"
-        android:padding="10dp"
-        />
+
     <GridView
         android:id="@+id/gv"
         android:layout_width="650dp"

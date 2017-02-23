@@ -30,6 +30,7 @@ public class finalverification extends AppCompatActivity {
     private String JSON_STRING, id, date, typeC, seats;
     private TextView nameLast, email, seatTxt, place;
     private Button resBtn;
+    private EditText people;
     private int userId;
 
     @Override
@@ -50,6 +51,7 @@ public class finalverification extends AppCompatActivity {
         seats = bundle.getString("seats");
         //seat = bundle.getString("seat");
 
+        people = (EditText)findViewById(R.id.peopleNum);
         nameLast = (TextView) findViewById(R.id.nameLastTxt);
         email = (TextView)findViewById(R.id.emailTxtF);
         seatTxt = (TextView)findViewById(R.id.seatTxt);
@@ -72,6 +74,9 @@ public class finalverification extends AppCompatActivity {
     }
 
     private synchronized void addReservation(){
+
+
+         final String peoplee = people.getText().toString();
 
 
         class AddEmployee extends AsyncTask<Void,Void,String>{
@@ -117,6 +122,7 @@ public class finalverification extends AppCompatActivity {
                 params.put("date",newDate2);
                 params.put("seat","0");
                 params.put("type",typeC);
+                params.put("people",peoplee);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendPostRequest(Config.ADD_RESERVATION, params);

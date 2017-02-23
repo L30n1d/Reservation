@@ -29,67 +29,26 @@
         android:layout_alignStart="@+id/nameLastTxt"
         android:textColor="#212121" />
 
-    <TextView
-        android:text="Бр. астал"
-        android:layout_width="match_parent"
-        android:paddingTop="2dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/emailTxtF"
-        android:layout_marginTop="8dp"
-        android:id="@+id/seatTxt"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:background="@drawable/edittext_bg"
-        android:layout_alignRight="@+id/emailTxtF"
-        android:layout_alignEnd="@+id/emailTxtF"
-        android:layout_alignLeft="@+id/emailTxtF"
-        android:layout_alignStart="@+id/emailTxtF"
-        android:textColor="#212121" />
+
 
     <TextView
         android:text="Место"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@+id/seatTxt"
+        android:layout_below="@+id/emailTxtF"
         android:layout_marginTop="8dp"
         android:id="@+id/placeTxt"
         android:background="@drawable/edittext_bg"
         android:textAlignment="center"
         android:paddingTop="2dp"
         android:textSize="18sp"
-        android:layout_alignRight="@+id/seatTxt"
-        android:layout_alignEnd="@+id/seatTxt"
-        android:layout_alignLeft="@+id/seatTxt"
-        android:layout_alignStart="@+id/seatTxt"
+        android:layout_alignRight="@+id/emailTxtF"
+        android:layout_alignEnd="@+id/emailTxtF"
+        android:layout_alignLeft="@+id/emailTxtF"
+        android:layout_alignStart="@+id/emailTxtF"
         android:textColor="#212121" />
 
-    <Button
-        android:text="Резервирај"
-        android:layout_width="match_parent"
-        android:layout_marginTop="35dp"
-        android:id="@+id/rezBtn"
-        android:background="@drawable/rounded_but"
-        android:layout_below="@+id/placeTxt"
-        android:layout_alignLeft="@+id/placeTxt"
-        android:layout_alignStart="@+id/placeTxt"
-        android:layout_alignRight="@+id/placeTxt"
-        android:layout_alignEnd="@+id/placeTxt"
-        android:layout_height="42dp"
-        android:textColor="#212121" />
 
-    <TextView
-        android:text="Име и Презиме"
-        android:paddingTop="2dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="140dp"
-        android:id="@+id/nameLastTxt"
-        android:background="@drawable/edittext_bg"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textColor="#212121"
-        android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
     <ImageView
         android:id="@+id/logoViewF"
         android:layout_alignParentTop="true"
@@ -98,5 +57,48 @@
         app:srcCompat="@drawable/logo192"
         android:layout_width="65dp"
         android:layout_height="65dp" />
+
+    <TextView
+        android:text="Име и Презиме"
+        android:paddingTop="2dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:id="@+id/nameLastTxt"
+        android:background="@drawable/edittext_bg"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="#212121"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/logoViewF"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Резервирај"
+        android:layout_width="match_parent"
+        android:id="@+id/rezBtn"
+        android:background="@drawable/rounded_but"
+        android:layout_height="42dp"
+        android:textColor="#212121"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="76dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/placeTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/peopleNum"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Внеси број на луѓе"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/colorPrimary" />
 
 </RelativeLayout>

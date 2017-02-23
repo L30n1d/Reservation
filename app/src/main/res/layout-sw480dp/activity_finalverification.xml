@@ -29,38 +29,23 @@
         android:layout_alignStart="@+id/nameLastTxt"
         android:textColor="#212121" />
 
-    <TextView
-        android:text="Бр. астал"
-        android:layout_width="match_parent"
-        android:paddingTop="2dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/emailTxtF"
-        android:layout_marginTop="8dp"
-        android:id="@+id/seatTxt"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:background="@drawable/edittext_bg"
-        android:layout_alignRight="@+id/emailTxtF"
-        android:layout_alignEnd="@+id/emailTxtF"
-        android:layout_alignLeft="@+id/emailTxtF"
-        android:layout_alignStart="@+id/emailTxtF"
-        android:textColor="#212121" />
+
 
     <TextView
         android:text="Место"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@+id/seatTxt"
+        android:layout_below="@+id/emailTxtF"
         android:layout_marginTop="8dp"
         android:id="@+id/placeTxt"
         android:background="@drawable/edittext_bg"
         android:textAlignment="center"
         android:paddingTop="2dp"
         android:textSize="18sp"
-        android:layout_alignRight="@+id/seatTxt"
-        android:layout_alignEnd="@+id/seatTxt"
-        android:layout_alignLeft="@+id/seatTxt"
-        android:layout_alignStart="@+id/seatTxt"
+        android:layout_alignRight="@+id/emailTxtF"
+        android:layout_alignEnd="@+id/emailTxtF"
+        android:layout_alignLeft="@+id/emailTxtF"
+        android:layout_alignStart="@+id/emailTxtF"
         android:textColor="#212121" />
 
     <Button
@@ -81,7 +66,7 @@
         android:text="Име и Презиме"
         android:paddingTop="2dp"
         android:layout_height="30dp"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="140dp"
         android:id="@+id/nameLastTxt"
         android:background="@drawable/edittext_bg"
         android:textAlignment="center"
@@ -90,14 +75,13 @@
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
     <ImageView
-        android:layout_width="110dp"
         android:id="@+id/logoViewF"
-        android:layout_height="110dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/logo192" />
+        android:layout_marginTop="34dp"
+        app:srcCompat="@drawable/logo192"
+        android:layout_width="65dp"
+        android:layout_height="65dp" />
 
 </RelativeLayout>

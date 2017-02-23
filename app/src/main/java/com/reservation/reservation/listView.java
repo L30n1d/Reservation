@@ -2,14 +2,19 @@ package com.reservation.reservation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,7 +31,8 @@ public class listView extends AppCompatActivity {
 
     private ListView listView;
     private String id2,date, JSON_STRING, userId;
-    private  ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+    private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,25 @@ public class listView extends AppCompatActivity {
         id2 = bundle.getString("id");
         date = bundle.getString("date");
 
+        btn = (Button) findViewById(R.id.button2);
         listView = (ListView)findViewById(R.id.listView);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(listView.this, listView2.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("id", id2);
+                i.putExtras(bundle);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("date", date);
+                i.putExtras(bundle3);
+
+                startActivity(i);
+            }
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -80,6 +104,8 @@ public class listView extends AppCompatActivity {
                 JSONObject jo = result.getJSONObject(i);
                 String id = jo.getString(Config.TAG_ID);
                 String seatt = jo.getString("Seat");
+                String mobile = jo.getString("Mobile");
+                String people = jo.getString("People");
               //  userId = jo.getString("UserId");
                 String name = jo.getString("Name");
                 if(seatt.equals("0")){
@@ -87,6 +113,8 @@ public class listView extends AppCompatActivity {
                     HashMap<String,String> employees = new HashMap<>();
                     employees.put("id",id);
                     employees.put("name",name);
+                    employees.put("mobile",mobile);
+                    employees.put("people",people);
                     list.add(employees);
                 }
 
@@ -97,10 +125,11 @@ public class listView extends AppCompatActivity {
         }
 
 
-        ListAdapter adapter = new SimpleAdapter(
+      ListAdapter adapter = new SimpleAdapter(
                 listView.this, list, R.layout.listitem,
-                new String[]{"name"},
-                new int[]{R.id.textView8});
+                new String[]{"name","mobile","people"}, new int[]{R.id.textView8,R.id.textView9,R.id.textView10});
+
+
 
 
 

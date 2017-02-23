@@ -2,7 +2,9 @@ package com.reservation.reservation;
 
 
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -106,13 +108,12 @@ public class GridViewSupplementActivity extends Activity {
         // Initializing a new String Array
         String[] plants = new String[Integer.parseInt(seats)+1];
 
-        for(int i = 1;i<Integer.parseInt(seats)+1;i++){
+        for(int i = 0;i<Integer.parseInt(seats)+1;i++){
             plants[i] = Integer.toString(i);
         }
 
         // Populate a List from Array elements
         final List<String> plantsList = new ArrayList<String>(Arrays.asList(plants));
-
         // Data bind GridView with ArrayAdapter (String Array elements)
         gv.setAdapter(new ArrayAdapter<String>(
                 this, android.R.layout.simple_list_item_1, plantsList){
@@ -121,19 +122,22 @@ public class GridViewSupplementActivity extends Activity {
                 // Return the GridView current item as a View
                 View view = super.getView(position,convertView,parent);
 
+
                 // Convert the view as a TextView widget
                 TextView tv = (TextView) view;
 
+
                 tv.setTextColor(Color.parseColor("#212121"));
 
+
                 // Set the layout parameters for TextView widget
-              /*  RelativeLayout.LayoutParams lp =  new RelativeLayout.LayoutParams(
+              /*  LayoutParams lp =  new LayoutParams(
                         LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT
                 );
                 tv.setLayoutParams(lp);*/
 
                 // Get the TextView LayoutParams
-             /*   RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)tv.getLayoutParams();
+           /*   LayoutParams params = (LayoutParams)tv.getLayoutParams();
 
                 // Set the width of TextView widget (item of GridView)
                 params.width = getPixelsFromDPs(GridViewSupplementActivity.this,168);
@@ -149,18 +153,34 @@ public class GridViewSupplementActivity extends Activity {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12);
 
                 // Set the TextView text (GridView item text)
+
+
+
+
+
                 tv.setText(plantsList.get(position));
 
+                if(listt.contains(Integer.toString(position))){
+                    tv.setOnClickListener(null);
+                    tv.setTextColor(Color.WHITE);
+                    tv.setBackgroundResource(R.drawable.boxxcolor2);
+                }
+                else{
+
+                    tv.setTextColor(Color.parseColor("#FFC107"));
+                    tv.setBackgroundResource(R.drawable.boxxcolor);
+                }
+
+
                 // Set the TextView background color
-                tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                tv.setBackgroundResource(R.drawable.boxxcolor);
+
+               // tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv.setTextSize(getResources().getDimension(R.dimen.textsize));
-                tv.setTextColor(Color.parseColor("#FFC107"));
 
 
-                // Return the TextView widget as GridView item
-                return tv;
 
+
+                    return tv;
 
             }
         });
@@ -168,9 +188,27 @@ public class GridViewSupplementActivity extends Activity {
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = parent.getItemAtPosition(position).toString();
 
-                updateRes(selectedItem);
+                final String selectedItem = parent.getItemAtPosition(position).toString();
+
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(GridViewSupplementActivity.this);
+                    builder.setTitle("Дали си сигурен?");
+                    builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            updateRes(selectedItem);
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //TODO
+                            dialog.dismiss();
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
 
 
 
@@ -185,17 +223,13 @@ public class GridViewSupplementActivity extends Activity {
        // }
 
 
-        ViewGroup gridChild = (ViewGroup) gv.getChildAt(8);
-        View asd = gridChild.getChildAt(1);
-        asd.setBackgroundColor(Color.GREEN);
-      //  gv.setSelection(2);
 
 
 
         /*final int size = gv.getChildCount();
         for(int i = 0; i < 100; i++) {
-            ViewGroup gridChild = (ViewGroup) gv.getChildAt(i);
-            int childSize = gridChild.getChildCount();
+            int childSize = gridChild.getChildCoun
+            ViewGroup gridChild = (ViewGroup) gv.getChildAt(i);t();
             for(int k = 0; k < childSize; k++) {
                 if( gridChild.getChildAt(k) instanceof TextView ) {
                     gridChild.getChildAt(k).setVisibility(View.GONE);
@@ -272,7 +306,19 @@ public class GridViewSupplementActivity extends Activity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                getJSON();
+
+                Intent i = new Intent(GridViewSupplementActivity.this, listView.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("id", caffeId);
+                i.putExtras(bundle2);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("date", date);
+                i.putExtras(bundle3);
+
+                startActivity(i);
+
             }
 
             @Override

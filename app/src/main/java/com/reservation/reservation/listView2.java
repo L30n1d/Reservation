@@ -25,14 +25,12 @@ public class listView2 extends AppCompatActivity {
 
     private ListView listView;
     private String id2,date, JSON_STRING, userId;
+    private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view2);
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -40,6 +38,8 @@ public class listView2 extends AppCompatActivity {
         date = bundle.getString("date");
 
         listView = (ListView)findViewById(R.id.listView2);
+
+        getJSON3();
 
 
     }
@@ -56,10 +56,15 @@ public class listView2 extends AppCompatActivity {
                 JSONObject jo = result.getJSONObject(i);
                 String id = jo.getString(Config.TAG_ID);
                 String seatt = jo.getString("Seat");
-                userId = jo.getString("UserId");
-
-                if(seatt != "0"){
-                    getJSON2(id,seatt);
+                //  userId = jo.getString("UserId");
+                String name = jo.getString("Name");
+                if(!seatt.equals("0")){
+                    //  getJSON2(id);
+                    HashMap<String,String> employees = new HashMap<>();
+                    employees.put("id",id);
+                    employees.put("name",name);
+                    employees.put("seat",seatt);
+                    list.add(employees);
                 }
 
             }
@@ -69,6 +74,14 @@ public class listView2 extends AppCompatActivity {
         }
 
 
+        ListAdapter adapter = new SimpleAdapter(
+                listView2.this, list, R.layout.listitem,
+                new String[]{"name","seat"},
+                new int[]{R.id.textView8,R.id.textView9});
+
+
+
+        listView.setAdapter(adapter);
     }
 
     private synchronized void getJSON3(){
@@ -109,7 +122,7 @@ public class listView2 extends AppCompatActivity {
 
                 map.put("caffe_id",id2);
                 map.put("date",newDate2);
-                map.put("seat","0");
+
 
 
                 String s = rh.sendPostRequest(Config.GET_SEATS2,map);
@@ -121,79 +134,5 @@ public class listView2 extends AppCompatActivity {
     }
 
 
-    private void showEmployee2(String id, String seat){
-        JSONObject jsonObject = null;
-        ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
-        try {
-            jsonObject = new JSONObject(JSON_STRING);
-            JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
-
-
-
-            for(int i = 0; i<result.length(); i++){
-                JSONObject jo = result.getJSONObject(i);
-                String name = jo.getString("name");
-                String lastName = jo.getString("lastName");
-                String mobile = jo.getString("mobile");
-
-                HashMap<String,String> employees = new HashMap<>();
-                employees.put("id",id);
-                employees.put("name",name);
-                employees.put("lastName",lastName);
-                employees.put("mobile",mobile);
-                employees.put("seat",seat);
-                list.add(employees);
-
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        ListAdapter adapter = new SimpleAdapter(
-                listView2.this, list, R.layout.listitem,
-                new String[]{"seat"},
-                new int[]{R.id.textView8});
-
-
-
-        listView.setAdapter(adapter);
-
-
-    }
-
-    private void getJSON2(final String id, final String seat){
-        class GetJSON2 extends AsyncTask<Void,Void,String> {
-
-            ProgressDialog loading;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-
-                loading = ProgressDialog.show(listView2.this,"","Се вчитува...",false,false);
-
-
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-                JSON_STRING = s;
-                showEmployee2(id,seat);
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-
-                RequestHandler rh = new RequestHandler();
-
-                String s = rh.sendGetRequestParam(Config.GET_USER2,userId);
-                return s;
-            }
-        }
-        GetJSON2 gj = new GetJSON2();
-        gj.execute();
-    }
 
 }
