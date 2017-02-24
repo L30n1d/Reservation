@@ -103,7 +103,7 @@ public class GridViewSupplementActivity extends Activity {
 
 
         GridView gv = (GridView) findViewById(R.id.gv);
-        final TextView tv_message = (TextView) findViewById(R.id.tv_message);
+       // final TextView tv_message = (TextView) findViewById(R.id.tv_message);
 
         // Initializing a new String Array
         String[] plants = new String[Integer.parseInt(seats)+1];

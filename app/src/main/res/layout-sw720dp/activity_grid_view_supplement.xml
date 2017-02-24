@@ -6,28 +6,21 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".GridViewSupplementActivity"
-    android:background="#498a48"
+    android:background="@drawable/backgrid"
     >
-    <TextView
-        android:id="@+id/tv_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#d8ecd8"
-        android:layout_marginBottom="15dp"
-        android:padding="10dp"
-        />
+
     <GridView
         android:id="@+id/gv"
-        android:layout_width="650dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="2dp"
         android:numColumns="4"
-        android:background="#63b162"
+        android:background="@drawable/backgrid"
         android:verticalSpacing="2dp"
         android:horizontalSpacing="2dp"
         android:stretchMode="columnWidth"
         android:gravity="left"
-        android:layout_below="@id/tv_message"
+
         >
     </GridView>
 </RelativeLayout>
