@@ -139,7 +139,7 @@ public class GridViewSupplementActivity extends Activity {
                 // Get the TextView LayoutParams
            /*   LayoutParams params = (LayoutParams)tv.getLayoutParams();
 
-                // Set the width of TextView widget (item of GridView)
+                Set the width of TextView widget (item of GridView)
                 params.width = getPixelsFromDPs(GridViewSupplementActivity.this,168);
 
                 // Set the TextView layout parameters
@@ -150,7 +150,7 @@ public class GridViewSupplementActivity extends Activity {
 
                 // Set the TextView text font family and text size
                 tv.setTypeface(Typeface.SANS_SERIF, Typeface.NORMAL);
-                tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12);
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.textsize));
 
                 // Set the TextView text (GridView item text)
 
