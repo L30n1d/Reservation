@@ -106,11 +106,15 @@ public class GridViewSupplementActivity extends Activity {
        // final TextView tv_message = (TextView) findViewById(R.id.tv_message);
 
         // Initializing a new String Array
-        String[] plants = new String[Integer.parseInt(seats)+1];
+        String[] plants = new String[Integer.parseInt(seats)];
 
-        for(int i = 0;i<Integer.parseInt(seats)+1;i++){
-            plants[i] = Integer.toString(i);
+        for(int i = 0;i<Integer.parseInt(seats);i++){
+
+            plants[i] = Integer.toString(i+1);
+
         }
+
+
 
         // Populate a List from Array elements
         final List<String> plantsList = new ArrayList<String>(Arrays.asList(plants));
