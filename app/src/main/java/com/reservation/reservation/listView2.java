@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -20,12 +24,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class listView2 extends AppCompatActivity {
 
     private ListView listView;
     private String id2,date, JSON_STRING, userId;
     private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+    private String[] items = new String[100];
+    private EditText editText;
+    private ListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +46,45 @@ public class listView2 extends AppCompatActivity {
         date = bundle.getString("date");
 
         listView = (ListView)findViewById(R.id.listView2);
+        editText=(EditText)findViewById(R.id.txtSearch);
+
+
 
         getJSON3();
 
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().equals("")){
+                    getJSON3();
+                }
+                else{
+                    searchItem(s.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+    }
+
+    private void searchItem(String s){
+        for(HashMap<String,String> item:list){
+            if(!item.containsValue(s)){
+                list.remove(s);
+            }
+        }
+
+        ((BaseAdapter)adapter).notifyDataSetChanged();
 
     }
 
@@ -65,6 +109,7 @@ public class listView2 extends AppCompatActivity {
                     employees.put("name",name);
                     employees.put("seat",seatt);
                     list.add(employees);
+                    items[i] = name;
                 }
 
             }
@@ -74,7 +119,7 @@ public class listView2 extends AppCompatActivity {
         }
 
 
-        ListAdapter adapter = new SimpleAdapter(
+          adapter = new SimpleAdapter(
                 listView2.this, list, R.layout.listitem,
                 new String[]{"name","seat"},
                 new int[]{R.id.textView8,R.id.textView9});
@@ -82,22 +127,23 @@ public class listView2 extends AppCompatActivity {
 
 
         listView.setAdapter(adapter);
+
     }
 
     private synchronized void getJSON3(){
         class GetJSON3 extends AsyncTask<Void,Void,String> {
 
-            ProgressDialog loading;
+           // ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(listView2.this,"","Се вчитува...",false,false);
+               // loading = ProgressDialog.show(listView2.this,"","Се вчитува...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
+              //  loading.dismiss();
                 JSON_STRING = s;
                 showSeats3();
             }

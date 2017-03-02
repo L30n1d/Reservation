@@ -14,11 +14,21 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:dividerHeight="3dp"
         android:divider="@null"
         android:background="#FFA000"
         android:id="@+id/listView2"
         android:layout_alignParentBottom="true"
+        android:layout_below="@+id/txtSearch" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtSearch"
+        android:hint="Пребарувај..."
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
