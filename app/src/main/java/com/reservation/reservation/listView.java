@@ -1,5 +1,21 @@
 package com.reservation.reservation;
 
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -47,7 +63,7 @@ public class listView extends AppCompatActivity {
         btn = (Button) findViewById(R.id.button2);
         listView = (ListView)findViewById(R.id.listView);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        /*btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(listView.this, listView2.class);
@@ -62,13 +78,13 @@ public class listView extends AppCompatActivity {
 
                 startActivity(i);
             }
-        });
+        });*/
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+                /*HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
                 String idd = map.get("id").toString();
 
                 Intent i = new Intent(listView.this, GridViewSupplementActivity.class);
@@ -85,7 +101,8 @@ public class listView extends AppCompatActivity {
                 bundle3.putString("date", date);
                 i.putExtras(bundle3);
 
-                startActivity(i);
+                startActivity(i);*/
+
             }
         });
 
@@ -254,6 +271,31 @@ public class listView extends AppCompatActivity {
         }
         GetJSON2 gj = new GetJSON2();
         gj.execute();
+    }
+
+    public void getnotification(View view){
+
+        NotificationManager notificationmgr = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        Intent intent = new Intent(this, resultpage.class);
+        PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+
+        //   PendingIntent pintent = PendingIntent.getActivities(this,(int)System.currentTimeMillis(),intent, 0);
+
+
+        Notification notif = new Notification.Builder(this)
+                .setSmallIcon(R.drawable.busy32)
+                .setContentTitle("Hello Android Hari")
+                .setContentText("Welcome to Notification Service")
+                .setContentIntent(pintent)
+                .build();
+
+
+        notificationmgr.notify(0,notif);
+
+
+
+
+
     }
 
 }

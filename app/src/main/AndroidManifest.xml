@@ -83,7 +83,8 @@
             android:name=".TestMap3"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".usersignin"
+        <activity
+            android:name=".usersignin"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -91,13 +92,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GridViewSupplementActivity">
-
-        </activity>
-        <activity android:name=".listView"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".listView2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".GridViewSupplementActivity" />
+        <activity
+            android:name=".listView"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".listView2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".resultpage" />
+        <activity android:name=".page2"></activity>
     </application>
 
 </manifest>
