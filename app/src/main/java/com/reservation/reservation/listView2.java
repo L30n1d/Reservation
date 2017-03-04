@@ -60,11 +60,19 @@ public class listView2 extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                adapter = listView.getAdapter();
+
                 if(s.toString().equals("")){
-                    getJSON3();
+                   // getJSON3();
+                    listView.clearTextFilter();
+
+
                 }
                 else{
-                    searchItem(s.toString());
+                  //  searchItem(s.toString());
+                    listView.setFilterText(s.toString());
+
                 }
             }
 
@@ -84,7 +92,7 @@ public class listView2 extends AppCompatActivity {
             }
         }
 
-        ((BaseAdapter)adapter).notifyDataSetChanged();
+
 
     }
 
@@ -95,6 +103,8 @@ public class listView2 extends AppCompatActivity {
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+
+            list.clear();
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
@@ -127,6 +137,7 @@ public class listView2 extends AppCompatActivity {
 
 
         listView.setAdapter(adapter);
+        listView.setTextFilterEnabled(true);
 
     }
 
