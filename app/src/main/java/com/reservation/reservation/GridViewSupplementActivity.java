@@ -2,16 +2,20 @@ package com.reservation.reservation;
 
 
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
@@ -34,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.content.res.Resources;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,7 +48,8 @@ public class GridViewSupplementActivity extends Activity {
 
     private String resId,caffeId,date, JSON_STRING,resSeat;
     private ArrayList<String> listt;
-    private String seats;
+    private String seats, mobile, selectedSeat;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private Session session;
 
 
@@ -62,6 +68,7 @@ public class GridViewSupplementActivity extends Activity {
         resId = bundle.getString("id");
         caffeId = bundle.getString("caffeId");
         date = bundle.getString("date");
+        mobile = bundle.getString("mobile");
 
         getJSON();
 
@@ -193,16 +200,16 @@ public class GridViewSupplementActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                final String selectedItem = parent.getItemAtPosition(position).toString();
+                selectedSeat = parent.getItemAtPosition(position).toString();
 
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(GridViewSupplementActivity.this);
                     builder.setTitle("Дали си сигурен?");
                     builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-
-                            updateRes(selectedItem);
+                            sendSMSMessage();
                             dialog.dismiss();
+
                         }
                     });
                     builder.setNegativeButton("Не", new DialogInterface.OnClickListener() {
@@ -296,7 +303,7 @@ public class GridViewSupplementActivity extends Activity {
         gj.execute();
     }
 
-    private void updateRes(final String selectedSeat){
+    private void updateRes(){
 
         class UpdateEmployee extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
@@ -342,6 +349,44 @@ public class GridViewSupplementActivity extends Activity {
 
         UpdateEmployee ue = new UpdateEmployee();
         ue.execute();
+    }
+
+    protected void sendSMSMessage() {
+
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(mobile, null, "Успешно направивте резервација", null, null);
+        Toast.makeText(getApplicationContext(), "SMS sent.",
+                Toast.LENGTH_LONG).show();
+
+        updateRes();
+
+       /* ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.SEND_SMS},
+                1);*/
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(mobile, null, "Успешно направивте резервација", null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
+
+        updateRes();
+
     }
 
 }

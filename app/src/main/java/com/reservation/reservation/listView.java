@@ -1,13 +1,21 @@
 package com.reservation.reservation;
 
 
+import android.Manifest;
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,8 +54,9 @@ import java.util.HashMap;
 public class listView extends AppCompatActivity {
 
     private ListView listView;
-    private String id2,date, JSON_STRING, userId;
+    private String id2,date, JSON_STRING, userId,mobile;
     private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private Button btn;
 
     @Override
@@ -63,7 +72,7 @@ public class listView extends AppCompatActivity {
         btn = (Button) findViewById(R.id.button2);
         listView = (ListView)findViewById(R.id.listView);
 
-        /*btn.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(listView.this, listView2.class);
@@ -78,30 +87,70 @@ public class listView extends AppCompatActivity {
 
                 startActivity(i);
             }
-        });*/
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
 
-                /*HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
-                String idd = map.get("id").toString();
 
-                Intent i = new Intent(listView.this, GridViewSupplementActivity.class);
 
-                Bundle bundle = new Bundle();
-                bundle.putString("id", idd);
-                i.putExtras(bundle);
+                final AlertDialog.Builder builderSingle = new AlertDialog.Builder(listView.this);
+                builderSingle.setIcon(R.drawable.logo192);
+                builderSingle.setTitle("Избери");
 
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("caffeId", id2);
-                i.putExtras(bundle2);
+                final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(listView.this, android.R.layout.simple_selectable_list_item);
+                arrayAdapter.add("Додели маса");
+                arrayAdapter.add("Прати порака");
+                arrayAdapter.add("Јави се");
 
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("date", date);
-                i.putExtras(bundle3);
 
-                startActivity(i);*/
+                builderSingle.setNegativeButton("Откажи", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String strName = arrayAdapter.getItem(which);
+
+                        if(strName.equals("Додели маса")){
+                            HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
+                            String idd = map.get("id").toString();
+
+                            Intent i = new Intent(listView.this, GridViewSupplementActivity.class);
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("id", idd);
+                            i.putExtras(bundle);
+
+                            Bundle bundle2 = new Bundle();
+                            bundle2.putString("caffeId", id2);
+                            i.putExtras(bundle2);
+
+                            Bundle bundle3 = new Bundle();
+                            bundle3.putString("date", date);
+                            i.putExtras(bundle3);
+
+                            Bundle bundle4 = new Bundle();
+                            bundle4.putString("mobile", mobile);
+                            i.putExtras(bundle4);
+
+                            startActivity(i);
+                        }
+                        else if(strName.equals("Прати порака")) {
+                            sendSMS();
+                        }
+                        else if(strName.equals("Јави се")) {
+                            call();
+                        }
+
+                    }
+                });
+                builderSingle.show();
 
             }
         });
@@ -121,7 +170,7 @@ public class listView extends AppCompatActivity {
                 JSONObject jo = result.getJSONObject(i);
                 String id = jo.getString(Config.TAG_ID);
                 String seatt = jo.getString("Seat");
-                String mobile = jo.getString("Mobile");
+                mobile = jo.getString("Mobile");
                 String people = jo.getString("People");
               //  userId = jo.getString("UserId");
                 String name = jo.getString("Name");
@@ -273,29 +322,64 @@ public class listView extends AppCompatActivity {
         gj.execute();
     }
 
-    public void getnotification(View view){
+    protected void sendSMS() {
+        Log.i("Send SMS", "");
+        Intent smsIntent = new Intent(Intent.ACTION_VIEW);
 
-        NotificationManager notificationmgr = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Intent intent = new Intent(this, resultpage.class);
-        PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+        smsIntent.setData(Uri.parse("smsto:"));
+        smsIntent.setType("vnd.android-dir/mms-sms");
+        smsIntent.putExtra("address"  , new String (mobile));
+        smsIntent.putExtra("sms_body"  , "Вашата резервација не е успешна.");
 
-        //   PendingIntent pintent = PendingIntent.getActivities(this,(int)System.currentTimeMillis(),intent, 0);
-
-
-        Notification notif = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.busy32)
-                .setContentTitle("Hello Android Hari")
-                .setContentText("Welcome to Notification Service")
-                .setContentIntent(pintent)
-                .build();
-
-
-        notificationmgr.notify(0,notif);
-
-
-
-
-
+        try {
+            startActivity(smsIntent);
+            finish();
+            Log.i("Finished sending SMS...", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(listView.this,
+                    "SMS faild, please try again later.", Toast.LENGTH_SHORT).show();
+        }
     }
+
+    private void call(){
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:"+mobile));
+
+        if (ActivityCompat.checkSelfPermission(listView.this,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
+    }
+
+    protected void sendSMSMessage() {
+
+
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.SEND_SMS},
+                MY_PERMISSIONS_REQUEST_SEND_SMS);
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(mobile, null, "Успешно направивте резервација", null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }}
+
 
 }

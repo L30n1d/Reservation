@@ -27,7 +27,7 @@ public class verify2 extends AppCompatActivity {
     private Button btn;
     private EditText pinTxt;
     private String JSON_STRING, code, emailB,phoneG,codeG;
-    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0 ;
     private TextView resend;
 
     @Override
