@@ -270,7 +270,17 @@ public class finalverification extends AppCompatActivity {
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
 
             if(result.length() <= Integer.parseInt(seats)){
-                addReservation();
+                String p = people.getText().toString();
+                if(p.equals("") || Integer.parseInt(p) < 2){
+                    Toast.makeText(getApplicationContext(),"Масите се за најмалку две особи!", Toast.LENGTH_SHORT).show();
+                }
+                else if(Integer.parseInt(p) > 20){
+                    Toast.makeText(getApplicationContext(),"Масите се за најмногу 20 особи!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    addReservation();
+                }
+
 
             }
             else{

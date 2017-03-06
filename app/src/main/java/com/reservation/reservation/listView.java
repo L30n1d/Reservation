@@ -9,7 +9,9 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -50,14 +52,20 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class listView extends AppCompatActivity {
 
     private ListView listView;
-    private String id2,date, JSON_STRING, userId,mobile;
+    private String id2,date, JSON_STRING, userId,mobile,selectedFromList;
     private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
+    private HashMap<String,String> listt;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private Button btn;
+    private final Handler handler = new Handler();
+    private Timer timer = new Timer();
+    private int num = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +101,8 @@ public class listView extends AppCompatActivity {
             @Override
             public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
 
+                listt = (HashMap)(listView.getItemAtPosition(position));
+
 
 
                 final AlertDialog.Builder builderSingle = new AlertDialog.Builder(listView.this);
@@ -103,6 +113,7 @@ public class listView extends AppCompatActivity {
                 arrayAdapter.add("Додели маса");
                 arrayAdapter.add("Прати порака");
                 arrayAdapter.add("Јави се");
+                arrayAdapter.add("Избриши резервација");
 
 
                 builderSingle.setNegativeButton("Откажи", new DialogInterface.OnClickListener() {
@@ -147,6 +158,9 @@ public class listView extends AppCompatActivity {
                         else if(strName.equals("Јави се")) {
                             call();
                         }
+                        else if(strName.equals("Избриши резервација")){
+                            deleteRes();
+                        }
 
                     }
                 });
@@ -156,7 +170,62 @@ public class listView extends AppCompatActivity {
         });
 
         getJSON3();
+       // callTimer();
 
+    }
+
+    private void callTimer(){
+
+        TimerTask doAsynchronousTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
+                        try {
+                            getJSON3();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        };
+        timer.schedule(doAsynchronousTask, 0, 3000);
+
+    }
+
+    private void deleteRes(){
+
+        class UpdateEmployee extends AsyncTask<Void,Void,String>{
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(listView.this,"","Се вчитува...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                getJSON3();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                HashMap<String,String> hashMap = new HashMap<>();
+                hashMap.put("id",listt.get("id").toString());
+
+                RequestHandler rh = new RequestHandler();
+
+                String s = rh.sendPostRequest(Config.DELETE_RES,hashMap);
+
+                return s;
+            }
+        }
+
+        UpdateEmployee ue = new UpdateEmployee();
+        ue.execute();
     }
 
     private synchronized void showSeats3(){
@@ -165,6 +234,10 @@ public class listView extends AppCompatActivity {
         try {
             jsonObject = new JSONObject(JSON_STRING);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
+
+
+
+            list.clear();
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
@@ -195,9 +268,10 @@ public class listView extends AppCompatActivity {
                 listView.this, list, R.layout.listitem,
                 new String[]{"name","mobile","people"}, new int[]{R.id.textView8,R.id.textView9,R.id.textView10});
 
-
-
-
+        if(listView.getCount() > num){
+            getnotification(listView.getRootView());
+        }
+        num = listView.getCount();
 
         listView.setAdapter(adapter);
 
@@ -206,17 +280,17 @@ public class listView extends AppCompatActivity {
     private synchronized void getJSON3(){
         class GetJSON3 extends AsyncTask<Void,Void,String> {
 
-            ProgressDialog loading;
+          //  ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(listView.this,"","Се вчитува...",false,false);
+                //loading = ProgressDialog.show(listView.this,"","Се вчитува...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
+             //   loading.dismiss();
                 JSON_STRING = s;
                 showSeats3();
 
@@ -329,7 +403,7 @@ public class listView extends AppCompatActivity {
         smsIntent.setData(Uri.parse("smsto:"));
         smsIntent.setType("vnd.android-dir/mms-sms");
         smsIntent.putExtra("address"  , new String (mobile));
-        smsIntent.putExtra("sms_body"  , "Вашата резервација не е успешна.");
+        smsIntent.putExtra("sms_body"  , "Вашата резервација неможе да биде извршена, бидејќи сите маси за над " + listt.get("people").toString() + " особи се веќе резервирани.");
 
         try {
             startActivity(smsIntent);
@@ -380,6 +454,34 @@ public class listView extends AppCompatActivity {
                 }
             }
         }}
+
+    public void getnotification(View view){
+
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationManager notificationmgr = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        Intent intent = new Intent(this, resultpage.class);
+        PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+
+        //   PendingIntent pintent = PendingIntent.getActivities(this,(int)System.currentTimeMillis(),intent, 0);
+
+
+        Notification notif = new Notification.Builder(this)
+                .setSmallIcon(R.drawable.busy32)
+                .setContentTitle("Hello Android Hari")
+                .setContentText("Welcome to Notification Service")
+                .setContentIntent(pintent)
+                .setSound(alarmSound)
+                .build();
+
+
+        notificationmgr.notify(0,notif);
+
+
+
+
+
+    }
 
 
 }

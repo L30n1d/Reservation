@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'DistributionKey'
             keyPassword 'reservation123'
-            storeFile file('C:/Users/Leonid/Desktop/reserve app/key.jks')
+            storeFile file('C:/Users/Home/Desktop/reserve app/key.jks')
             storePassword 'reservation123'
         }
         config1 {
