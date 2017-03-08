@@ -45,7 +45,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
     private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
     private Session session;
     private Button btn,logOut;
-    private int num = 0;
+    private int num = 0, notificationId = 0x10;
     private final Handler handler = new Handler();
     private Timer timer = new Timer();
 
@@ -73,6 +73,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 timer.cancel();
+                timer.purge();
                 session.setLoggedIn(false, "");
                 session.setUserRole("");
                 finish();
@@ -124,6 +125,16 @@ public class PlaceChooserAdmin extends AppCompatActivity {
         populate();
         callTimer();
         
+    }
+
+    @Override
+    public void onBackPressed() {
+        timer.cancel();
+        timer.purge();
+        session.setLoggedIn(false, "");
+        session.setUserRole("");
+        finish();
+        startActivity(new Intent(PlaceChooserAdmin.this, usersignin.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 
     private void callTimer(){
@@ -183,7 +194,7 @@ public class PlaceChooserAdmin extends AppCompatActivity {
         if(list.size() > num){
             getnotification(spinner2.getRootView(),datee);
         }
-         num = list.size();
+        num = list.size();
 
 
     }
@@ -411,26 +422,37 @@ public class PlaceChooserAdmin extends AppCompatActivity {
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         NotificationManager notificationmgr = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Intent intent = new Intent(this, resultpage.class);
+        Intent intent = new Intent(this, PlaceChooserAdmin.class);
+
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString("caffe_id", caffeId);
+        intent.putExtras(bundle);
+
+        Bundle bundle2 = new Bundle();
+        bundle2.putString("days", days);
+        intent.putExtras(bundle2);
+
+        Bundle bundle3 = new Bundle();
+        bundle3.putString("layout", layout);
+        intent.putExtras(bundle3);
+
         PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
 
         //   PendingIntent pintent = PendingIntent.getActivities(this,(int)System.currentTimeMillis(),intent, 0);
 
 
         Notification notif = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.busy32)
-                .setContentTitle(date)
-                .setContentText("Welcome to Notification Service")
+                .setSmallIcon(R.drawable.logo192)
+                .setContentTitle("Имате резервација")
+                .setContentText(date)
                 .setContentIntent(pintent)
                 .setSound(alarmSound)
                 .build();
 
-
-        notificationmgr.notify(0,notif);
-
-
-
-
+        notif.flags |= Notification.FLAG_AUTO_CANCEL;
+        notificationmgr.notify(notificationId++,notif);
 
     }
 

@@ -106,7 +106,7 @@ public class listView extends AppCompatActivity {
 
 
                 final AlertDialog.Builder builderSingle = new AlertDialog.Builder(listView.this);
-                builderSingle.setIcon(R.drawable.logo192);
+                builderSingle.setIcon(R.drawable.logo72);
                 builderSingle.setTitle("Избери");
 
                 final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(listView.this, android.R.layout.simple_selectable_list_item);
@@ -268,10 +268,6 @@ public class listView extends AppCompatActivity {
                 listView.this, list, R.layout.listitem,
                 new String[]{"name","mobile","people"}, new int[]{R.id.textView8,R.id.textView9,R.id.textView10});
 
-        if(listView.getCount() > num){
-            getnotification(listView.getRootView());
-        }
-        num = listView.getCount();
 
         listView.setAdapter(adapter);
 
@@ -455,33 +451,7 @@ public class listView extends AppCompatActivity {
             }
         }}
 
-    public void getnotification(View view){
 
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-        NotificationManager notificationmgr = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Intent intent = new Intent(this, resultpage.class);
-        PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
-
-        //   PendingIntent pintent = PendingIntent.getActivities(this,(int)System.currentTimeMillis(),intent, 0);
-
-
-        Notification notif = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.busy32)
-                .setContentTitle("Hello Android Hari")
-                .setContentText("Welcome to Notification Service")
-                .setContentIntent(pintent)
-                .setSound(alarmSound)
-                .build();
-
-
-        notificationmgr.notify(0,notif);
-
-
-
-
-
-    }
 
 
 }
