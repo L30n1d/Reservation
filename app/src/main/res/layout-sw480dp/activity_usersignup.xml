@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignup"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <EditText
         android:layout_height="30dp"
@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:maxLines="1"
         android:minLines="1"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="265dp"
         android:hint=" Име"
         android:layout_width="match_parent"
         android:background="@drawable/edittext_bg"
@@ -138,30 +138,38 @@
         android:textColorLink="?attr/actionMenuTextColor"
         android:textColorHighlight="#FFFFFF" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.8dp"
-        android:layout_marginTop="80dp"
-        android:layout_below="@id/regBtn"
-        android:background="#212121"
-        android:id="@+id/view1" />
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view1"
-        android:layout_marginTop="2dp"
-        android:textColor="#212121"
-        android:text="Имаш профил?"
-        android:layout_marginLeft="60dp"
-        android:id="@+id/t1" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/t1"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/view1"
-        android:layout_marginLeft="3.5dp"
-        android:text="Најави се"
-        android:id="@+id/logTxtView" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#212121"
+            android:text="Имаш профил?"
+            android:textAlignment="center"
+            android:id="@+id/t1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/t1"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="3.5dp"
+            android:text="Најави се"
+            android:textAlignment="center"
+            android:id="@+id/logTxtView" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="88dp"
+        android:id="@+id/logoViewS"
+        app:srcCompat="@drawable/logo192"
+        android:layout_height="88dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp" />
 
 </RelativeLayout>

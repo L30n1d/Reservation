@@ -9,8 +9,22 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.PlaceChooser"
-    android:background="@drawable/gradientback"
+    android:background="@drawable/animation_list"
     android:textAlignment="center">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/connTxt"
+        tools:text="Нема интернет конекција"
+        android:background="@drawable/log_out2"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:padding="5dp"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/logOut"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 
 
     <TextView
@@ -19,7 +33,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textColor="@color/colorPrimary"
-        android:textSize="25sp"
+        android:textSize="22sp"
         tools:textStyle="bold"
         android:layout_marginTop="145dp"
         android:textStyle="normal|bold"
@@ -31,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:textColor="@color/colorPrimary"
         tools:textStyle="bold"
         android:textStyle="normal|bold"

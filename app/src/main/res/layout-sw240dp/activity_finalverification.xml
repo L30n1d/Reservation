@@ -9,7 +9,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.finalverification"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
+
+
+    <ImageView
+        android:id="@+id/logoViewF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/logo192"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
 
     <TextView
         android:text="Email"
@@ -65,7 +75,7 @@
     <Button
         android:text="Резервирај"
         android:layout_width="match_parent"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="65dp"
         android:id="@+id/rezBtn"
         android:background="@drawable/rounded_but"
         android:layout_below="@+id/placeTxt"
@@ -80,7 +90,7 @@
         android:text="Име и Презиме"
         android:paddingTop="2dp"
         android:layout_height="30dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="125dp"
         android:id="@+id/nameLastTxt"
         android:background="@drawable/edittext_bg"
         android:textAlignment="center"
@@ -89,5 +99,20 @@
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/placeTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/peopleNum"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Внеси број на луѓе"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/colorPrimary" />
 
 </RelativeLayout>

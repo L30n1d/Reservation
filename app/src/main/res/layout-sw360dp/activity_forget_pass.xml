@@ -10,13 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.forget_pass"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <TextView
         android:text="Внесете го вашиот број"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="210dp"
         android:textAlignment="center"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
@@ -55,10 +55,10 @@
         android:id="@+id/logoViewP"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="70dp"
         app:srcCompat="@drawable/logo192"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
 
 
 </RelativeLayout>

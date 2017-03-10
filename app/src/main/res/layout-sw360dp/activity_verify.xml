@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.verify"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <EditText
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:textStyle="normal|bold"
         android:layout_width="wrap_content"
         android:textColor="#212121"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:text="Успешна регистрација!"
@@ -90,12 +90,12 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:id="@+id/logoViewV"
         app:srcCompat="@drawable/logo192"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp" />
+        android:layout_marginTop="54dp" />
 
 </RelativeLayout>

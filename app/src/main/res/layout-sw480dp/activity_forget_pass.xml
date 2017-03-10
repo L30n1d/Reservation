@@ -9,13 +9,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.forget_pass"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <TextView
         android:text="Внесете го вашиот е-маил"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="314dp"
         android:id="@+id/textView6"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -47,6 +47,14 @@
         android:text="Внеси"
         android:layout_marginTop="20dp"
         android:id="@+id/checkEmailBtn" />
+    <ImageView
+        android:id="@+id/logoViewP"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo192"
+        android:layout_width="88dp"
+        android:layout_height="88dp" />
 
 
 </RelativeLayout>

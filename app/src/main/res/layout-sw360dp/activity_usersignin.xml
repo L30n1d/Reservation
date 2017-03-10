@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <Button
         android:text="Најави се"
@@ -117,9 +117,9 @@
         android:layout_height="30dp" />
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:id="@+id/logoViewSign"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"

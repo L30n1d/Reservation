@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.finalverification"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <TextView
         android:text="Email"

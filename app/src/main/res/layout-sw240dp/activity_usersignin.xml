@@ -9,7 +9,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:id="@+id/logoViewSign"
+        android:src="@drawable/logo192"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
     <Button
         android:text="Најави се"

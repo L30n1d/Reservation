@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,11 +38,33 @@ public class verify extends AppCompatActivity {
     private String JSON_STRING, code, emailB,phoneG,codeG;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private TextView resend;
+    private AnimationDrawable animationDrawable;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (animationDrawable != null && !animationDrawable.isRunning())
+            animationDrawable.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (animationDrawable != null && animationDrawable.isRunning())
+            animationDrawable.stop();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify);
+
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_verify);
+
+        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(3500);
 
         btn = (Button)findViewById(R.id.confirmBtn);
         pinTxt = (EditText)findViewById(R.id.pin);

@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.reservation.reservation.usersignin"
-    android:background="@drawable/gradientback">
+    android:background="@drawable/animation_list">
 
     <Button
         android:text="Најави се"
