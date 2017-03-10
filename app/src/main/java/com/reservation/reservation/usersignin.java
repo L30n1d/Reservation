@@ -3,12 +3,14 @@ package com.reservation.reservation;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,16 +29,40 @@ public class usersignin extends AppCompatActivity {
     private EditText phoneTxt, passTxt;
     private TextView lost;
     private ConnectionDetector cd;
-
+    private AnimationDrawable animationDrawable;
 
 
 
     private int flag = 0;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (animationDrawable != null && !animationDrawable.isRunning())
+            animationDrawable.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (animationDrawable != null && animationDrawable.isRunning())
+            animationDrawable.stop();
+    }
+
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_usersignin);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_usersignin);
+
+        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(3500);
+
 
         cd = new ConnectionDetector(this);
         session = new Session(this);

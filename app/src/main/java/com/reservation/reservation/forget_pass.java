@@ -8,10 +8,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -28,12 +30,34 @@ public class forget_pass extends AppCompatActivity {
     private String JSON_STRING,password,emailTxt,phoneG,passG;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private EditText email;
+    private AnimationDrawable animationDrawable;
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (animationDrawable != null && !animationDrawable.isRunning())
+            animationDrawable.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (animationDrawable != null && animationDrawable.isRunning())
+            animationDrawable.stop();
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_pass);
+
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_forget_pass);
+
+        animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(3500);
 
 
         btn = (Button)findViewById(R.id.checkEmailBtn);
