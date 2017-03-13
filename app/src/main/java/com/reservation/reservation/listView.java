@@ -62,7 +62,7 @@ public class listView extends AppCompatActivity {
     private ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
     private HashMap<String,String> listt;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
-    private Button btn;
+    private Button btn, btn2;
     private final Handler handler = new Handler();
     private Timer timer = new Timer();
     private int num = 0;
@@ -78,6 +78,7 @@ public class listView extends AppCompatActivity {
         date = bundle.getString("date");
 
         btn = (Button) findViewById(R.id.button2);
+        btn2 = (Button) findViewById(R.id.button3);
         listView = (ListView)findViewById(R.id.listView);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +95,31 @@ public class listView extends AppCompatActivity {
                 i.putExtras(bundle3);
 
                 startActivity(i);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent i = new Intent(listView.this, GridView2.class);
+
+
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("caffeId", id2);
+                i.putExtras(bundle2);
+
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("date", date);
+                i.putExtras(bundle3);
+
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("mobile", mobile);
+                i.putExtras(bundle4);
+
+                startActivity(i);
+
             }
         });
 

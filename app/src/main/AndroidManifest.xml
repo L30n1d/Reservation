@@ -101,7 +101,9 @@
             android:name=".listView2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".resultpage" />
-        <activity android:name=".page2"></activity>
+        <activity android:name=".page2" />
+        <activity android:name=".GridView2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,5 @@
 package com.reservation.reservation;
 
-
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -44,7 +42,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class GridViewSupplementActivity extends Activity {
+public class GridView2 extends Activity {
 
     private String resId,caffeId,date, JSON_STRING,resSeat;
     private ArrayList<String> listt;
@@ -52,11 +50,10 @@ public class GridViewSupplementActivity extends Activity {
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0 ;
     private Session session;
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_grid_view_supplement);
+        setContentView(R.layout.activity_grid_view2);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -65,15 +62,14 @@ public class GridViewSupplementActivity extends Activity {
         seats = session.getAdminSeats();
         listt = new ArrayList<String>();
 
-        resId = bundle.getString("id");
         caffeId = bundle.getString("caffeId");
         date = bundle.getString("date");
         mobile = bundle.getString("mobile");
 
         getJSON();
 
-
     }
+
 
     public static int getPixelsFromDPs(Activity activity, int dps){
         Resources r = activity.getResources();
@@ -109,8 +105,8 @@ public class GridViewSupplementActivity extends Activity {
         }
 
 
-        GridView gv = (GridView) findViewById(R.id.gv);
-       // final TextView tv_message = (TextView) findViewById(R.id.tv_message);
+        GridView gv = (GridView) findViewById(R.id.gv2);
+        // final TextView tv_message = (TextView) findViewById(R.id.tv_message);
 
         // Initializing a new String Array
         String[] plants = new String[Integer.parseInt(seats)];
@@ -185,68 +181,17 @@ public class GridViewSupplementActivity extends Activity {
 
                 // Set the TextView background color
 
-               // tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                // tv.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 tv.setTextSize(getResources().getDimension(R.dimen.textsize));
 
 
 
 
-                    return tv;
+                return tv;
 
             }
         });
 
-        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                selectedSeat = parent.getItemAtPosition(position).toString();
-
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(GridViewSupplementActivity.this);
-                    builder.setTitle("Дали си сигурен?");
-                    builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            sendSMSMessage();
-                            dialog.dismiss();
-
-                        }
-                    });
-                    builder.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            //TODO
-                            dialog.dismiss();
-                        }
-                    });
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-
-
-
-            }
-        });
-
-      //for (String object: listt) {
-        // View asd = gv.getChildAt(Integer.parseInt(object));
-            //iasd.setBackgroundColor(Color.RED);
-            //asd.setOnClickListener(null);
-            //asd.setClickable(false);
-       // }
-
-
-
-
-
-        /*final int size = gv.getChildCount();
-        for(int i = 0; i < 100; i++) {
-            int childSize = gridChild.getChildCoun
-            ViewGroup gridChild = (ViewGroup) gv.getChildAt(i);t();
-            for(int k = 0; k < childSize; k++) {
-                if( gridChild.getChildAt(k) instanceof TextView ) {
-                    gridChild.getChildAt(k).setVisibility(View.GONE);
-                }
-            }
-        }*/
 
 
     }
@@ -261,7 +206,7 @@ public class GridViewSupplementActivity extends Activity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
+                loading = ProgressDialog.show(GridView2.this,"","Се вчитува...",false,false);
             }
 
             @Override
@@ -303,90 +248,5 @@ public class GridViewSupplementActivity extends Activity {
         gj.execute();
     }
 
-    private void updateRes(){
-
-        class UpdateEmployee extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(GridViewSupplementActivity.this,"","Се вчитува...",false,false);
-            }
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                loading.dismiss();
-
-                Intent i = new Intent(GridViewSupplementActivity.this, listView.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("id", caffeId);
-                i.putExtras(bundle2);
-
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("date", date);
-                i.putExtras(bundle3);
-
-                startActivity(i);
-
-            }
-
-            @Override
-            protected String doInBackground(Void... params) {
-
-                RequestHandler rh = new RequestHandler();
-
-                HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put("id",resId);
-                hashMap.put("seat",selectedSeat);
-
-                String s = rh.sendPostRequest(Config.UPDATE_RES,hashMap);
-
-                return s;
-            }
-        }
-
-        UpdateEmployee ue = new UpdateEmployee();
-        ue.execute();
-    }
-
-    protected void sendSMSMessage() {
-
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(mobile, null, "Успешно направивте резервација", null, null);
-        Toast.makeText(getApplicationContext(), "SMS sent.",
-                Toast.LENGTH_LONG).show();
-
-        updateRes();
-
-       /* ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.SEND_SMS},
-                1);*/
-    }
-
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage(mobile, null, "Успешно направивте резервација", null, null);
-                    Toast.makeText(getApplicationContext(), "SMS sent.",
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(),
-                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
-                    return;
-                }
-            }
-        }
-
-        updateRes();
-
-    }
 
 }
